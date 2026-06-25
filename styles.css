@@ -92,7 +92,9 @@ nav a:hover::after{
 .inicio {
     position: relative;
 
-    height: 100vh;
+    min-height: 100vh;
+    
+    padding: 120px 20px 60px;
 
     display: flex;
     justify-content: center;
@@ -466,6 +468,8 @@ html {
     padding: 120px 20px;
 
     background: white;
+
+    padding-top: 140px;
 }
 
 #titulo-categoria{
