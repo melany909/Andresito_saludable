@@ -23,6 +23,7 @@ function mostrarInicio(){
     nosotros.style.display = "none";
     contacto.style.display = "none";
     productos.style.display = "none";
+    productosCategoria.style.display = "none";
 
 }
 
@@ -32,6 +33,7 @@ function mostrarNosotros(){
     nosotros.style.display = "block";
     contacto.style.display = "none";
     productos.style.display = "none";
+    productosCategoria.style.display = "none";
 
 }
 
@@ -41,6 +43,7 @@ function mostrarContacto(){
     nosotros.style.display = "none";
     contacto.style.display = "block";
     productos.style.display = "none";
+    productosCategoria.style.display = "none";
 
 }
 
