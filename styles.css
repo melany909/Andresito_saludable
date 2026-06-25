@@ -102,7 +102,7 @@ nav a:hover::after{
 
     text-align: center;
 
-    background-image: url("fondo.jpg");
+    background-image: url("fondo-celular.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -635,17 +635,22 @@ html {
     }
 
     header h1{
-        font-size: 1.15rem;
-        padding: 6px 15px
+        font-size: 1.2rem;
+        padding: 8px 18px
     }
 
     nav ul{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 35px;
-    flex-wrap: wrap;
-    margin-top: 8px;
+    flex-wrap: nowrap;
+    gap: 0;
+    margin-top: 10px;
+    padding: 0;
+    }
+
+    nav li{
+        margin: 0;
     }
 
     nav a{
@@ -687,9 +692,10 @@ html {
 
     .inicio{
 
-    padding-top: 180px;
-    min-height: 100svh;
-    background-position: center top;
+    min-height: 100vh;
+    padding: 210px 20px 60px;
+    background-size: cover;
+    background-position: center;
     }
 
     #nosotros,
