@@ -102,7 +102,7 @@ nav a:hover::after{
 
     text-align: center;
 
-    background-image: url("fondo-celular.jpg");
+    background-image: url("fondo-celular.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
