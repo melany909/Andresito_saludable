@@ -93,7 +93,7 @@ nav a:hover::after{
     position: relative;
 
     min-height: 100vh;
-    
+
     padding: 120px 20px 60px;
 
     display: flex;
@@ -101,7 +101,6 @@ nav a:hover::after{
     align-items: center;
 
     text-align: center;
-    padding: 20px;
 
     background-image: url("fondo.jpg");
     background-size: cover;
@@ -469,7 +468,7 @@ html {
 
     background: white;
 
-    padding-top: 140px;
+    padding-top: 185px;
 }
 
 #titulo-categoria{
@@ -630,8 +629,13 @@ html {
 
 @media (max-width: 768px){
 
+    header{
+
+    padding:8px 10px;
+    }
+
     header h1{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     nav ul{
@@ -650,6 +654,13 @@ html {
         font-size: 1rem;
     }
 
+    .maquina{
+        white-space: normal;
+        width: 100%;
+        border-right: none;
+        animation: none;
+    }
+
     #titulo-categoria{
         font-size: 2rem;
     }
@@ -666,4 +677,18 @@ html {
     .producto-card img{
         height: 180px;
     }
+
+    .inicio{
+
+    padding-top:180px;
+    }
+
+    #nosotros,
+    #contacto,
+    #productos,
+    #productos-categoria{
+
+    padding-top:180px;
+}
+
 }
