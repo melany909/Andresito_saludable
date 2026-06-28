@@ -20,7 +20,7 @@
 </nav>
     </header>
 
-    <!--SECCIÓN INICIO-->
+   <!-- ==================== SECCIÓN INICIO ==================== -->
     <section id="inicio" class="inicio">
 
         <div class="inicio-contenido">
@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <!--SECCIÓN NOSOTROS-->
+    <!-- ==================== SECCIÓN NOSOTROS ==================== -->
     <section id="nosotros">
 
         <h2>Sobre Nosotros</h2>
@@ -70,8 +70,8 @@
         </div>
 
     </section>
-
-    <section id="productos-categoria">
+<!-- ==================== SECCIÓN SUPLEMENTOS ==================== -->
+    <section id="productos-categoria" class="suplementos">
 
         <button class="btn-volver"
         onclick="volverCategorias()">
@@ -79,18 +79,25 @@
 
     </button>
 
-        <h2 id="titulo-categoria">
-            Productos
+        <h2 class="titulo-categoria">
+            Suplementos
         </h2>
 
        <!--SUPLEMENTOS-->
         <div class="grilla-productos">
 
-            <div class="producto-card">
+            <div class="producto-card" onclick="alternarProducto(this)">
 
             <h3>Glicinato de magnesio</h3>
 
             <img src="img/suplementos/glic de magnesio.jpg" alt="Glicinato de magnesio">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+
+            <div class="contenido-producto">
 
             <ul>
 
@@ -102,7 +109,7 @@
 
             <li>
                 <strong>➥Reduce el estrés y ansiedad:</strong>
-                Ayudan a disminuir los niveels de cortisol, favoreciendo
+                Ayudan a disminuir los niveles de cortisol, favoreciendo
                 el equilibrio emocional.
             </li>
 
@@ -137,12 +144,21 @@
             </p>
         </div>
         </div>
+            </div>
+            
+        
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
 
             <h3>Golden Mix Moringuero</h3>
 
             <img src="img/suplementos/golden mix.webp" alt="Golden Mix">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
 
@@ -160,7 +176,7 @@
 
                 <li> 
                     <strong>➥Apoyo digestivo:</strong>
-                    Ayuda al transito intestinal, mejora la digestión 
+                    Ayuda al tránsito intestinal, mejora la digestión 
                     y reduce molestias estomacales e hinchazón.
                 </li>
 
@@ -181,12 +197,19 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
 
             <h3>Golden Milk</h3>
 
             <img src="img/suplementos/golden milk.png" alt="Golden milk">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -232,10 +255,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Hibiscus Complex</h3>
             <img src="img/suplementos/hibiscus complex.jpg" alt="Hibiscus complex">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -280,11 +310,18 @@
             </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Triple maca vigorizante</h3>
 
             <img src="img/suplementos/triple maca.png" alt="Triple Maca">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -327,11 +364,18 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Semillas de palta en polvo</h3>
 
             <img src="img/suplementos/sem. palta en polvo.jpg" alt="semilla de palta en polvo">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -347,7 +391,7 @@
 
                 <li>
                     <strong>➥Digestión y peso:</strong>
-                    Mejora el transito intestinal, combate la inflamación
+                    Mejora el tránsito intestinal, combate la inflamación
                     y favorece la pérdida de peso al aumentar la saciedad.
                 </li>
 
@@ -363,16 +407,23 @@
 
                 <p>
                     Se puede consumir en infusiones, en acompañamiento de comidas,
-                    Batidos, yogures y incluso en el mate.
+                    Batidos, yogures e incluso en el mate.
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
 
             <h3>Clorofila</h3>
 
             <img src="img/suplementos/clorofila.webp" alt="Clorofila">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
 
             <ul>
@@ -422,15 +473,22 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
 
             <h3>Vinagre de Manzana</h3>
             <img src="img/suplementos/vinagre de manzana.jpg" alt="Vinagre de manzana">
 
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
             <ul>
                 <li>
-                    <strong>➥Digestón:</strong>
+                    <strong>➥Digestión:</strong>
                     Alivia la inflamación abdominal y mejora la salud
                     gastrointestinal.
                 </li>
@@ -448,13 +506,13 @@
                 </li>
 
                 <li>
-                    <span>➥Antioxidante y defensas:</span>
+                    <strong>➥Antioxidante y defensas:</strong>
                     Al tener Vitamina C incluido, actúa como un potente
                     depurativo y refuerza el sistema inmunitario.
                 </li>
 
                 <li>
-                    <span>➥Salud cardiovascular:</span>
+                    <strong>➥Salud cardiovascular:</strong>
                     Tiene un efecto positivo sobre los niveles de colesterol y
                     triglicéridos en sangre.
                 </li>
@@ -471,11 +529,18 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Vinagre de sidra de manzana en capsulas</h3>
 
             <img src="img/suplementos/vinagre sidra de manzana caps..webp" alt="Vinagre de manzana en capsulas">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -508,11 +573,19 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Jugo de Aloe vera Sistema digestivo</h3>
 
+
             <img src="img/suplementos/aloe vera digest....jpg" alt="Jugo Aloe Vera">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+             <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -565,12 +638,18 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Omega-3 Vegetal</h3>
 
             <img src="img/suplementos/omega-3 vegetal.webp" alt="Omega-3 Natier">
 
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
             <ul>
                 <li>
                     <strong>➥Salud cardiovascular:</strong>
@@ -611,14 +690,22 @@
                     1 vez por día.
                     Se recomienda tomarlo 30min antes o después de las comidas prinicpales
                     para optimizar su absorción.
+                </p>
             </div>
         </div>
+        </div>
 
-       <div class="producto-card">
+       <div class="producto-card" onclick="alternarProducto(this)">
         
         <h3>Aceite de prímula</h3>
 
         <img src="img/suplementos/primula natier.webp" alt="Primula Natier">
+
+        <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+        <div class="contenido-producto">
 
         <ul>
             <li>
@@ -657,11 +744,18 @@
             </p>
         </div>
        </div> 
+       </div>
 
-       <div class="producto-card">
+       <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Jugo de Aloe Vera máximas defensas</h3>
 
         <img src="img/suplementos/aloe vera defensas.webp" alt="Jugo aloe vera">
+
+        <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+        <div class="contenido-producto">
 
         <ul>
             <li>
@@ -697,11 +791,18 @@
             </p>
         </div>
        </div>
+       </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Centella Asiática</h3>
 
             <img src="img/suplementos/centella asiatica.jpg" alt="Centella Asiática Natier">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -747,10 +848,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Hierro Quelado</h3>
             <img src="img/suplementos/hierro quelado caps..jpg" alt="Hierro quelado capsulas">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -779,12 +887,19 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
 
             <h3>Jugo de uva Tinto 100% natural</h3>
 
             <img src="img/suplementos/jugo de uva tinto.webp" alt="jugo de uva tinto">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -814,11 +929,18 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura madre Melisa</h3>
 
             <img src="img/suplementos/tintura madre melisa.webp" alt="Tintura madre">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -847,16 +969,23 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura madre Garcinia Cambogia</h3>
 
             <img src="img/suplementos/tintura madre garcinia cambogia.jpg" alt="Tintura madre">
 
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
             <ul>
                 <li>
                     <strong>➥Control del apetito:</strong>
-                    Reduce los antojos y la asniedad por comer.
+                    Reduce los antojos y la ansiedad por comer.
                 </li>
 
                 <li>
@@ -883,10 +1012,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre Fucus</h3>
             <img src="img/suplementos/tintura madre fucus.webp" alt="Tintura madre">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -926,11 +1062,18 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre Ortiga</h3>
 
             <img src="img/suplementos/tintura madre ortiga.webp" alt="Tintura madre">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -972,10 +1115,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura madre Sen Hojas</h3>
             <img src="img/suplementos/tintura madre sen hojas.png" alt="Tintura Madre">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1012,10 +1162,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre Cardo Mariano</h3>
             <img src="img/suplementos/tintura madre cardo mariano.webp" alt="Tintura madre">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1050,16 +1207,23 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre Valeriana</h3>
 
             <img src="img/suplementos/tintura madre valeriana.webp" alt="Tintura madre">
 
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
             <ul>
                 <li>
                     <strong>➥Combate el insomnio:</strong>
-                    Ayua a reconciliar el sueño rápido.
+                    Ayuda a reconciliar el sueño rápido.
                 </li>
 
                 <li>
@@ -1082,10 +1246,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre pasionaria</h3>
             <img src="img/suplementos/tintura madre pasionaria.webp" alt="Tintura madre">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1113,10 +1284,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Caldo de huesos vacuno</h3>
             <img src="img/suplementos/caldo de huesos vacuno.webp" alt="caldo de huesos vacuno Colabella">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1149,10 +1327,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Cáscara de huevo</h3>
             <img src="img/suplementos/cáscara de huevo.webp" alt="cascara de huevo Colabella">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1186,10 +1371,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Caldo de huesos marino</h3>
             <img src="img/suplementos/caldo de huesos marino.webp" alt="Caldo de huesos marino Colabella">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1225,10 +1417,18 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Aceite de Romero</h3>
             <img src="img/suplementos/aceite de romero.jpg" alt="Aceite de romero">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1238,7 +1438,7 @@
 
                 <li>
                     <strong>➥Nutre intensamente:</strong>
-                    Aporta nutrienetes esenciales para el tejido cutáneo.
+                    Aporta nutrientes esenciales para el tejido cutáneo.
                 </li>
 
                 <li>
@@ -1266,10 +1466,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Aceite de orégano</h3>
             <img src="img/suplementos/aceite de orégano.webp" alt="Aceite de oregano">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1313,10 +1520,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Zeolita extracto liquido</h3>
             <img src="img/suplementos/zeolita extracto liquido.webp" alt="Zeolita">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1350,10 +1564,17 @@
                 </p>
             </div>
         </div>
+        </div>
 
-        <div class="producto-card">
+        <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Lax Fibras</h3>
             <img src="img/suplementos/lax fibras.webp" alt="Lax fibras Geonat">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
 
             <ul>
                 <li>
@@ -1386,26 +1607,525 @@
             </div>
         </div>
         </div>
+        
+    </section>
+    
+    <!-- ==================== SECCIÓN HIERBAS MEDICINALES ==================== -->
 
-        <!--HIERBAS MEDICINALES-->
-        <h2 class="titulo-categoria-productos">
-            🌿 Hierbas medicinales
-        </h2>
+    <section id="hierbas-categoria">
 
-        <div class="grilla-hierbas">
+        <button class="btn-volver"
+        onclick="volverCategorias()">
+        ← Volver a Categorías
+    </button>
 
-            <div class="producto-card">
-                <h3>Manzanilla</h3>
+    <h2 class="titulo-categoria">
+        Hierbas Medicinales
+    </h2>
+
+    <div class="grilla-productos">
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>🌼Manzanilla</h3>
+            <img src="img/hierbas/manzanilla.webp" alt="Manzanilla">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+            <ul>
+                <li>
+                    <strong>➥ Calma el estómago:</strong>
+                    Alivia los gases, dolor de panza y la pesadez después de
+                    comer.
+                </li>
+
+                <li>
+                    <strong>➥ Ayuda a dormir:</strong>
+                    Relaja el cuerpo, reduce el estrés y te ayuda a descansar mejor.
+                </li>
+
+                <li>
+                    <strong>➥ Sana la piel:</strong>
+                    Alivia las zonas rojas, las alergias y también a cerrar
+                    heridas leves si se usa fría.
+                </li>
+
+                <li>
+                    <strong>➥ Reduce dolores:</strong>
+                    Calma las molestias de los cólicos cuando las mujeres tienen el periodo.
+                </li>
+            </ul>
+
+            <div class="consumo-hierbas">
+                <h4>🍵 Como preparar</h4>
+
+                <p>
+                    ↪ En una taza con agua caliente, añade una cucharada de manzanilla.<br> 
+                    ↪ Tapa y deja reposar entre 5 y 10min. <br>
+                    ↪ Pasa el líquido por un colador y disfrutalo tibio.
+                </p>
             </div>
+        </div>
+        </div>
 
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>Cola de quirquincho</h3>
+            <img src="img/hierbas/cola de quirquincho.webp" alt="Cola de quirquincho">
 
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
 
+            <div class="contenido-producto">
 
+            <ul>
+                <li>
+                    <strong>➥ Mejora el deseo sexual:</strong>
+                    Funciona como un vigorizante natural para hombres y mujeres.
+                </li>
 
+                <li>
+                    <strong>➥ Protege el cerebro:</strong>
+                    Ayuda a cuidar las neuronas y mejora la memoria.
+                </li>
 
+                <li>
+                    <strong>➥ Aumento de energía:</strong>
+                    Combate el cansancio físico y el agotamiento mental.
+                </li>
+            </ul>
+
+            <div class="consumo-hierbas">
+                <h4>🍵 Como preparar</h4>
+
+                <p>
+                    ↪ Hierve agua y colocalo en una taza.<br> 
+                    ↪ Añade una cucharita muy pequeña de la cola de quirquincho.<br>
+                    ↪ Tapa la taza y déjala reposar entre 10 y 15min, cuela el liquido y tómalo.<br>
+                    <b>Puedes endulzarlo si te parece muy amargo.</b><br><br>
+                    <b>💡También puedes agregar solo una ramita pequeña dentro del termo con agua caliente o en el mate.</b>
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+
+            <h3>🌺 Flor de Jamaica (Hibiscus)</h3>
+
+            <img src="img/hierbas/flor hibiscus.png" alt="Flor hibiscus">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+            <ul>
+                <li>
+                    <strong>➥ Baja la presión: </strong>
+                    Ayuda a controlar la presión baja y limpia las arterias.
+                </li>
+
+                <li>
+                    <strong>➥ Bajar de peso:</strong>
+                    Evita que tu cuerpo absorba tanta grasa y azúcares.
+                </li>
+
+                <li>
+                    <strong>➥ Elimina líquidos:</strong>
+                    Actúa como un diurético, lo que quita la hinchazón del cuerpo.
+                </li>
+
+                <li>
+                    <strong>➥ Combate el colesterol:</strong>
+                    Reduce la grasa mala en la sangre.
+                </li>
+
+                <li>
+                    <strong>➥ Contiene gran cantidad de Vitaminas:</strong>
+                    Fortalece las defensas para no enfermarse de seguido.
+                </li>
+            </ul>
+
+            <div class="consumo-hierbas">
+                <h4>🍵 Como preparar</h4>
+
+                <p>
+                    ↪ Pon a calentar 1 litro de agua.<br>
+                    ↪ Cuando empiece a hervir, añade 2 cdas soperas de flores secas de Jamaica (10gr).<br>
+                    ↪ Apaga el fuego, tapa la olla y deja reposar 10min.<br>
+                    ↪ Cuela el liquido y tomalo caliente o dejalo enfriar para tomarlo como agua fresca.<br><br>
+                    <b>💡Evita el azúcar. Si prefieres endulzar, usa un toque de Stevia o miel.</b>
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>🍃 Menta</h3>
+            <img src="img/hierbas/menta.jpg" alt="Menta">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+            
+            <ul>
+                <li>
+                    <strong>➥ Mejora la digestión:</strong>
+                    Alivia gases, la hinchazón y el dolor de panza.
+                </li>
+
+                <li>
+                    <strong>➥ Descongestiona:</strong>
+                    Ayuda a respirar mejor cuando tienes gripe o tos.
+                </li>
+
+                <li>
+                    <strong>➥ Calma dolores:</strong>
+                    Calma dolores de cabeza y dolores musculares.
+                </li>
+
+                <li>
+                    <strong>➥ Quita mal aliento:</strong>
+                    Elimina las bacterias de la boca.
+                </li>
+
+                <li>
+                    <strong>➥ Relaja:</strong>
+                    Ayuda a bajar el estrés y la ansiedad.
+                </li>
+            </ul>
+
+            <div class="consumo-hierbas">
+                <h4>🍵 Como preparar</h4>
+
+                <p>
+                    ↪ Coloca agua caliente en una taza.<br>
+                    ↪ Añade 1 cucharita de menta.<br>
+                    ↪ Tapa y deja reposar 10min.<br>
+                    ↪ Cuela y ya esta listo para disfrutar!
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>Laurel</h3>
+            <img src="img/hierbas/laurel.png" alt="Laurel">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+            <ul>
+                <li>
+                    <strong>➥ Alivia la digestión:</strong>
+                    Reduce gases, la hinchazón y dolor de panza.
+                </li>
+
+                <li>
+                    <strong>➥ Mejora la respiración:</strong>
+                    Combate la tos y desinflama los pulmones.
+                </li>
+
+                <li>
+                    <strong>➥ Reduce dolores:</strong>
+                    Alivia molestias en músculos y articulaciones.
+                </li>
+
+                <li>
+                    <strong>➥ Calma el estrés:</strong>
+                    Relaja la mente y ayuda a dormir mejor.
+                </li>
+
+                <li>
+                    <strong>➥ Controla el azúcar:</strong>
+                    Ayuda a regular los niveles de glucosa en sangre.
+                </li>
+            </ul>
+
+            <div class="consumo-hierbas">
+                <h4>🍵 Como preparar</h4>
+
+                <p>
+                     ↪ Hierve de 3 a 4 hojas secas con agua por 5min.<br>
+                     ↪ Tapa y deja reposar.<br>
+                     ↪ Colocalo en una taza y tomalo para la digestión o el estrés.
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>Tomillo</h3>
+            <img src="img/hierbas/tomillo.png" alt="Tomillo">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+            <ul>
+                <li>
+                    <strong>➥ Alivia la tos:</strong>
+                    Abre los pulmones y te ayuda a sacar las flemas cuando estás
+                    resfriado.
+                </li>
+
+                <li>
+                    <strong>➥ Mejora la digestión:</strong>
+                    Evita gases y quita el dolor de panza después de comer pesado.
+                </li>
+
+                <li>
+                    <strong>➥ Mata gérmenes:</strong>
+                    Funciona como escudo que limpia y combate bacterias y hongos.
+                </li>
+
+                <li>
+                    <strong>➥ Protege tus células:</strong>
+                    Mantiene tu cuerpo fuerte y sano gracias a sus antioxidantes.
+                </li>
+            </ul>
+
+            <div class="consumo-hierbas">
+                <h4>🍵 Como preparar</h4>
+
+                <p>
+                    ↪ Hierve agua.<br>
+                    ↪ Coloca en una taza y añade una cucharadita de tomillo.<br>
+                    ↪ Tapa la taza y deja reposar 10min.<br>
+                    ↪ Cuela y disfruta!<br><br>
+                    <b>💡Puedes endulzarlo con miel y agregar unas gotas de limón.</b>
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>Zarza</h3>
+            <img src="img/hierbas/zarza.jpg" alt="Zarza">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+                <ul>
+                    <li>
+                        <strong>➥ Limpia la piel:</strong>
+                        Combate el acné, las eccemas, la psoriasis y la dermatitis.
+                    </li>
+
+                    <li>
+                        <strong>➥ Purifica la sangre:</strong>
+                        Funciona como un excelente depurativo natural que elimina toxinas.
+                    </li>
+
+                    <li>
+                        <strong>➥ Evita retención de líquidos:</strong>
+                        Tiene un fuerte efecto diurético que estimula el trabajo de los riñones.
+                    </li>
+
+                    <li>
+                        <strong>➥ Alivia dolores:</strong>
+                        Reduce la inflamación en las articulaciones, siendo útil para el reumatismo y la artritis.
+                    </li>
+
+                    <li>
+                        <strong>➥ Protege el hígado:</strong>
+                        Mejora la función hepática y defiendea a las células del cuerpo.
+                    </li>
+                </ul>
+
+                <div class="consumo-hierbas">
+                    <h4>🍵 Como preparar</h4>
+
+                    <p>
+                        ↪ Hierve con agua una cucharada sopera (aprox. 5 y 10gr) de zarza.<br>
+                        ↪ Dejalo a fuego suave durante 5-10min.<br>
+                        ↪Apaga el fuego, tapa el recipiente y deja reposar durante 10min.<br>
+                        ↪ Colar el líquido y puedes tomarlo tanto tibio como frío.<br>
+                    </p>
+                </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>Peperina</h3>
+            <img src="img/hierbas/peperina.jpg" alt="Peperina">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+                <ul>
+                    <li>
+                        <strong>➥ Alivia la digestió:</strong>
+                        Calma el dolor de panza, reduce gases, evita la pesadez después de comer y ayuda contra 
+                        los vómitos.
+                    </li>
+
+                    <li>
+                        <strong>➥ Mejora la respiración:</strong>
+                        Ayuda a abrir los bronquios, limpia los pulmones y alivia la tos
+                        o los resfríos.
+                    </li>
+
+                    <li>
+                        <strong>➥ Calma los nervios:</strong>
+                        Funciona como relajante natural que ayuda a bajar el estrés y alivia
+                        los dolores de cabeza.
+                    </li>
+                </ul>
+
+                <div class="consumo-hierbas">
+
+                    <h4>🍵 Como preparar</h4>
+
+                    <p>
+                        ↪ Añade la peperina en una taza con agua caliente.<br>
+                        ↪ Tapa y deja reposar 10min.<br>
+                        ↪ Cuela el liquido y tomalo.<br>
+                        <b>💡 Se consume tradicionalmente después de las comidas para favorecer la digestión.</b>
+                    </p>
+                </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+            <h3>Burrito</h3>
+            <img src="img/hierbas/burrito.webp" alt="burrito">
+
+            <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+                <ul>
+                    <li>
+                        <strong>➥ Mejora la digestión:</strong>
+                        Alivia pesadez estomacal, elimina gases, calma los dolores de panza
+                        y reduce la acidez.
+                    </li>
+
+                    <li>
+                        <strong>➥ Calma los nervios:</strong>
+                        Actúa como un ansiolítico y sedante natural que ayuda a bajar el estrés,
+                        relajar la mente y dormir mejor.
+                    </li>
+
+                    <li>
+                        <strong>➥ Aporta nutrientes:</strong>
+                        Contiene antioxidantes y minerales (calcio, zinc y cobre).
+                    </li>
+                </ul>
+
+                <div class="consumo-hierbas">
+                    <h4>🍵 Como preparar</h4>
+
+                    <p>
+                        ↪ En una taza de agua caliente, agrega 5 a 10gr de burrito, tapa y
+                        deja reposar unos 10min.<br>
+                        ↪ Cuela el líquido y tomalo caliente o tibio...
+                        Consume de 1 a 2 tazas de té al día.<br><br>
+                        <b>🧉 Le puedes agregar al mate o al tereré.</b>
+                    </p>
+                </div>
+        </div>
+        </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+
+            <h3>Moringa</h3>
+            <img src="img/hierbas/moringa.webp" alt="moringa">
+             <p class="abrir-info">
+                  ▼ Tocá para mas información
+            </p>
+
+            <div class="contenido-producto">
+
+                <ul>
+                    <li>
+                        <strong>➥ Aporta nutrientes:</strong>
+                        Llena tu cuerpo de Vitaminas, hierro, calcio y proteínas
+                        de alta calidad.
+                    </li>
+
+                    <li>
+                        <strong>➥ Contiene antioxidantes:</strong>
+                        Protege tus células y combate el envejecimiento del cuerpo.
+                    </li>
+
+                    <li>
+                        <strong>➥ Reduce inflamación:</strong>
+                        Alivia dolores corporales e inflamaciones internas.
+                    </li>
+
+                    <li>
+                        <strong>➥ Controla el azúcar:</strong>
+                        Mantiene estables los niveles de glucosa en la sangre.
+                    </li>
+
+                    <li>
+                        <strong>➥ Baja el colesterol:</strong>
+                        Cuida tu corazón al reducir las grasas malas.
+                    </li>
+
+                    <li>
+                        <strong>➥ Mejora la digestión:</strong>
+                        Protege al estómago y ayuda a evitar la gastritis.
+                    </li>
+                </ul>
+
+                <div class="consumo-hierbas">
+                    <h4>🍵 Como preparar </h4>
+
+                    <p>
+                    ↪ Agrega moringa en una taza con agua caliente.<br>
+                    ↪ Tapa y deja reposar 10min.<br>
+                    ↪ Cuela el líquido y disfruta del "Té de Moringa".<br><br>
+                    <b>💡 Puedes agregar unas gotas de limón o miel si preferís.</b>
+                    <b>🧉 También le puedes agregar a tus mates.</b>
+                    </p>
+                </div>
 
 
         </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
     </section>
 
     <!--SECCIÓN CONTACTO-->
@@ -1483,7 +2203,7 @@
 
         <div class="contenedor-categorias">
 
-            <div class="tarjeta" onclick="abrirCategoria('suplementos')">
+            <div class="tarjeta" onclick="abrirCategoria('productos-categoria')">
                 <h3>💪</h3>
 
                 <h4>Suplementos</h4>
@@ -1493,8 +2213,13 @@
                 </p>
             </div>
 
-            <div class="tarjeta">
-                <h3>Hierbas medicinales🌿</h3>
+            <div class="tarjeta" onclick="abrirCategoria('hierbas-categoria')">
+                <h3>🌱</h3>
+                <h4>Hierbas Medicinales</h4>
+
+                <p class="ver-categoria">
+                    Toca para ver →
+                </p>
             </div>
 
             <div class="tarjeta">

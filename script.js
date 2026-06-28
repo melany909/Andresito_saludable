@@ -23,7 +23,9 @@ function mostrarInicio(){
     nosotros.style.display = "none";
     contacto.style.display = "none";
     productos.style.display = "none";
+
     productosCategoria.style.display = "none";
+    hierbasCategoria.style.display = "none";
 
 }
 
@@ -33,7 +35,9 @@ function mostrarNosotros(){
     nosotros.style.display = "block";
     contacto.style.display = "none";
     productos.style.display = "none";
+
     productosCategoria.style.display = "none";
+    hierbasCategoria.style.display = "none";
 
 }
 
@@ -43,32 +47,56 @@ function mostrarContacto(){
     nosotros.style.display = "none";
     contacto.style.display = "block";
     productos.style.display = "none";
+
     productosCategoria.style.display = "none";
+    hierbasCategoria.style.display = "none";
 
 }
 
 const categorias = document.getElementById("productos");
+
 const productosCategoria =
     document.getElementById("productos-categoria");
 
-const tituloCategoria =
-    document.getElementById("titulo-categoria");
+const hierbasCategoria =
+    document.getElementById("hierbas-categoria");
 
-function abrirCategoria(nombre){
+
+function abrirCategoria(id){
 
     categorias.style.display = "none";
 
-    productosCategoria.style.display = "block";
+    productosCategoria.style.display = "none";
+    hierbasCategoria.style.display = "none";
 
-    tituloCategoria.textContent =
-        nombre;
+    document.getElementById(id).style.display = "block";
 
 }
+
 
 function volverCategorias(){
 
     productosCategoria.style.display = "none";
+    hierbasCategoria.style.display = "none";
 
     categorias.style.display = "block";
 
 }
+
+
+function alternarProducto(tarjeta){
+
+    const contenido = tarjeta.querySelector(".contenido-producto");
+
+    if(contenido.style.display === "block"){
+
+        contenido.style.display = "none";
+
+    }else{
+
+        contenido.style.display = "block";
+
+    }
+
+}
+
