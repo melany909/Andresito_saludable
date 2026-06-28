@@ -86,17 +86,6 @@ function volverCategorias(){
 
 function alternarProducto(tarjeta){
 
-    const contenido = tarjeta.querySelector(".contenido-producto");
-
-    if(contenido.style.display === "block"){
-
-        contenido.style.display = "none";
-
-    }else{
-
-        contenido.style.display = "block";
-
-    }
+    tarjeta.classList.toggle("activa");
 
 }
-
