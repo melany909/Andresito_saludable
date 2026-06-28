@@ -698,12 +698,11 @@ html {
     }
 
     .producto-card{
-         width:100%;
-         max-width:350px;
+         padding:12px;
     }
 
     .producto-card img{
-        height: 180px;
+        height: 130px;
     }
 
     .inicio{
@@ -735,6 +734,12 @@ html {
 .contacto-card{
     width:95%;
     max-width:320px;
+}
+
+.grilla-productos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
 }
