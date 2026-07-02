@@ -1,3 +1,8 @@
+/* ==========================================
+   ESTILOS GENERALES
+========================================== */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +13,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* ==========================================
+   ENCABEZADO (HEADER)
+========================================== */
 header {
     background: rgba(76, 175, 80, 0.85);
     color: white;
@@ -89,6 +98,10 @@ nav a:hover::after{
     width: 100%;
 }
 
+/* ==========================================
+   SECCIÓN INICIO
+========================================== */
+
 .inicio {
     position: relative;
 
@@ -102,7 +115,7 @@ nav a:hover::after{
 
     text-align: center;
 
-    background-image: url("fondo-celular.png");
+    background-image: url("fondo-celular.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -127,8 +140,7 @@ nav a:hover::after{
 }
 
 .inicio h2,
-.inicio p,
-.btn{
+.inicio p{
     position: relative;
     z-index: 2;
 }
@@ -163,10 +175,12 @@ nav a:hover::after{
 }
     
 
-
+/*BOTON VER PRODUCTOS*/
 .btn {
     
     background-color: #4caf50;
+    position: relative;
+    z-index: 2;
     color: white;
 
     text-decoration: none;
@@ -176,18 +190,19 @@ nav a:hover::after{
     border-radius: 50px;
 
     margin-top: 20px;
+    display: inline-block;
 
-    transition: 0.3s;
+    animation: flotar 2.5s ease-in-out infinite;
 }
 
-.btn:hover{
-    transform: scale(1.08);
-    background-color: #3d9140;
-}
 
 html {
     scroll-behavior: smooth;
 }
+
+/* ==========================================
+   SECCIÓN PRODUCTOS (CATEGORÍAS)
+========================================== */
 
 #productos {
     min-height: 100vh;
@@ -267,10 +282,38 @@ html {
 
 }
 
+@keyframes flotar{
+
+        0%{
+        transform: translateY(0);
+    }
+
+    25%{
+        transform: translateY(-4px);
+    }
+
+    50%{
+        transform: translateY(-8px);
+    }
+
+    75%{
+        transform: translateY(-4px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
 .tarjeta:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
+
+/* ==========================================
+   SECCIÓN NOSOTROS
+========================================== */
 
 #nosotros {
     min-height: 100vh;
@@ -311,6 +354,10 @@ html {
 #productos{
     display: none;
 }
+
+/* ==========================================
+   SECCIÓN CONTACTO
+========================================== */
 
 #contacto {
     min-height: 100vh;
@@ -424,6 +471,10 @@ html {
     color: #4caf50;
 }
 
+/* ==========================================
+   EFECTO MÁQUINA DE ESCRIBIR
+========================================== */
+
 .maquina{
     overflow: hidden;
     white-space: nowrap;
@@ -459,6 +510,11 @@ html {
 
 }
 
+/* ==========================================
+   CATEGORÍAS DE PRODUCTOS
+   (SUPLEMENTOS - HIERBAS - FRUTOS SECOS)
+========================================== */
+
 #productos-categoria{
 
     display: none;
@@ -485,6 +541,30 @@ html {
     padding-top: 185px;
 }
 
+#frutsecos-categoria{
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 120px 20px;
+
+    background: white;
+
+    padding-top: 185px;
+}
+
+#harinas-categoria{
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 120px 20px;
+
+    background: white;
+
+    padding-top: 185px;
+}
+
 .titulo-categoria{
 
     text-align: center;
@@ -498,6 +578,42 @@ html {
 
     text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
 }
+
+.titulo-categoria-desecada{
+    
+    text-align: center;
+
+    margin-top: 40px;
+    clear: both;
+    display:block;
+
+    margin-bottom: 20px;
+
+    color: #2e7d32;
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+.titulo-categoria-desecada::after{
+
+    content: "";
+
+    display: block;
+
+    width: 120px;
+
+    height: 4px;
+
+    background: #4caf50;
+
+    margin: 15px auto;
+
+    border-radius: 20px;
+}
+
 
 .titulo-categoria::after{
 
@@ -518,7 +634,7 @@ html {
 
 
     
-
+/*ES LO QUE APRETAMOS PARA ABRIR LAS CATEGORIAS*/
 .ver-categoria{
 
     margin-top: 10px;
@@ -557,6 +673,10 @@ html {
     transform: translateX(-5px);
 }
 
+/* ==========================================
+   TARJETAS DE PRODUCTOS
+========================================== */
+
 .grilla-productos{
     display:flex;
     justify-content: center;
@@ -582,6 +702,17 @@ html {
     
 }
 
+.producto-card.abierta .contenido-producto{
+    max-height: 900px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.producto-card.abierta{
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(76,175,80,.18);
+}
+
 .producto-card:hover{
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -600,12 +731,13 @@ html {
 
 .producto-card img{
     width:100%;
-    height: 220px;
+    height: 100%;
     object-fit: contain;
-    border-radius: 25px;
+    border-bottom: 20px;
     margin-bottom: 15px;
     display: block;
     margin: 0 auto 15px;
+    order: -1;
 
 }
 
@@ -624,6 +756,10 @@ html {
     color:#4caf50;
 }
 
+/* ==========================================
+   ESTILOS DE SUPLEMENTOS
+========================================== */
+
 .consumo{
     background: #f5f5f5;
     border-left: 4px solid #4caf50;
@@ -641,6 +777,11 @@ html {
     font-size: 0.9rem;
     line-height: 1.4;
 }
+
+/* ==========================================
+   DISEÑO RESPONSIVE
+========================================== */
+
 
 @media (max-width: 768px){
 
@@ -745,12 +886,18 @@ html {
 }
 
 .grilla-productos{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    align-items: flex-start;
 }
 
 }
+
+/* ==========================================
+   ESTILOS DE HIERBAS MEDICINALES
+========================================== */
 
 .consumo-hierbas{
     background: #edf8ed;
@@ -780,21 +927,14 @@ html {
 
     opacity: 0;
 
-    margin-top: 0;
-
     transition:
-        max-height .5s ease,
-        opacity .35s ease,
-        margin-top .35s ease;
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        margin-top 0.35s ease;
+
+    margin-top: 0;
 }
 
-
-
-.producto-card.activa .contenido-producto{
-    max-height: 1500px;
-    opacity: 1;
-    margin-top: 20px;
-}
 
 
 .abrir-info{
@@ -825,3 +965,469 @@ html {
 
 }
 
+/* ==========================================
+   ESTILOS DE FRUTOS SECOS
+========================================== */
+
+.abrir-info-frutos{
+
+    display: inline-block;
+
+    margin-top: 14px;
+    padding: 10px 20px;
+
+    background: linear-gradient(135deg, #f9efd7, #f3e0b6);
+
+    color: #6d4c41;
+
+    border: 2px solid #d8b67d;
+    border-radius: 30px;
+
+    font-weight: bold;
+    font-size: .95rem;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+
+    animation: descubrirFrutos 2.2s ease-in-out infinite;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+@keyframes descubrirFrutos{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-5px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
+.consumo-frutos{
+
+    margin-top: 20px;
+
+    background: #fdf6ea;
+
+    border: 2px solid #e5c98d;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,.08);
+}
+
+.consumo-frutos h4{
+
+    color: #7b5a3a;
+
+    margin-bottom: 12px;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+}
+
+.consumo-frutos p{
+
+    color: #5c4b3b;
+
+    line-height: 1.8;
+
+    text-align: left;
+}
+
+/*FLECHA DE LOS BENEFICIOS*/
+.flecha-frutos strong{
+    color: #4caf50;
+}
+
+.flecha-frutos{
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/*COLOR DE LOS BENEFICIOS*/
+.beneficios-frutos strong{
+    color: #222;
+}
+
+/*TITULO DE FRUTAS DESECADAS*/
+.subtitulo-categoria{
+    margin-top: 60px;
+}
+
+.flecha-cocos{
+    color: #bb89bd;
+    font-weight: bold;
+}
+
+/*-----------SECCION HARINAS-------------*/
+.titulo-harinas{
+    color: #8b5e3c;
+}
+
+.titulo-harinas::after{
+    background: #d8b36b;
+}
+
+.abrir-info-harinas{
+    display: inline-block;
+
+    margin-top: 14px;
+    padding: 10px 20px;
+
+    background: linear-gradient(135deg, #f9efd7, #f3e0b6);
+
+    color: #6d4c41;
+
+    border: 2px solid #d8b67d;
+    border-radius: 30px;
+
+    font-weight: bold;
+    font-size: .95rem;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+
+    animation: descubrirFrutos 2.2s ease-in-out infinite;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.producto-card-harina{
+    box-shadow: 0 8px 20px rgba(180, 140, 60, 0.25);
+    transition: 0.3s;
+}
+
+.producto-card-harina:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(180, 140, 60, 0.40);
+}
+
+/*------CONSUMO HARINA---------*/
+.consumo-harinas{
+    background: #fff8ec;
+    border: 2px solid #d8b36b;
+    border-radius: 18px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.consumo-harinas h4{
+    color: #8b5e3c;
+}
+
+.consumo-harinas p{
+    color: #222;
+    font-weight: 250;
+}
+
+.beneficios-harinas{
+    color:#222;
+}
+
+.flecha-harinas{
+    color: #c9ba37;
+    font-weight: bold;
+}
+
+.beneficios-harinas strong{
+    color:#222;
+}
+
+/*CUADRITO DONDE ESTA EL PRODUCTO, ESTE ES EL DE HARINAS EN GENERAL*/
+.grilla-productos-harinas{
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:25px;
+    align-items: flex-start;
+    filter: drop-shadow(2px 2px 10px rgb(141, 191, 40));
+    
+}
+
+/*=================== ETIQUETAS PREMEZCLAS ===================*/
+
+.etiqueta-premezcla{
+
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+.etiqueta-pastas{
+
+    background: #d8f3dc;
+
+    color: #2d6a4f;
+
+}
+
+.etiqueta-panqueso{
+
+    background: #ffe8c2;
+
+    color: #b85c00;
+
+}
+
+.etiqueta-universal{
+
+    background: #e6dcff;
+
+    color: #5a3e8c;
+
+}
+
+.flecha-pastas{
+    color: #1b6d29;
+    font-weight: bold;
+}
+
+.beneficios-pastas strong{
+    color:#222;
+}
+
+.flecha-panqueso{
+    color: #d0c912;
+    font-weight: bold;
+}
+
+.flecha-universal{
+    color: #5a3e8c;
+    font-weight: bold;
+}
+
+.beneficios-panqueso strong{
+    color:#222;
+}
+
+/*PARA CAMBIAR EL COLOR DEL FONDO BRILLOSO, ESTE ES DEL DE PASTA*/
+.sombra-pastas{
+    filter: drop-shadow(0px 6px 4px #278e2766);
+}
+
+/*PARA CAMBIAR EL COLOR DEL FONDO BRILLOSO, ESTE ES DEL DE PAN DE QUESO*/
+.sombra-panqueso{
+    filter: drop-shadow(0px 6px 4px #a7710d66);
+}
+
+
+/*PARA CAMBIAR EL COLOR DEL FONDO BRILLOSO, ESTE ES DEL DE UNIVERSAL*/
+.sombra-universal{
+    filter: drop-shadow(0px 6px 4px #5a3e8c66);
+}
+
+/*=================== CARRUSEL PREMEZCLAS ===================*/
+
+.carrusel-premezclas{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin: 40px auto;
+
+}
+
+.contenido-carrusel{
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.imagen-carrusel{
+
+    width: 320px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.imagen-carrusel:hover{
+
+    transform: scale(1.03);
+
+}
+
+.flecha-carrusel{
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    background: #4caf50;
+
+    color: white;
+
+    transition: 0.3s;
+
+}
+
+.flecha-carrusel:hover{
+
+    transform: scale(1.1);
+
+}
+
+.titulo-premezcla{
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #5d4037;
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+}
+
+/*=================== MODAL PRODUCTO ===================*/
+
+.modal-producto{
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.65);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+.modal-contenido{
+
+    background: white;
+
+    width: 90%;
+
+    max-width: 650px;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    position: relative;
+
+    text-align: center;
+
+}
+
+.modal-contenido img{
+
+    width: 240px;
+
+    margin: 20px auto;
+
+    display: block;
+
+}
+
+.cerrar-modal{
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #4caf50;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+}
+
+.linea-modal{
+
+    border: none;
+
+    height: 3px;
+
+    background: #4caf50;
+
+    margin: 25px 0;
+
+    border-radius: 20px;
+
+}
+
+.titulo-modal{
+
+    color: #2e7d32;
+
+    margin-bottom: 15px;
+
+    font-size: 1.3rem;
+
+}
+
+#modalBeneficios,
+#modalPreparacion,
+#modalIngredientes{
+
+    color: #444;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+}
