@@ -569,7 +569,7 @@ html {
 
     text-align: center;
 
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     color: #2e7d32;
     text-transform: uppercase;
@@ -1249,9 +1249,10 @@ html {
 
     gap: 25px;
 
-    margin: 40px auto;
+    padding-bottom: 40px;
 
 }
+
 
 .contenido-carrusel{
 
@@ -1303,9 +1304,26 @@ html {
 }
 
 .flecha-carrusel:hover{
-
     transform: scale(1.1);
+}
 
+.modal-contenido{
+
+    background: white;
+
+    width: 90%;
+    max-width: 650px;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    position: relative;
+
+    text-align: center;
+
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
 .titulo-premezcla{
@@ -1339,26 +1357,32 @@ html {
     align-items: center;
 
     z-index: 9999;
+    padding: 15px;
 
 }
 
-.modal-contenido{
+@media (max-width: 768px) {
 
+    .modal-contenido {
+        width: 95%;
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    .cerrar-modal {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+.modal-contenido {
+    max-height: 85vh;
+    overflow-y: auto;
     background: white;
-
-    width: 90%;
-
-    max-width: 650px;
-
-    border-radius: 25px;
-
-    padding: 30px;
-
-    position: relative;
-
-    text-align: center;
-
 }
+
+
 
 .modal-contenido img{
 
@@ -1400,9 +1424,9 @@ html {
 
     border: none;
 
-    height: 3px;
+    height: 2px;
 
-    background: #4caf50;
+    background: #d6d6d6;
 
     margin: 25px 0;
 
@@ -1429,5 +1453,158 @@ html {
     line-height: 1.8;
 
     text-align: left;
+
+}
+
+/*BENEFICIOS CON FONDO VERDE SUAVE*/
+#modalBeneficios{
+
+    background: #f1f8e9;
+
+    padding: 18px;
+
+    border-left: 6px solid #4caf50;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+/*PARTE DE IDEAS PARA PREPARAR CON UN FONDO DIFERENTE*/
+#modalPreparacion{
+
+    background: #fff8e1;
+
+    padding: 18px;
+
+    border-left: 6px solid #ff9800;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+/*DISEÑO DE LA PARTE DE INGREDIENTES*/
+#modalIngredientes{
+
+    background: #f3e5f5;
+
+    padding: 18px;
+
+    border-left: 6px solid #8e24aa;
+
+    border-radius: 12px;
+
+}
+
+/*EL TITULO DE LAS PREMEZCLAS*/
+#modalTitulo{
+
+    font-size: 2rem;
+
+    color: #2e7d32;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+}
+
+#modalTitulo::after{
+
+    content: "";
+
+    display: block;
+
+    width: 90px;
+
+    height: 4px;
+
+    background: #4caf50;
+
+    margin: 12px auto 0;
+
+    border-radius: 20px;
+
+}
+
+
+/*================ HARINAS FUNCIONALES (4) ================*/
+
+.carrusel-harinas{
+
+    margin-top:70px;
+
+}
+
+/*==========================================
+  TODOS LOS CARRUSELES - CELULAR
+==========================================*/
+
+@media (max-width:768px){
+
+    .carrusel-premezclas,
+    .carrusel-premium,
+    .carrusel-harinas{
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:8px;
+
+        margin:30px 0;
+    }
+
+    .contenido-carrusel{
+
+        width:210px;
+    }
+
+    .titulo-premezcla{
+
+        font-size:18px;
+        min-height:55px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        text-align:center;
+    }
+
+    .imagen-carrusel{
+
+        width:180px;
+        max-width:100%;
+
+        display:block;
+        margin:auto;
+    }
+
+    .flecha-carrusel{
+
+        width:36px;
+        height:36px;
+
+        font-size:18px;
+
+        flex-shrink:0;
+    }
+
+    .modal-contenido{
+
+        width:94%;
+        padding:18px;
+
+        max-height:85vh;
+        overflow-y:auto;
+    }
+
+    #modalTitulo{
+
+        font-size:24px;
+    }
 
 }
