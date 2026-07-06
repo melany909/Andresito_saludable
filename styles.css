@@ -565,6 +565,18 @@ html {
     padding-top: 185px;
 }
 
+#cereales-categoria{
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 120px 20px;
+
+    background: white;
+
+    padding-top: 185px;
+}
+
 .titulo-categoria{
 
     text-align: center;
@@ -684,7 +696,7 @@ html {
     justify-content: center;
     gap:25px;
     align-items: flex-start;
-    filter: drop-shadow(2px 2px 5px rgb(97, 233, 142));
+    filter: drop-shadow(0px 2px 4px rgb(97, 233, 142));
     
 }
 
@@ -994,6 +1006,54 @@ html {
     transition: .3s;
 }
 
+/*BENEFICIOS DE CEREALES*/
+
+.abrir-info-cereales{
+    text-align: center;
+
+    color: #b8860b;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+/*CUADRITO CONSUMO DE CEREALES*/
+.consumo-cereales{
+
+    background: #fff8e6;
+
+    border-left: 6px solid #d4a017;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+/*TITULO DE CEREALES*/
+.consumo-cereales h4{
+
+    color: #8d6e00;
+
+}
+
+.beneficios-cereales strong{
+color: #222;
+}
+
+.flecha-cereales{
+   color: #D4A017;
+}
+
 @keyframes descubrirFrutos{
 
     0%{
@@ -1152,7 +1212,7 @@ html {
     justify-content: center;
     gap:25px;
     align-items: flex-start;
-    filter: drop-shadow(2px 2px 10px rgb(141, 191, 40));
+    filter: drop-shadow(0px 2px 4px rgb(141, 191, 40));
     
 }
 
@@ -1606,5 +1666,51 @@ html {
 
         font-size:24px;
     }
+
+}
+
+/*CEREALES PARTE DE ALMOHADITAS RELLENAS*/
+.titulo-sabores{
+
+    color:#9c6b00;
+
+    text-align:center;
+
+    margin:20px 0 15px;
+    text-shadow: 0 0 10px #9c6b00;
+    border-top: 2px solid #e2b04342;
+    padding-top: 8px;
+
+}
+
+.sabores-almohaditas{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+.sabor{
+
+    background:#fff4d6;
+
+    color:#6d4c41;
+
+    padding:8px 15px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+    font-size:.95rem;
+
+    border:2px solid #e0c36b;
 
 }

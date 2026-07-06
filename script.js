@@ -11,6 +11,7 @@ const productosCategoria = document.getElementById("productos-categoria");
 const hierbasCategoria = document.getElementById("hierbas-categoria");
 const frutsecosCategoria = document.getElementById("frutsecos-categoria");
 const harinasCategoria = document.getElementById("harinas-categoria");
+const cerealesCategoria = document.getElementById("cereales-categoria");
 
 boton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -75,6 +76,7 @@ function abrirCategoria(id) {
     hierbasCategoria.style.display = "none";
     frutsecosCategoria.style.display = "none";
     harinasCategoria.style.display = "none";
+    cerealesCategoria.style.display = "none";
 
     document.getElementById(id).style.display = "block";
 }
@@ -85,6 +87,7 @@ function volverCategorias() {
     hierbasCategoria.style.display = "none";
     frutsecosCategoria.style.display = "none";
     harinasCategoria.style.display = "none";
+    cerealesCategoria.style.display = "none";
 
     productos.style.display = "block";
 }
@@ -95,6 +98,7 @@ function ocultarCategorias() {
     hierbasCategoria.style.display = "none";
     frutsecosCategoria.style.display = "none";
     harinasCategoria.style.display = "none";
+    cerealesCategoria.style.display = "none";
 }
 
 /* ================= PRODUCTOS EXPANDIR ================= */
