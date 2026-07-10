@@ -12,6 +12,7 @@ const hierbasCategoria = document.getElementById("hierbas-categoria");
 const frutsecosCategoria = document.getElementById("frutsecos-categoria");
 const harinasCategoria = document.getElementById("harinas-categoria");
 const cerealesCategoria = document.getElementById("cereales-categoria");
+const semillasCategoria = document.getElementById("semillas-categoria");
 
 boton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -77,6 +78,10 @@ function abrirCategoria(id) {
     frutsecosCategoria.style.display = "none";
     harinasCategoria.style.display = "none";
     cerealesCategoria.style.display = "none";
+    semillasCategoria.style.display = "none";
+    
+    
+    
 
     document.getElementById(id).style.display = "block";
 }
@@ -88,6 +93,8 @@ function volverCategorias() {
     frutsecosCategoria.style.display = "none";
     harinasCategoria.style.display = "none";
     cerealesCategoria.style.display = "none";
+    semillasCategoria.style.display = "none";
+    
 
     productos.style.display = "block";
 }
@@ -99,6 +106,9 @@ function ocultarCategorias() {
     frutsecosCategoria.style.display = "none";
     harinasCategoria.style.display = "none";
     cerealesCategoria.style.display = "none";
+    semillasCategoria.style.display = "none";
+   
+    
 }
 
 /* ================= PRODUCTOS EXPANDIR ================= */
@@ -110,7 +120,8 @@ function alternarProducto(tarjeta) {
     const texto =
         tarjeta.querySelector(".abrir-info") ||
         tarjeta.querySelector(".abrir-info-frutos") ||
-        tarjeta.querySelector(".abrir-info-harinas");
+        tarjeta.querySelector(".abrir-info-harinas") ||
+        tarjeta.querySelector(".ver-info-semillas");
 
     if (!texto) return;
 

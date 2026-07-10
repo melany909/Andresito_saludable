@@ -577,6 +577,18 @@ html {
     padding-top: 185px;
 }
 
+#semillas-categoria{
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 120px 20px;
+
+    background: white;
+
+    padding-top: 185px;
+}
+
 .titulo-categoria{
 
     text-align: center;
@@ -1023,6 +1035,21 @@ html {
 
 }
 
+/*EBNEFICIOS DE SEMILLAS*/
+.abrir-info-semillas{
+    margin-top: 20px;
+
+    font-size: 1.05rem;
+
+    font-weight: bold;
+
+    color: #5d8a3d;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
 /*CUADRITO CONSUMO DE CEREALES*/
 .consumo-cereales{
 
@@ -1054,6 +1081,31 @@ color: #222;
    color: #D4A017;
 }
 
+/*FLECHA DE LA GRANOLA TRADICIONAL*/
+.flecha-tradicional{
+    color:#27a12fe7;
+}
+
+/*FLECHA DE LA GRANOLA ENERGÉTICA*/
+.flecha-energetica{
+    color:#d8e216e7;
+}
+
+/*FLECHA DE LA GRANOLA COCADA*/
+.flecha-cocada{
+    color:#e21616b3;
+}
+
+/*FLECHA DE LA GRANOLA BASE*/
+.flecha-base{
+    color:#e7b00ad6;
+}
+
+.flecha-semillas{
+    color:#1b5e1fd4;
+    font-weight: bold;
+    
+}
 @keyframes descubrirFrutos{
 
     0%{
@@ -1712,5 +1764,153 @@ color: #222;
     font-size:.95rem;
 
     border:2px solid #e0c36b;
+
+}
+
+/*GRANOLAS COLORES Y ETIQUETAS*/
+.etiqueta-granola{
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    font-size: .9rem;
+
+    color: white;
+
+    margin-bottom: 15px;
+
+}
+
+.etiqueta-base{
+
+    background: #f57b007d;
+    color: #222;
+
+}
+
+.etiqueta-energetica{
+
+    background: #fbc12d9c;
+
+    color: #222;
+
+}
+
+.etiqueta-cocada{
+
+    background: #d32f2f90;
+    color:#222;
+
+}
+
+.etiqueta-tradicional{
+
+    background: #43a0486d;
+    color:#222;
+
+}
+
+.granola-base{
+
+    border-left: 8px solid #f57b0091;
+
+}
+
+.granola-energetica{
+
+    border-left: 8px solid #fbc12d97;
+
+}
+
+.granola-cocada{
+
+    border-left: 8px solid #d32f2f6d;
+
+}
+
+.granola-tradicional{
+
+    border-left: 8px solid #43a048b3;
+
+}
+
+/*-----------------SEMILLAS---------------------*/
+
+.producto-card-semillas{
+    filter: drop-shadow(0px 2px 2px #19da3656);
+}
+
+.beneficios-semillas{
+
+    list-style: none;
+
+    
+
+    padding: 0;
+
+    margin: 25px 0;
+
+}
+
+.beneficios-semillas li{
+
+    display: flex;
+
+    align-items: flex-start;
+    
+    gap: 5px;
+
+    margin-bottom: 5px;
+
+    color: #444;
+
+    line-height: 1.5;
+
+}
+
+.beneficios-semillas strong{
+
+    font-weight: 600;
+    color:#222;
+
+}
+
+.consumo-semillas{
+
+    margin-top: 25px;
+
+    background: #f5fbf1;
+
+    border-left: 5px solid #6d9f3d;
+
+    border-radius: 10px;
+
+    padding: 15px;
+    font-weight: 600;
+
+}
+
+.consumo-semillas h4{
+
+    color: #4d7a2a;
+
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+
+}
+
+.consumo-semillas p{
+
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 0.95rem;
 
 }
