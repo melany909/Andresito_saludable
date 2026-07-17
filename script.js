@@ -13,6 +13,7 @@ const frutsecosCategoria = document.getElementById("frutsecos-categoria");
 const harinasCategoria = document.getElementById("harinas-categoria");
 const cerealesCategoria = document.getElementById("cereales-categoria");
 const semillasCategoria = document.getElementById("semillas-categoria");
+const congeladosCategoria = document.getElementById("congelados-categoria");
 
 boton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -79,6 +80,8 @@ function abrirCategoria(id) {
     harinasCategoria.style.display = "none";
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
+    congeladosCategoria.style.display = "none";
+    
     
     
     
@@ -94,6 +97,7 @@ function volverCategorias() {
     harinasCategoria.style.display = "none";
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
+    congeladosCategoria.style.display = "none";
     
 
     productos.style.display = "block";
@@ -107,6 +111,7 @@ function ocultarCategorias() {
     harinasCategoria.style.display = "none";
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
+    congeladosCategoria.style.display = "none";
    
     
 }

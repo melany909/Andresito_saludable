@@ -1,3 +1,16 @@
+
+<?php
+
+$conexion = new mysqli("localhost","root","","dietetica");
+
+if($conexion->connect_error){
+
+    die("Error de conexión");
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,6 +105,34 @@
 
             <img src="img/suplementos/glic de magnesio.jpg" alt="Glicinato de magnesio" loading="lazy">
 
+<?php
+
+$sql_glici_magnesio = "SELECT * FROM productos WHERE nombre='Glicinato de magnesio'";
+
+$resultado_glici_magnesio = $conexion->query($sql_glici_magnesio);
+
+$glici_magnesio = $resultado_glici_magnesio->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($glici_magnesio["estado"]); ?>">
+
+<?php
+
+if($glici_magnesio["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
             <p class="abrir-info">
                   ▼ Tocá para mas información
             </p>
@@ -132,6 +173,14 @@
             </li>
             </ul>
 
+        <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $glici_magnesio["precio"]; ?></p>
+
+        </div>
+
         <div class="consumo">
 
             <h4>Modo de consumo🛡️</h4>
@@ -153,6 +202,34 @@
             <h3>Golden Mix Moringuero</h3>
 
             <img src="img/suplementos/golden mix.webp" alt="Golden Mix" loading="lazy">
+
+<?php
+
+$sql_golden_mix = "SELECT * FROM productos WHERE nombre='Golden Mix'";
+
+$resultado_golden_mix = $conexion->query($sql_golden_mix);
+
+$golden_mix = $resultado_golden_mix->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($golden_mix["estado"]); ?>">
+
+<?php
+
+if($golden_mix["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -187,6 +264,14 @@
                 </li>
             </ul>
 
+        <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $golden_mix["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
 
                 <h4>Modo de consumo🛡️</h4>
@@ -204,6 +289,34 @@
             <h3>Golden Milk</h3>
 
             <img src="img/suplementos/golden milk.png" alt="Golden milk" loading="lazy">
+
+<?php
+
+$sql_golden_milk = "SELECT * FROM productos WHERE nombre='Golden Milk'";
+
+$resultado_golden_milk = $conexion->query($sql_golden_milk);
+
+$golden_milk = $resultado_golden_milk->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($golden_milk["estado"]); ?>">
+
+<?php
+
+if($golden_milk["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -243,6 +356,14 @@
                 </li>
             </ul>
 
+        <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $golden_milk["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -260,6 +381,34 @@
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Hibiscus Complex</h3>
             <img src="img/suplementos/hibiscus complex.jpg" alt="Hibiscus complex" loading="lazy">
+
+<?php
+
+$sql_hibiscus = "SELECT * FROM productos WHERE nombre='Hibiscus Complex'";
+
+$resultado_hibiscus  = $conexion->query($sql_hibiscus);
+
+$hibiscus = $resultado_hibiscus->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($hibiscus["estado"]); ?>">
+
+<?php
+
+if($hibiscus["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -299,6 +448,14 @@
                 </li>
             </ul>
 
+        <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $hibiscus["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -316,6 +473,34 @@
             <h3>Triple maca vigorizante</h3>
 
             <img src="img/suplementos/triple maca.png" alt="Triple Maca" loading="lazy">
+
+<?php
+
+$sql_triple_maca = "SELECT * FROM productos WHERE nombre='Triple maca vigorizante'";
+
+$resultado_triple_maca  = $conexion->query($sql_triple_maca);
+
+$triple_maca = $resultado_triple_maca->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($triple_maca["estado"]); ?>">
+
+<?php
+
+if($triple_maca["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -355,6 +540,14 @@
                 </li>
             </ul>
 
+        <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $triple_maca["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -370,6 +563,34 @@
             <h3>Semillas de palta en polvo</h3>
 
             <img src="img/suplementos/sem. palta en polvo.jpg" alt="semilla de palta en polvo" loading="lazy">
+
+<?php
+
+$sql_palta = "SELECT * FROM productos WHERE nombre='Semillas de palta en polvo'";
+
+$resultado_palta  = $conexion->query($sql_palta);
+
+$palta= $resultado_palta->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($palta["estado"]); ?>">
+
+<?php
+
+if($palta["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -402,6 +623,14 @@
                 </li>
             </ul>
 
+        <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $palta["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -418,6 +647,34 @@
             <h3>Clorofila</h3>
 
             <img src="img/suplementos/clorofila.webp" alt="Clorofila" loading="lazy">
+
+<?php
+
+$sql_clorofila = "SELECT * FROM productos WHERE nombre='Clorofila'";
+
+$resultado_clorofila  = $conexion->query($sql_clorofila);
+
+$clorofila= $resultado_clorofila->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($clorofila["estado"]); ?>">
+
+<?php
+
+if($clorofila["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -458,6 +715,13 @@
                     el daño de los radicales libres.
                 </li>
             </ul>
+
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $clorofila["precio"]; ?></p>
+
+        </div>
 
             <div class="consumo">
 
@@ -1563,7 +1827,7 @@
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
-                    Ingrerir <b>4 gotas,</b> 2 veces al día, 30min antes o despés 
+                    Ingrerir <b>4 gotas,</b> 2 veces al día, 30min antes o después 
                     de las comidas peincipales.<br>
                     Puedes mezclarla con agua o colocarlas bajo la lengua.<br>
                     Para uso externo colocar <b>4 a 8 gotas</b> de forma externa.
@@ -1571,6 +1835,75 @@
             </div>
         </div>
         </div>
+
+        <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Aceite de CBD Bioactiva</h3>
+        <img src="img/suplementos/bioactiva.png" alt="Bioactiva" loading="lazy">
+
+        <p class="abrir-info">
+            ▼ Tocá para mas información
+        </p>
+
+        <div class="contenido-producto">
+            <ul>
+                <li>
+                    <strong>➥ Reduce la asniedad:</strong>
+                    Calma la mente y disminuye el estrés.
+                </li>
+
+                <li>
+                    <strong>➥ Mejora el sueño:</strong>
+                    Facilita el descanso y combate el insomnio.
+                </li>
+
+                <li>
+                    <strong>➥ Alivia dolores:</strong>
+                    Actúa como un analgésico y antiinflamatorio natural.
+                </li>
+
+                <li>
+                    <strong>➥ Efecto seguro:</strong>
+                    No genera efectos psicoactivos por ser libre de THC.
+                </li>
+            </ul>
+
+            <div class="consumo">
+                <h4>Modo de consumo🛡️</h4>
+                <p>
+                    Se colocan gotas sublinguales y se mantienen ahí 
+                    de 30 a 60seg antes de tragarlas por una absorción rápida.<br><br>
+                    <b>Para dormir mejor,</b> Consume a la noche de 30 a 60min antes de acostarse.<br>
+                    <b>Para estrés y dolores,</b> se toma por la mañana o en la tarde, repartiendo su dosis
+                    según la necesidad del día.
+                </p>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Zeolita extracto liquido</h3>
@@ -5264,10 +5597,40 @@
         Semillas
     </h2>
 
+<?php
+
+$sql = "SELECT * FROM productos WHERE nombre='Chía'";
+
+$resultado = $conexion->query($sql);
+
+while($fila = $resultado->fetch_assoc()){
+
+    $carpeta = strtolower($fila["categoria"]);
+
+?>
+
     <div class="grilla-productos">
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
-            <h3>Chía</h3>
-            <img src="img/semillas/chia.jpg" alt="Semilla chía" loading="lazy">
+            <h3><?php echo $fila["nombre"]; ?></h3>
+            <img src="img/<?php echo $carpeta; ?>/<?php echo $fila["imagen"]; ?>" alt="<?php echo $fila["nombre"]; ?>" loading="lazy">
+
+<div class="estado-producto <?php echo strtolower(trim($fila["estado"])); ?>">
+
+<?php
+
+if(strtolower(trim($fila["estado"])) == "disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5275,48 +5638,104 @@
 
             <div class="contenido-producto">
 
-            <ul class="beneficios-semillas">
-                <li>
-                    <span class="flecha-semillas">𖧧</span>
-                    <strong>Su fibra limpia y mejora la digestión.</strong>
-                </li>
+        <ul class="beneficios-semillas">
 
-                <li>
-                    <span class="flecha-semillas">𖧧</span>
-                    <strong>Se infla en la panza y te llena por más tiempo.</strong>
-                </li>
+        <?php
 
-                <li>
-                    <span class="flecha-semillas">𖧧</span>
-                    <strong>Limpia el colesterol malo de las arterias.</strong>
-                </li>
+        $beneficios = explode("|", $fila["beneficios"]);
 
-                <li>
-                    <span class="flecha-semillas">𖧧</span>
-                    <strong>Evita que el azúcar te suba de golpe.</strong>
-                </li>
+        foreach($beneficios as $beneficio){
 
-                <li>
-                    <span class="flecha-semillas">𖧧</span>
-                    <strong>Aporta mucho calcio y magnesio para cuidar tus huesos y dientes.</strong>
-                </li>
-            </ul>
+        ?>
+            <li>
+                <span class="flecha-semillas">𖧧</span>
+
+                <strong><?php echo $beneficio; ?></strong>
+            </li>
+
+        <?php
+
+        }
+
+        ?>
+        </ul>
+
+    <div class="precios-producto">
+
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $fila["precio100"]; ?></p>
+
+    <p><strong>500 g:</strong> $<?php echo $fila["precio500"]; ?></p>
+
+    <p><strong>1 kg:</strong> $<?php echo $fila["precio1000"]; ?></p>
+    </div>
 
             <div class="consumo-semillas">
                 ✨ Como lo puedes consumir
 
-                <p>
-                    ⮕ Agrega una cucharada sobre tu yogur o tazón de avena matutino, deja reposar 5min para que se ablanden antes de comer.<br><br>
-                    ⮕ Sumá una cucharada a la licuadora cuando prepares batidos de frutas o jugos verdes.<br><br>
-                    ⮕ Agrega una cucharada mezclada con agua, deja reposar 5-10min y tómalo en ayuna (puedes agregar un chorrito de limón).
-                </p>
-            </div>
+            <p>
+            <?php
+
+            $consumos = explode("|", $fila["consumo"]);
+
+            foreach($consumos as $consumo){
+
+            ?>
+
+        ⮕ <?php echo $consumo; ?><br><br>
+
+        <?php
+
+        }
+
+        ?>
+        </p>
         </div>
         </div>
+        </div>
+
+        <?php
+
+}
+
+?>
 
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
             <h3>Linaza</h3>
             <img src="img/semillas/lino.webp" alt="semilla de lino" loading="lazy">
+
+<?php
+
+$sql_linaza = "SELECT * FROM productos WHERE nombre='Linaza'";
+
+$resultado_linaza = $conexion->query($sql_linaza);
+
+$linaza = $resultado_linaza->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($linaza["estado"]); ?>">
+
+<?php
+
+if($linaza["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+
+
+            
 
             <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5346,6 +5765,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $linaza["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $linaza["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $linaza["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
                     <p>
@@ -5362,6 +5793,39 @@
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
             <h3>Girasol</h3>
             <img src="img/semillas/girasol.jpg" alt="semillas de girasol sin cascara" loading="lazy">
+
+<?php
+
+$sql_girasol = "SELECT * FROM productos WHERE nombre='Girasol'";
+
+$resultado_girasol = $conexion->query($sql_girasol);
+
+$girasol = $resultado_girasol->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($girasol["estado"]); ?>">
+
+<?php
+
+if($girasol["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+        
+
+
+            
 
             <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5395,6 +5859,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $girasol["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $girasol["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $girasol["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
 
@@ -5410,6 +5886,36 @@
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
             <h3>Calabaza</h3>
             <img src="img/semillas/calabaza.webp" alt="semilla de calabaza" loading="lazy">
+
+<?php
+
+$sql_calabaza = "SELECT * FROM productos WHERE nombre='Calabaza'";
+
+$resultado_calabaza = $conexion->query($sql_calabaza);
+
+$calabaza = $resultado_calabaza->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($calabaza["estado"]); ?>">
+
+<?php
+
+if($calabaza["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+        
 
             <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5443,6 +5949,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $calabaza["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $calabaza["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $calabaza["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
 
@@ -5458,6 +5976,34 @@
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
             <h3>Sésamo blanco</h3>
             <img src="img/semillas/sesamo blanco.webp" alt="Sésamo blanco" loading="lazy">
+
+<?php
+
+$sql_sesamo_blanco = "SELECT * FROM productos WHERE nombre='Sésamo blanco'";
+
+$resultado_sesamo_blanco = $conexion->query($sql_sesamo_blanco);
+
+$sesamo_blanco = $resultado_sesamo_blanco->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($sesamo_blanco["estado"]); ?>">
+
+<?php
+
+if($sesamo_blanco["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
              <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5492,6 +6038,19 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $sesamo_blanco["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $sesamo_blanco["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $sesamo_blanco["precio1000"]; ?></p>
+
+                </div>
+
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
 
@@ -5508,6 +6067,38 @@
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
             <h3>Sésamo integral</h3>
             <img src="img/semillas/sesamo integral.webp" alt="Sésamo integral" loading="lazy">
+
+<?php
+
+$sql_sesamo_integral = "SELECT * FROM productos WHERE nombre='Sésamo integral'";
+
+$resultado_sesamo_integral = $conexion->query($sql_sesamo_integral);
+
+$sesamo_integral = $resultado_sesamo_integral->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($sesamo_integral["estado"]); ?>">
+
+<?php
+
+if($sesamo_integral["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+            
+
+            
 
             <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5542,6 +6133,18 @@
                     </li>
                 </ul>
 
+                 <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $sesamo_integral["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $sesamo_integral["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $sesamo_integral["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
                     <p>
@@ -5556,6 +6159,35 @@
         <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
             <h3>Sésamo negro</h3>
             <img src="img/semillas/sesamo negro.webp" alt="Sésamo negro" loading="lazy">
+
+<?php
+
+$sql_sesamo_negro = "SELECT * FROM productos WHERE nombre='Sésamo negro'";
+
+$resultado_sesamo_negro = $conexion->query($sql_sesamo_negro);
+
+$sesamo_negro = $resultado_sesamo_negro->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($sesamo_negro["estado"]); ?>">
+
+<?php
+
+if($sesamo_negro["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
             <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5590,6 +6222,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $sesamo_negro["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $sesamo_negro["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $sesamo_negro["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
 
@@ -5606,6 +6250,35 @@
     <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
         <h3>Zaragatona Psyllium</h3>
         <img src="img/semillas/psyllium.jpg" alt="psyllium" loading="lazy">
+
+<?php
+
+$sql_zaragatona_psyllium = "SELECT * FROM productos WHERE nombre='Zaragatona psyllium'";
+
+$resultado_zaragatona_psyllium = $conexion->query($sql_zaragatona_psyllium);
+
+$zaragatona_psyllium = $resultado_zaragatona_psyllium->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($zaragatona_psyllium["estado"]); ?>">
+
+<?php
+
+if($zaragatona_psyllium["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
         <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5640,12 +6313,24 @@
                     </li>
                 </ul>
 
+                 <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $zaragatona_psyllium["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $zaragatona_psyllium["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $zaragatona_psyllium["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4> ✨ Como lo puedes consumir</h4>
 
                     <p>
                         ⮕ Mezcla un poco directamente en tu yogur favorito, casi no tiene sabor así que no arruinará tu desayuno.<br><br>
-                        ⮕ Esoesante de sopas y salsas.<br><br> 
+                        ⮕ Espesante de sopas y salsas.<br><br> 
                         ⮕ En panadería (¡El ingrediente secreto sin gluten!)🤩.
                     </p>
                 </div>
@@ -5656,6 +6341,35 @@
     <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
         <h3>Quinoa</h3>
         <img src="img/semillas/quinoa.jpg" alt="semilla quinoa" loading="lazy">
+
+<?php
+
+$sql_quinoa = "SELECT * FROM productos WHERE nombre='Quinoa'";
+
+$resultado_quinoa = $conexion->query($sql_quinoa);
+
+$quinoa = $resultado_quinoa->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($quinoa["estado"]); ?>">
+
+<?php
+
+if($quinoa["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
         <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5694,6 +6408,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $quinoa["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $quinoa["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $quinoa["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4> ✨Como lo puedes consumir</h4>
 
@@ -5711,6 +6437,34 @@
     <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
         <h3>Amaranto</h3>
         <img src="img/semillas/amaranto.jpg" alt="semilla amaranto" loading="lazy">
+
+<?php
+
+$sql_amaranto = "SELECT * FROM productos WHERE nombre='Amaranto'";
+
+$resultado_amaranto = $conexion->query($sql_amaranto);
+
+$amaranto = $resultado_amaranto->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($amaranto["estado"]); ?>">
+
+<?php
+
+if($amaranto["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5734,6 +6488,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $amaranto["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $amaranto["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $amaranto["precio1000"]; ?></p>
+
+                </div>
+
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
 
@@ -5750,6 +6516,34 @@
         <h3>Mijo</h3>
         <img src="img/semillas/mijo.webp" alt="semilla mijo" loading="lazy">
 
+<?php
+
+$sql_mijo = "SELECT * FROM productos WHERE nombre='Mijo'";
+
+$resultado_mijo = $conexion->query($sql_mijo);
+
+$mijo = $resultado_mijo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($mijo["estado"]); ?>">
+
+<?php
+
+if($mijo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
         <div class="ver-info-semillas">
                 🌱 Ver beneficios
             </div>
@@ -5760,9 +6554,8 @@
                         <span class="flecha-semillas">𖧧</span>
                         <strong>Tiene mucho <b>magnesio</b> que te ayuda a relajarte y te da fuerzas.</strong>
                     </li>
-                </ul>
 
-                <li>
+                    <li>
                         <span class="flecha-semillas">𖧧</span>
                         <strong>Aporta mineral especial que fortalece desde adentro ( deja el pelo, piel y uñas lindas).</strong>
                     </li>
@@ -5771,6 +6564,19 @@
                         <span class="flecha-semillas">𖧧</span>
                         <strong>Es súper fácil de digerir, evita la acidez y <b>no tiene gluten</b>.</strong>
                     </li>
+                </ul>
+
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $mijo["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $mijo["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $mijo["precio1000"]; ?></p>
+
+                </div>
 
                     <div class="consumo-semillas">
                         <h4>✨ Como lo puedes consumir</h4>
@@ -5787,6 +6593,34 @@
     <div class="producto-card producto-card-semillas" onclick="alternarProducto(this)">
         <h3>Amapola</h3>
         <img src="img/semillas/amapola.jpg" alt="semilla amapola" loading="lazy">
+
+<?php
+
+$sql_amapola = "SELECT * FROM productos WHERE nombre='Amapola'";
+
+$resultado_amapola = $conexion->query($sql_amapola);
+
+$amapola = $resultado_amapola->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($amapola["estado"]); ?>">
+
+<?php
+
+if($amapola["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌱 Ver beneficios
@@ -5809,6 +6643,18 @@
                         <strong>Aportan grasas saludables (Omega-3 y 6) que protegen tus arterias y zinc para reforzar tu sistema inmune.</strong>
                     </li>
                 </ul>
+
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $amapola["precio100"]; ?></p>
+
+                    <p><strong>500 g:</strong> $<?php echo $amapola["precio500"]; ?></p>
+
+                    <p><strong>1 kg:</strong> $<?php echo $amapola["precio1000"]; ?></p>
+
+                </div>
 
                 <div class="consumo-semillas">
                     <h4>✨ Como lo puedes consumir</h4>
@@ -5833,6 +6679,34 @@
         <h3>Canela en polvo</h3>
         <img src="img/especias y condim/canela polvo.jfif" alt="canela en polvo" loading="lazy">
 
+<?php
+
+$sql_canela = "SELECT * FROM productos WHERE nombre='Canela en polvo'";
+
+$resultado_canela = $conexion->query($sql_canela);
+
+$canela = $resultado_canela->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($canela["estado"]); ?>">
+
+<?php
+
+if($canela["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
             </div>
@@ -5856,6 +6730,16 @@
                 <strong>Evita los gases y la hinchazón de la panza.</strong>
             </li>
             </ul>
+
+<div class="precios-producto">
+
+<h4>💰 Precios</h4>
+
+<p><strong>100 g:</strong> $<?php echo $canela["precio100"]; ?></p>
+
+<p><strong>150 g:</strong> $<?php echo $canela["precio150"]; ?></p>
+
+</div>
             
 
             <div class="consumo-semillas">
@@ -5871,9 +6755,38 @@
             </div>
     </div>
 
-    <div class="producto-card" onclick="alternarProducto(this)">
-        <h3>Canela en rama</h3>
-        <img src="img/especias y condim/canela rama.jpg" alt="canela en rama" loading="lazy">
+<div class="producto-card" onclick="alternarProducto(this)">
+<h3>Canela en rama</h3>
+<img src="img/especias y condim/canela rama.jpg" alt="Canela en rama" loading="lazy">
+
+<?php
+
+$sql_canela_rama = "SELECT * FROM productos WHERE nombre='Canela en rama'";
+
+$resultado_canela_rama = $conexion->query($sql_canela_rama);
+
+$canela_rama = $resultado_canela_rama->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($canela["estado"]); ?>">
+
+<?php
+
+if($canela["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+    
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -5896,6 +6809,17 @@
                         <strong>Ideal para calmar la tos, dolor de garganta y calentar el cuerpo.</strong>
                     </li>
                 </ul>
+            <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $canela_rama["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $canela_rama["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $canela_rama["precio150"]; ?></p>
+
+
+            </div>
 
                 <div class="consumo-semillas">
                     <h4>🥣 Como lo puedes consumir</h4>
@@ -5913,6 +6837,34 @@
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Canela quebrada</h3>
         <img src="img/especias y condim/canela quebrada.png" alt="canela quebrada" loading="lazy">
+
+<?php
+
+$sql_canela_quebrada = "SELECT * FROM productos WHERE nombre='Canela quebrada'";
+
+$resultado_canela_quebrada = $conexion->query($sql_canela_quebrada);
+
+$canela_quebrada = $resultado_canela_quebrada->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($canela_quebrada["estado"]); ?>">
+
+<?php
+
+if($canela_quebrada["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -5936,6 +6888,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $canela_quebrada["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $canela_quebrada["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $canela_quebrada["precio150"]; ?></p>
+
+
+            </div>
+
                 <div class="consumo-semillas">
                     <h4>🥣 Como lo puedes consumir</h4>
 
@@ -5952,6 +6916,34 @@
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Clavo de olor</h3>
         <img src="img/especias y condim/Clavo de olor.jpg" alt="clavo de olor" loading="lazy">
+
+<?php
+
+$sql_clavo_olor = "SELECT * FROM productos WHERE nombre='Clavo de olor'";
+
+$resultado_clavo_olor = $conexion->query($sql_clavo_olor);
+
+$clavo_olor = $resultado_clavo_olor->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($clavo_olor["estado"]); ?>">
+
+<?php
+
+if($clavo_olor["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -5975,6 +6967,18 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $clavo_olor["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $clavo_olor["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $clavo_olor["precio150"]; ?></p>
+
+
+            </div>
+
                 <div class="consumo-semillas">
                     <h4>🥣 Como lo puedes consumir</h4>
                     <p>
@@ -5990,6 +6994,34 @@
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Clavo de olor en polvo</h3>
         <img src="img/especias y condim/clavo olor en polvo.jpg" alt="clavo de olor en polvo" loading="lazy">
+
+<?php
+
+$sql_clavo_olor_polvo = "SELECT * FROM productos WHERE nombre='Clavo de olor en polvo'";
+
+$resultado_clavo_olor_polvo = $conexion->query($sql_clavo_olor_polvo);
+
+$clavo_olor_polvo = $resultado_clavo_olor_polvo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($clavo_olor_polvo["estado"]); ?>">
+
+<?php
+
+if($clavo_olor_polvo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -6014,12 +7046,21 @@
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $clavo_olor_polvo["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $clavo_olor_polvo["precio50"]; ?></p>
+
+            </div>
+
                 <div class="consumo-semillas">
                     <h4>🥣 Como lo puedes consumir</h4>
 
                     <P>
                         ⮕ Mezcla para repostería (galletas, budines o pancakes).<br><br>
-                        ⮕ Hierve agua con una ramita de canela y un trozo de jenjibre fresco. Luego agrega té negro (o bebida vegetal) y una pizca de clavo de olor en polvo.<br><b>Endulza con miel.</b>
+                        ⮕ Hierve agua con una ramita de canela y un trozo de jengibre fresco. Luego agrega té negro (o bebida vegetal) y una pizca de clavo de olor en polvo.<br><b>Endulza con miel.</b>
                     </P>
                 </div>
             </div>
@@ -6028,6 +7069,34 @@
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Anís estrellado</h3>
         <img src="img/especias y condim/anis estrellado.jpg" alt="anis estrellado" loading="lazy">
+
+<?php
+
+$sql_anis_estrellado = "SELECT * FROM productos WHERE nombre='Anís estrellado'";
+
+$resultado_anis_estrellado = $conexion->query($sql_anis_estrellado);
+
+$anis_estrellado = $resultado_anis_estrellado->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($anis_estrellado["estado"]); ?>">
+
+<?php
+
+if($anis_estrellado["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -6056,6 +7125,17 @@
                     </li>
                 </ul>
 
+            <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $anis_estrellado["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $anis_estrellado["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $anis_estrellado["precio150"]; ?></p>
+
+            </div>
+
                 <div class="consumo-semillas">
                     <h4>🥣 Como lo puedes consumir</h4>
 
@@ -6071,6 +7151,34 @@
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Anís estrellado en tallo</h3>
         <img src="img/especias y condim/anis estrellado tallo.png" alt="anis estrellado en tallos" loading="lazy">
+
+<?php
+
+$sql_anis_estrellado_tallo = "SELECT * FROM productos WHERE nombre='Anís estrellado en tallo'";
+
+$resultado_anis_estrellado_tallo = $conexion->query($sql_anis_estrellado_tallo);
+
+$anis_estrellado_tallo = $resultado_anis_estrellado_tallo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($anis_estrellado_tallo["estado"]); ?>">
+
+<?php
+
+if($anis_estrellado_tallo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -6100,6 +7208,17 @@
                 </li>
                </ul> 
 
+               <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $anis_estrellado_tallo["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $anis_estrellado_tallo["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $anis_estrellado_tallo["precio150"]; ?></p>
+
+            </div>
+
                <div class="consumo-semillas">
                 <h4>🥣 Como lo puedes consumir</h4>
 
@@ -6114,6 +7233,34 @@
     <div class="producto-card" onclick="alternarProducto(This)">
         <h3>Cúrcuma en polvo</h3>
         <img src="img/especias y condim/curcuma en polvo.jpg" alt="curcuma en polvo" loading="lazy">
+
+<?php
+
+$sql_curcuma = "SELECT * FROM productos WHERE nombre='Cúrcuma en polvo'";
+
+$resultado_curcuma = $conexion->query($sql_curcuma);
+
+$curcuma = $resultado_curcuma->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($curcuma["estado"]); ?>">
+
+<?php
+
+if($curcuma["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -6143,6 +7290,17 @@
                 </li>
                </ul>
 
+               <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $curcuma["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $curcuma["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $curcuma["precio150"]; ?></p>
+
+            </div>
+
                <div class="consumo-semillas">
                 <h4>🥣 Como lo puedes consumir</h4>
 
@@ -6157,6 +7315,34 @@
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Jengibre en polvo</h3>
         <img src="img/especias y condim/jengibre en polvo.jpg" alt="jengibre en polvo" loading="lazy">
+
+<?php
+
+$sql_jengibre = "SELECT * FROM productos WHERE nombre='Jengibre en polvo'";
+
+$resultado_jengibre = $conexion->query($sql_jengibre);
+
+$jengibre = $resultado_jengibre->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($jengibre["estado"]); ?>">
+
+<?php
+
+if($jengibre["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <div class="ver-info-semillas">
                 🌿 Ver beneficios
@@ -6186,6 +7372,17 @@
                 </li>
                </ul>
 
+               <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $jengibre["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $jengibre["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $jengibre["precio150"]; ?></p>
+
+            </div>
+
                <div class="consumo-semillas">
                 <h4>🥣 Como lo puedes consumir</h4>
 
@@ -6198,6 +7395,1441 @@
             </div>
     </div>
 
+    <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Pimienta negra</h3>
+        <img src="img/especias y condim/pimienta negra.jpg" alt="pimienta negra" loading="lazy">
+
+<?php
+
+$sql_pimienta = "SELECT * FROM productos WHERE nombre='Pimienta negra'";
+
+$resultado_pimienta = $conexion->query($sql_pimienta);
+
+$pimienta = $resultado_pimienta->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($pimienta["estado"]); ?>">
+
+<?php
+
+if($pimienta["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+        <div class="ver-info-semillas">
+                🌿 Ver beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-semillas">
+                    <li>"
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Multiplica la absorción de nutrientes y vitaminas de otros alimentos.</strong>
+                    </li>
+
+                    <li>"
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Estimula el estómago para procesar la comida más rápido y evitar gases.</strong>
+                    </li>
+
+                    <li>"
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Protege tus células contra el envejecimiento y el daño diario.</strong>
+                    </li>
+
+                    <li>"
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Reduce dolores e inflamaciones en el cuerpo.</strong>
+                    </li>
+
+                    <li>"
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Apoya el control del peso y ayuda a regular el azúcar en la sangre.</strong>
+                    </li>
+                </ul>
+
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $pimienta["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $pimienta["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $pimienta["precio150"]; ?></p>
+
+            </div>
+
+                <div class="consumo-semillas">
+                    <h4>🥣 Como lo puedes consumir</h4>
+
+                    <p>
+                       ⮕ Agrega pimienta recién molida sobre un plato de tomates, aguacate o verduras asadas para resaltar su sabor.<br><br>
+                       ⮕ Carnes y legumbres. 
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Chimichurri</h3>
+        <img src="img/especias y condim/chimichurri.png" alt="chimichurri" loading?="lazy">
+
+<?php
+
+$sql_chimichurri = "SELECT * FROM productos WHERE nombre='Chimichurri'";
+
+$resultado_chimichurri = $conexion->query($sql_chimichurri);
+
+$chimichurri = $resultado_chimichurri->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($chimichurri["estado"]); ?>">
+
+<?php
+
+if($chimichurri["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+        
+        <div class="ver-info-semillas">
+                🌿 Ver beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-semillas">
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Tiene antioxidantes que cuidan tus células y desinflaman.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>El ajo ayuda a tu sangre a correr mejor.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Sus hierbas ayudan a combatir bacterias malas.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Hace que te sientas menos pesado después de comer.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Te da hierro y vitaminas para tus huesos y defensas.</strong>
+                    </li>
+                </ul>
+
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $chimichurri["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $chimichurri["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $chimichurri["precio150"]; ?></p>
+
+            </div>
+
+                <div class="consumo-semillas">
+                    <h4>🥣 Como lo puedes consumir</h4>
+
+                    <p>
+                        ⮕ <b>Pollo al horno,</b> úsalo como adobo antes de cocinarlo para que quede jugoso.<br><br>
+                        ⮕ <b>Pescado a la plancha,</b> ponle una cucharadita encima justo antes de sacarlo del fuego.<br><br>
+                        ⮕ <b>Cerdo o cordero,</b> Combina perfecto con cortes magros para darles más humedad.<br><br>
+                        ⮕ <b>Papas al horno,</b> mezcla las papas cortadas con chimichurri antes de meterlas al horno.
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Provenzal</h3>
+        <img src="img/especias y condim/provenzal.webp" alt="provenzal" loading="lazy">
+
+<?php
+
+$sql_provenzal = "SELECT * FROM productos WHERE nombre='Provenzal'";
+
+$resultado_provenzal = $conexion->query($sql_provenzal);
+
+$provenzal = $resultado_provenzal->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($provenzal["estado"]); ?>">
+
+<?php
+
+if($provenzal["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+        <div class="ver-info-semillas">
+                🌿 Ver beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-semillas">
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>El ajo que contiene, ayuda a combatir bacterias y virus.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Ayuda a bajar la presión alta y el colesterol malo</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Evita los gases y la hinchazón después de comer.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>El perejil ayuda a eliminar el exceso de líquido a través de la orina.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Aporta Vitamina A, C y K, además de minerales como el hierro y calcio.</strong>
+                    </li>
+                </ul>
+
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $provenzal["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $provenzal["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $provenzal["precio150"]; ?></p>
+
+            </div>
+
+                <div class="cosumo-semillas">
+                    <h4>🥣 Como lo puedes consumir</h4>
+
+                    <p>
+                        ⮕ <b>Papas a la provenzal,</b> Puedes espolvorearlo sobre papas fritas recién hechas.<br><br>
+                        ⮕ Queda delicioso sobre calabaza, berenjenas o zanahorias cocinadas al horno con un chorrito de aceite.<br><br>
+                        ⮕ <b>Milanesas,</b> es el ingrediente secreto indispensabale. Se añade directamente al huevo batido antes de pasar la carne o el pollo por pan rallado.
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Orégano</h3>
+        <img src="img/especias y condim/pregano.jpg" alt="oregano" loading="lazy">
+
+<?php
+
+$sql_oregano = "SELECT * FROM productos WHERE nombre='Orégano'";
+
+$resultado_oregano = $conexion->query($sql_oregano);
+
+$oregano = $resultado_oregano->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($oregano["estado"]); ?>">
+
+<?php
+
+if($oregano["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+         <div class="ver-info-semillas">
+                🌿 Ver beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-semillas">
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Combate de forma activa bacterias, virus y hongos en el cuerpo.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Su efecto antiinflamatorio reduce los cólicos menstruales y molestias musculares.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Disminuye notablemente los gases, la hinchazón y la pesadez estomacal.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Por su gran acntidad de antioxidantes, protegen tu salud y retrasan el envejecimiento.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Su consumo en infusiones es ideal para calmar la tos y ablandar la mucosidad.</strong>
+                    </li>
+                </ul>
+
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $oregano["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $oregano["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $oregano["precio150"]; ?></p>
+
+            </div>
+
+                <div class="consumo-semillas">
+                    <h4>🥣 Como lo puedes consumir</h4>
+
+                    <p>
+                        ⮕ Espolvorealo sobre la pizza.<br><br>
+                        ⮕ Queda espectacular sobre rodajas de tomate fresco, queso criollo, muzzarella o ricota, junto con un buen chorrito de aceite de oliva.<br><br>
+                        ⮕ Adobo para carnes y cerdos.
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Perejil</h3>
+        <img src="img/especias y condim/perejil.avif" alt="perejil" loading="lazy">
+
+<?php
+
+$sql_perejil = "SELECT * FROM productos WHERE nombre='Perejil'";
+
+$resultado_perejil = $conexion->query($sql_perejil);
+
+$perejil = $resultado_perejil->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($perejil["estado"]); ?>">
+
+<?php
+
+if($perejil["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+        <div class="ver-info-semillas">
+                🌿 Ver beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-semillas">
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Ayuda a los riñones a deshinchar el cuerpo y a controlar la presión.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Su mezcla de hierrro y Vitamina C, es ideal para evitar la anemia.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Aporta mucha Vitamina K, que ayuda a cuidar tu esqueleto.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Alivia la pesadez, los gases y los espasmos estomacales.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Combate el mal aliento de forma natural.</strong>
+                    </li>
+                </ul>
+
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $perejil["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $perejil["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $perejil["precio150"]; ?></p>
+
+            </div>
+
+                
+
+                <div class="consumo-semillas">
+                    <h4> 🥣Como lo puedes consumir</h4>
+
+                    <p>
+                        ⮕ Queda genial mezclado en huevos revueltos, omelettes o una clásica tortilla de papas o de zapallitos verdes.<br><br>
+                        ⮕ Sobre tostadas con palta.<br><br>
+                        ⮕ Pescados y pollos.<br><br>
+                        ⮕ Purés y sopas.
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="producto-card" onclick="alternarProducto(this)">
+        <h3>Adobo para pizza</h3>
+        <img src="img/especias y condim/adobo pizza.webp" alt="adobo para pizza" loading="lazy">
+
+<?php
+
+$sql_adobo_pizza = "SELECT * FROM productos WHERE nombre='Adobo para pizza'";
+
+$resultado_adobo_pizza = $conexion->query($sql_adobo_pizza);
+
+$adobo_pizza = $resultado_adobo_pizza->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($adobo_pizza["estado"]); ?>">
+
+<?php
+
+if($adobo_pizza["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+        <div class="ver-info-semillas">
+                🌿 Ver beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-semillas">
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Ayuda a que las comidas pesadas (masas y quesos), caigan mejor.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Su toque pocante estimula al cuerpo a quemar energía de forma mas eficiente.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Está lleno de antioxidantes que protegen tus células y cuidan al corazón.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-semillas">💠</span>
+                        <strong>Combina hierbas y especias que ayudan a desinflamar el organismo de forma natural.</strong>
+                    </li>
+                </ul>
+
+                <div class="precios-producto">
+                <h4>💰 Precios</h4>
+
+                <p><strong>100 g:</strong> $<?php echo $adobo_pizza["precio100"]; ?></p>
+
+                <p><strong>50 g:</strong> $<?php echo $adobo_pizza["precio50"]; ?></p>
+
+                <p><strong>150 g:</strong> $<?php echo $adobo_pizza["precio150"]; ?></p>
+
+            </div>
+
+                <div class="consumo-semillas">
+                    <h4> 🥣Como lo puedes consumir</h4>
+
+                    <p>
+                        ⮕ Agrega una cucharada a tu salsa de tomate para fideos o polenta, le da un gusto clásico.<br><br>
+                        ⮕ Súmalo a principios de cocción cuando hagas guisos de lentejas, de arroz o estofados de carne.<br><br>
+                        ⮕ Espolvorea por encima de la pizza antes de colocar en el horno.
+
+                    </p>
+                </div>
+            </div>
+    </div>
+</div>
+</section>
+
+<!--------------------------------------- SECCIÓN FRUTAS CONGELADAS------------------------------------------>
+<section id="congelados-categoria">
+
+        <button class="btn-volver"
+        onclick="volverCategorias()">
+        ← Volver a Categorías
+    </button>
+
+    <h2 class="titulo-categoria">
+        Frutas congeladas
+    </h2>
+
+    <div class="grilla-productos">
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Frutilla Entera</h3>
+            <img src="img/congelados/frutilla cong.jpg" alt="frutilla congelada" loading="lazy">
+
+<?php
+
+$sql_frutilla = "SELECT * FROM productos WHERE nombre='Frutilla Entera'";
+
+$resultado_frutilla = $conexion->query($sql_frutilla);
+
+$frutilla = $resultado_frutilla->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($frutilla["estado"]); ?>">
+
+<?php
+
+if($frutilla["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+             <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Conservan intactas la Vitamina C y los antioxidantes.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Puedes consumirlas en cualquier época del año sin importar la temporada.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Duran meses en el freezer y solo usas la cantidad que necesitas.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Bajas en calorías, ricas en fibra y ayudan a cuidar al corazón.</strong>
+                    </li>
+
+                </ul>
+
+<div class="precios-producto">
+
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $frutilla["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Formas de disfrutarla</h4>
+
+                    <p>
+                        ➼ Ideal para preparar smoothies y licuados.<br><br>
+                        ➼ Perfecta para acompañar yogures, avena o granolas.<br><br>
+                        ➼ Excelente para postres, helados caseros y repostería.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Pulpa Frutilla</h3>
+            <img src="img/congelados/pulpa frutilla.webp" alt="Pulpa frutilla de congelada" loading="lazy">
+
+<?php
+
+$sql_frut_pulpa = "SELECT * FROM productos WHERE nombre='Pulpa Frutilla'";
+
+$resultado_frut_pulpa = $conexion->query($sql_frut_pulpa);
+
+$frut_pulpa = $resultado_frut_pulpa->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($frut_pulpa["estado"]); ?>">
+
+<?php
+
+if($frut_pulpa["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+
+            <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Mantiene la Vitamina C y los antioxidantes de la fruta fresca.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>No tiene hojas ni partes dañadas; rinde 100% de su peso.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Viene lista para usar, sin necesidas de lavar, pelar ni licuar.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Facilita lograr texturas perfectas en jugos, salsas y postres.</strong>
+                    </li>
+                </ul>
+
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $frut_pulpa["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+
+                    <p>
+                        ➼ Smoothie cremoso.<br><br>
+                        ➼ <b>Limonada rosa,</b> mezcla la pulpa descong. con agua fría, jugo de limón exprimido y endulzante al gusto.<br><br>
+                        ➼ <b>Agua fresca,</b> Licúa la pulpa con agua, hielo y unas hojas de menta fresca para un día caluroso.<br><br>
+                        ➼ <b>Helado express,</b> Procesa la pulpa congelada con yogur griego firme y endulzante hasta lograr una textura cremosa.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Arándanos</h3>
+            <img src="img/congelados/arándano cong..webp" alt="Arándanos congelados" loading="lazy">
+
+<?php
+
+$sql_arandanos = "SELECT * FROM productos WHERE nombre='Arándanos'";
+
+$resultado_arandanos = $conexion->query($sql_arandanos);
+
+$arandanos = $resultado_arandanos->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($arandanos["estado"]); ?>">
+
+<?php
+
+if($arandanos["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+             <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Aportan mucha Vitamina C y K.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Ayudan a bajar la presión, mejoran la memoria y reducen la inflamación.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Su congelación rompe la fibra celular y facilita que tu cuerpo absorba mejor sus nutrientes.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Se congelan en su punto de madurez, manteniendo todas sus propiedades por meses.</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>500 g :</strong> $<?php echo $arandanos["precio500"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+
+                    <p>
+                        ➼ úsalos en lugar de hielo para espesar tus batidos de proteína o leche.<br><br>
+                        ➼ Mézclalos congelados directamente en yogur natural para que se enfríe al instante.<br><br>
+                        ➼ Cómelos directo del congelador como si fueran pequeños caramelos refrescantes.<br><br>
+                        ➼ <b>Mermelada saludable en minutos,</b> Cocínalos a fuego lento con un chorrito de agua y endulzante hasta que se espesen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Mix frutos rojos</h3>
+            <img src="img/congelados/mix frutos rojos.webp" alt="Mix frutos rojos congelados" loading="lazy">
+
+<?php
+
+$sql_frutos_rojos = "SELECT * FROM productos WHERE nombre='Mix frutos rojos'";
+
+$resultado_frutos_rojos = $conexion->query($sql_frutos_rojos);
+
+$frutos_rojos = $resultado_frutos_rojos->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($frutos_rojos["estado"]); ?>">
+
+<?php
+
+if($frutos_rojos["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+            <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Se congelan en su mejor momento, manteniendo intactas sus Vitaminas y minerales.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>El frío facilita que el cuerpo absorba mejor sus compuestos protyectores y antiinflmatorios.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Desinflaman las arterias y controlan el azúcar en la sangre.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Son más económicos, duran meses en el freezer y están listos para usar todo el año.</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $frutos_rojos["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+
+                    <p>
+                        ➼ Licuado antioxidante rápido.<br><br>
+                        ➼ Licúa los frutos rojos con yogur natural o griego, un poco de leche y una cucharada de avena.<br><br>
+                        ➼ Helado express, licuando los frutos rojos con rodajas de banana.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" oncliK="alternarProducto(this)">
+           <h3>Maracuyá con semillas</h3>
+           <img src="img/congelados/maracuya con semillas.webp" alt="Maracuyá C/semillas congelado" loading="lazy">
+
+<?php
+
+$sql_maracuya_semilla = "SELECT * FROM productos WHERE nombre='Maracuyá con semillas'";
+
+$resultado_maracuya_semilla = $conexion->query($sql_maracuya_semilla);
+
+$maracuya_semilla = $resultado_maracuya_semilla->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($maracuya_semilla["estado"]); ?>">
+
+<?php
+
+if($maracuya_semilla["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+           <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Las semillas limpian el colon y mejoran el tránsito intestinal.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Reducen la ansiedad y mejora el sueño.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Aporta mucha Vitamina C y A para la inmunidad y la piel.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Sus grasas buenas (Omega-6) y potasio protegen las arterias.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Evita el trabajo de pelarlo y mantiene su acidez perfecta.</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $maracuya_semilla["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+
+                    <p>
+                        ➼ Limonada tropical de maracuyá (con agua fría, limón y endulzante a gusto).<br><br>
+                        ➼ Agua saborizada express (dentro del termo con agua fría o agua con gas).<br><br>
+                        ➼ Smoothie "Tropical" (Maracuyá + Frutos rojos).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Maracuyá sin semillas</h3>
+            <img src="img/congelados/maracuya sin semilla.png" alt="Maracuyá S/semillas congelado" loading="lazy">
+
+<?php
+
+$sql_maracuya_sin_semilla = "SELECT * FROM productos WHERE nombre='Maracuyá sin semillas'";
+
+$resultado_maracuya_sin_semilla = $conexion->query($sql_maracuya_sin_semilla);
+
+$maracuya_sin_semilla = $resultado_maracuya_sin_semilla->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($maracuya_sin_semilla["estado"]); ?>">
+
+<?php
+
+if($maracuya_sin_semilla["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+             <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Reduce el estrés, calma ansiedad y mejora el sueño.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Ideal para estómagos sensibles o colon irritable al no tener la fibra dura de la semilla.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Perfecto para usar directamente en cremas, postres y salsas sin tener que colar.</strong>
+                    </li>
+
+                     <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Conserva su acidez tropical intacta y viene listo para usar sin ensuciar</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $maracuya_sin_semilla["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4> 🥤Ideas para disfrutar</h4>
+
+                    <p>
+                        ➼ Jugo express de maracuyá.<br><br>
+                        ➼ Mezcla la pulpa con agua con gas, hielo y rodajas de menta. Si consumes alcohol combina perfecto con vodka, ginebra o espumante.<br><br>
+                        ➼ Licúa la pulpa con leche condensada y crema de leche (o yogur firme).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(This)">
+            <h3>Ananá en cubos</h3>
+            <img src="img/congelados/ananá en cubos.png" alt="Ananá en cubo congelado" loading="lazy">
+
+<?php
+
+$sql_anana = "SELECT * FROM productos WHERE nombre='Ananá en cubos'";
+
+$resultado_anana= $conexion->query($sql_anana);
+
+$anana = $resultado_anana->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($anana["estado"]); ?>">
+
+<?php
+
+if($anana["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+            <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Contiene bromelina, que desinflama y ayuda a digerir proteínas.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Aporta mucha Vitamina C para fortalecer el sitema inmune.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Es diurética y depurativa gracias a su agua y potasio.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Rica en manganeso, ideal para la salud ósea.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Conserva todos sus nutreinetes, no se echa a perder rápido y viene lista para usar</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $anana["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+
+                    <p>
+                        ➼ Licúa los cubos congelados con leche de coco, banana y un toque de jengibre.<br><br>
+                        ➼ Procesa el ananá con yogur natural espeso hasta lograr una consistencia de helado (decora con granola).<br><br>
+                        ➼ Añade los cubos directamente sobre tu avena caliente, panqueques o waffles.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Açaí</h3>
+            <img src="img/congelados/açaí cong.png" alt="Açaí Congelado" loading="lazy">
+
+<?php
+
+$sql_açaí = "SELECT * FROM productos WHERE nombre='Açaí'";
+
+$resultado_açaí= $conexion->query($sql_açaí);
+
+$açaí = $resultado_açaí->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($açaí["estado"]); ?>">
+
+<?php
+
+if($açaí["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+            <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Combaten el envejecimiento celular y protegen el corazón.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Contiene Omega 3, 6 y 9, lo que ayuda a controlar el colesterol malo (LDL) y cuidar las arterias.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Rico en carbohidratos saludables y proteínas, ideal para deportistas o paa empezar el día.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Favorece el tránsito intestinal y ayuda a mantener la saciedad por más tiempo.</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $açaí["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+
+                    <p>
+                     ➼ Licúa la pulpa con media banana y un poco de agua hasta lograr una textura cremosa como de helado suave.<br> Sírve en un tazon (decora con granola, frutills, etc).<br><br>
+                     ➼ Smoothie energético.<br><br>
+                     ➼ Paletas heladas.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Mamón en cubo</h3>
+            <img src="img/congelados/mamon cubo.png" alt="Mamón en cubos congelado" loading="lazy">
+
+<?php
+
+$sql_mamon = "SELECT * FROM productos WHERE nombre='Mamón en cubo'";
+
+$resultado_mamon= $conexion->query($sql_mamon);
+
+$mamon = $resultado_mamon->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($mamon["estado"]); ?>">
+
+<?php
+
+if($mamon["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+            <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Aporta papaína contra el estreñimiento.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Rico en Vitaminas C y A.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Protege las células y el corazón.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                        <strong>Muy bajo en calorías y alto de agua.</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $mamon["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4>🥤 Ideas para disfrutar</h4>
+                    <p>
+                        ➼ Licúa los cubos con leche de coco, jugo de naranja y un toque de jengibre.<br><br>
+                        ➼ <b>Smoothie verde,</b> Mezcla el mamón con espinaca fresca, agua y media banana.<br><br>
+                        ➼ <b>Batido proteico,</b> procésalo con yogur griego natural, leche y unacucharada de avena.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+            <h3>Limón</h3>
+            <img src="img/congelados/limon cong.png" alt="Limón congelado" loading="lazy">
+
+<?php
+
+$sql_limon = "SELECT * FROM productos WHERE nombre='Limón'";
+
+$resultado_limon= $conexion->query($sql_limon);
+
+$limon = $resultado_limon->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($limon["estado"]); ?>">
+
+<?php
+
+if($limon["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+
+            <div class="ver-info-congelados">
+                ❄️ Descubrí sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-congelados">
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                            <strong>Mantiene intacta la Vitamina C poara el sistema inmune.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                            <strong>Conserva los flavonoides que protegen las células.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                            <strong>Estimula los jugos gástricos y reduvce la pesadez.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-congelados">❄</span>
+                            <strong>Aporta poquísimas calorías y es un diurético natural.</strong>
+                    </li>
+                </ul>
+<div class="precios-producto">
+<h4>💰 Precio</h4>
+
+<p><strong>1 kg :</strong> $<?php echo $limon["precio1000"]; ?></p>
+
+</div>
+
+                <div class="consumo-congelados">
+                    <h4> 🥤Ideas para disfrutar</h4>
+                    <p>
+                        ➼ Agua sabporizada instantánea.<br><br>
+                        ➼ Limonada frappé rápida.<br><br>
+                        ➼ <b>Toque para postres,</b> ralla el limón congelado sobre un yogur natutral, porciones de budín o helado de crema.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== MANGO PULPA ==================== -->
+        <div class="producto-card producto-card-congelados" onclick="alternarProducto(this)">
+
+    <h3>Mango pulpa</h3>
+
+    <img src="img/congelados/mango cong.png" alt="Mango congelado" loading="lazy">
+
+<?php
+// Consulta SQL: busca el producto "Mango pulpa"
+$sql_mango = "SELECT * FROM productos WHERE nombre='Mango pulpa'";
+
+// Ejecuta la consulta
+$resultado_mango = $conexion->query($sql_mango);
+
+// Guarda los datos encontrados en la variable $mango
+$mango = $resultado_mango->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower(trim($mango["estado"])); ?>">
+
+<?php
+
+// Si el estado es "Disponible"
+if(strtolower(trim($mango["estado"])) == "disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+// Si no, muestra Agotado
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+<div class="ver-info-congelados">
+    ❄️ Descubrí sus beneficios
+</div>
+
+<div class="contenido-producto">
+
+    <ul class="beneficios-congelados">
+
+<?php
+
+// Divide los beneficios usando el símbolo |
+// Ejemplo:
+// beneficio1|beneficio2|beneficio3
+$beneficios = explode("|", $mango["beneficios"]);
+
+// Recorre todos los beneficios
+foreach($beneficios as $beneficio){
+
+?>
+
+        <li>
+            <span class="flecha-congelados">❄</span>
+
+             <!-- Muestra un beneficio -->
+            <strong><?php echo $beneficio; ?></strong>
+        </li>
+
+<?php
+
+}
+
+?>
+
+    </ul>
+
+    <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+         <!-- Precio de 1 kg -->
+        <p><strong>1 kg :</strong> $<?php echo $mango["precio1000"]; ?></p>
+
+    </div>
+
+    <div class="consumo-congelados">
+
+        <h4>🥤 Ideas para disfrutar</h4>
+
+<?php
+
+// Divide las formas de consumo usando |
+// Ejemplo:
+// consumo1|consumo2|consumo3
+$consumos = explode("|", $mango["consumo"]);
+
+// Recorre todas las formas de consumo
+foreach($consumos as $consumo){
+
+?>
+
+        <p>➼ <?php echo $consumo; ?></p>
+
+<?php
+
+}
+
+?>
+
+    </div>
+
+</div>
+
+</div>
+
+   
 
 
 
@@ -6207,7 +8839,27 @@
 
 
 
-</div> <!--cerrar grilla-poductos-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>   <!--Grilla productos cerrar-->
+
+</section>   <!--cerrar seccion frut. congeladas-->
+
+   
 
 
 
@@ -6238,7 +8890,21 @@
 
 
 
-</section>   <!--Cerrar section id semillas-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -6387,14 +9053,20 @@
             <div class="tarjeta" onclick="abrirCategoria('semillas-categoria')">
                 <h3>🌱</h3>
                 <h4>Semillas</h4>
+            
 
                 <p class="ver-categoria">
                     Toca para ver →
                 </p>
             </div>
 
-            <div class="tarjeta">
-                <h3>Frutas congeladas🍓</h3>
+            <div class="tarjeta" onclick="abrirCategoria('congelados-categoria')">
+                <h3>🍓</h3>
+                <h4>Frutas congeladas</h4>
+
+                <p class="ver-categoria">
+                    Toca para ver →
+                </p>
             </div>
         </div>
     </section>
