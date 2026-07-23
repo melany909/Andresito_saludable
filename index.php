@@ -744,6 +744,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Vinagre de Manzana</h3>
             <img src="img/suplementos/vinagre de manzana.jpg" alt="Vinagre de manzana" loading="lazy">
 
+<?php
+
+$sql_vinagre_manzana = "SELECT * FROM productos WHERE nombre='Vinagre de Manzana'";
+
+$resultado_vinagre_manzana = $conexion->query($sql_vinagre_manzana);
+
+$vinagre_manzana= $resultado_vinagre_manzana->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($vinagre_manzana["estado"]); ?>">
+
+<?php
+
+if($vinagre_manzana["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
             <p class="abrir-info">
                   ▼ Tocá para mas información
             </p>
@@ -782,6 +810,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $vinagre_manzana["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -799,6 +834,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Vinagre de sidra de manzana en capsulas</h3>
 
             <img src="img/suplementos/vinagre sidra de manzana caps..webp" alt="Vinagre de manzana en capsulas" loading="lazy">
+
+<?php
+
+$sql_vinagre_manzana_capsulas = "SELECT * FROM productos WHERE nombre='Vinagre de sidra de manzana en capsulas'";
+
+$resultado_vinagre_manzana_capsulas = $conexion->query($sql_vinagre_manzana_capsulas);
+
+$vinagre_manzana_capsulas= $resultado_vinagre_manzana_capsulas->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($vinagre_manzana_capsulas["estado"]); ?>">
+
+<?php
+
+if($vinagre_manzana_capsulas["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -828,6 +891,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $vinagre_manzana_capsulas["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -844,6 +914,35 @@ if($clorofila["estado"] == "Disponible"){
 
 
             <img src="img/suplementos/aloe vera digest....jpg" alt="Jugo Aloe Vera" loading="lazy">
+
+<?php
+
+$sql_aloe = "SELECT * FROM productos WHERE nombre='Jugo de aloe vera sistema digestivo'";
+
+$resultado_aloe = $conexion->query($sql_aloe);
+
+$aloe= $resultado_aloe->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($aloe["estado"]); ?>">
+
+<?php
+
+if($aloe["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -890,6 +989,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $aloe["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -908,6 +1014,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Omega-3 Vegetal</h3>
 
             <img src="img/suplementos/omega-3 vegetal.webp" alt="Omega-3 Natier" loading="lazy">
+
+<?php
+
+$sql_omega = "SELECT * FROM productos WHERE nombre='Omega-3 vegetal'";
+
+$resultado_omega = $conexion->query($sql_omega);
+
+$omega= $resultado_omega->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($omega["estado"]); ?>">
+
+<?php
+
+if($omega["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -946,6 +1080,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $omega["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -964,6 +1105,35 @@ if($clorofila["estado"] == "Disponible"){
         <h3>Aceite de prímula</h3>
 
         <img src="img/suplementos/primula natier.webp" alt="Primula Natier" loading="lazy">
+
+<?php
+
+$sql_primula = "SELECT * FROM productos WHERE nombre='Aceite de prímula'";
+
+$resultado_primula = $conexion->query($sql_primula);
+
+$primula= $resultado_primula->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($primula["estado"]); ?>">
+
+<?php
+
+if($primula["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
         <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1000,6 +1170,13 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $primula["precio"]; ?></p>
+
+        </div>
+
         <div class="consumo">
             <h4>Modo de consumo🛡️</h4>
             <p>
@@ -1014,6 +1191,34 @@ if($clorofila["estado"] == "Disponible"){
         <h3>Jugo de Aloe Vera máximas defensas</h3>
 
         <img src="img/suplementos/aloe vera defensas.webp" alt="Jugo aloe vera" loading="lazy">
+
+<?php
+
+$sql_max_defensas = "SELECT * FROM productos WHERE nombre='Jugo de Aloe Vera máximas defensas'";
+
+$resultado_max_defensas = $conexion->query($sql_max_defensas);
+
+$max_defensas= $resultado_max_defensas->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($max_defensas["estado"]); ?>">
+
+<?php
+
+if($max_defensas["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1046,6 +1251,13 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $max_defensas["precio"]; ?></p>
+
+        </div>
+
         <div class="consumo">
             <h4>Modo de consumo🛡️</h4>
             <p>
@@ -1061,6 +1273,35 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Centella Asiática</h3>
 
             <img src="img/suplementos/centella asiatica.jpg" alt="Centella Asiática Natier" loading="lazy">
+
+<?php
+
+$sql_centella = "SELECT * FROM productos WHERE nombre='Centella asiática'";
+
+$resultado_centella = $conexion->query($sql_centella);
+
+$centella= $resultado_centella->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($centella["estado"]); ?>">
+
+<?php
+
+if($centella["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1101,6 +1342,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $centella["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -1117,6 +1365,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Hierro Quelado</h3>
             <img src="img/suplementos/hierro quelado caps..jpg" alt="Hierro quelado capsulas" loading="lazy">
+
+<?php
+
+$sql_hierro = "SELECT * FROM productos WHERE nombre='Hierro Quelado'";
+
+$resultado_hierro = $conexion->query($sql_hierro);
+
+$hierro= $resultado_hierro->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($hierro["estado"]); ?>">
+
+<?php
+
+if($hierro["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1141,6 +1417,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+         <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $hierro["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1156,6 +1439,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Creatina Dark Lab</h3>
             <img src="img/suplementos/creatina dark lab.webp" alt="Creatina Dark Lab" loading="lazy">
+
+<?php
+
+$sql_creatina = "SELECT * FROM productos WHERE nombre='Creatina Dark Lab'";
+
+$resultado_creatina= $conexion->query($sql_creatina);
+
+$creatina= $resultado_creatina->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($creatina["estado"]); ?>">
+
+<?php
+
+if($creatina["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1190,6 +1502,13 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $creatina["precio"]; ?></p>
+
+        </div>
+
                 <div class="consumo">
                     <h4>🛡️ Modo de consumo</h4>
 
@@ -1208,6 +1527,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Jugo de uva Tinto 100% natural</h3>
 
             <img src="img/suplementos/jugo de uva tinto.webp" alt="jugo de uva tinto" loading="lazy">
+
+<?php
+
+$sql_jugo_uva = "SELECT * FROM productos WHERE nombre='Jugo de uva tinto'";
+
+$resultado_jugo_uva= $conexion->query($sql_jugo_uva);
+
+$jugo_uva= $resultado_jugo_uva->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($jugo_uva["estado"]); ?>">
+
+<?php
+
+if($jugo_uva["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1234,6 +1581,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $jugo_uva["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1249,6 +1603,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Tintura madre Melisa</h3>
 
             <img src="img/suplementos/tintura madre melisa.jpg" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_melissa = "SELECT * FROM productos WHERE nombre='Tintura madre melissa'";
+
+$resultado_melissa= $conexion->query($sql_melissa);
+
+$melissa= $resultado_melissa->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($melissa["estado"]); ?>">
+
+<?php
+
+if($melissa["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1274,6 +1656,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $melissa["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1289,6 +1678,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Tintura madre Garcinia Cambogia</h3>
 
             <img src="img/suplementos/tintura madre garcinia cambogia.jpg" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_cambogia = "SELECT * FROM productos WHERE nombre='Tintura madre garcinia cambogia'";
+
+$resultado_cambogia= $conexion->query($sql_cambogia);
+
+$cambogia= $resultado_cambogia->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($cambogia["estado"]); ?>">
+
+<?php
+
+if($cambogia["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1318,6 +1735,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $cambogia["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1331,6 +1755,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre Fucus</h3>
             <img src="img/suplementos/tintura madre fucus.jpg" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_fucus = "SELECT * FROM productos WHERE nombre='Tintura madre fucus'";
+
+$resultado_fucus= $conexion->query($sql_fucus);
+
+$fucus= $resultado_fucus->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($fucus["estado"]); ?>">
+
+<?php
+
+if($fucus["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1368,6 +1820,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $fucus["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1382,6 +1841,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Tintura Madre Ortiga</h3>
 
             <img src="img/suplementos/tintura madre ortiga.webp" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_ortiga = "SELECT * FROM productos WHERE nombre='Tintura madre ortiga'";
+
+$resultado_ortiga= $conexion->query($sql_ortiga);
+
+$ortiga= $resultado_ortiga->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($ortiga["estado"]); ?>">
+
+<?php
+
+if($ortiga["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1420,6 +1907,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $ortiga["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1434,6 +1928,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura madre Sen Hojas</h3>
             <img src="img/suplementos/tintura madre sen hojas.jpg" alt="Tintura Madre" loading="lazy">
+
+<?php
+
+$sql_hojas = "SELECT * FROM productos WHERE nombre='Tintura madre sen hojas'";
+
+$resultado_hojas= $conexion->query($sql_hojas);
+
+$hojas= $resultado_hojas->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($hojas["estado"]); ?>">
+
+<?php
+
+if($hojas["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1467,6 +1989,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $hojas["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
 
@@ -1481,6 +2010,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre Cardo Mariano</h3>
             <img src="img/suplementos/tintura madre cardo mariano.jpg" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_mariano = "SELECT * FROM productos WHERE nombre='Tintura madre cardo mariano'";
+
+$resultado_mariano= $conexion->query($sql_mariano);
+
+$mariano= $resultado_mariano->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($mariano["estado"]); ?>">
+
+<?php
+
+if($mariano["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1513,6 +2070,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $mariano["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1527,6 +2091,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Tintura Madre Valeriana</h3>
 
             <img src="img/suplementos/tintura madre valeriana.jpg" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_valeriana = "SELECT * FROM productos WHERE nombre='Tintura madre valeriana'";
+
+$resultado_valeriana= $conexion->query($sql_valeriana);
+
+$valeriana= $resultado_valeriana->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($valeriana["estado"]); ?>">
+
+<?php
+
+if($valeriana["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1550,7 +2142,13 @@ if($clorofila["estado"] == "Disponible"){
                     Relaja los espasmos musculares y cólicos
                 </li>
             </ul>
+            
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
 
+        <p>$<?php echo $valeriana["precio"]; ?></p>
+
+        </div>
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1565,6 +2163,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tintura Madre pasionaria</h3>
             <img src="img/suplementos/tintura madre pasionaria.jpg" alt="Tintura madre" loading="lazy">
+
+<?php
+
+$sql_pasionaria = "SELECT * FROM productos WHERE nombre='Tintura madre pasionaria'";
+
+$resultado_pasionaria= $conexion->query($sql_pasionaria);
+
+$pasionaria= $resultado_pasionaria->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($pasionaria["estado"]); ?>">
+
+<?php
+
+if($pasionaria["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1589,6 +2215,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $pasionaria["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1603,6 +2236,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Caldo de huesos vacuno</h3>
             <img src="img/suplementos/caldo de huesos vacuno.webp" alt="caldo de huesos vacuno Colabella" loading="lazy">
+
+<?php
+
+$sql_vacuno = "SELECT * FROM productos WHERE nombre='Caldo de huesos vacuno'";
+
+$resultado_vacuno= $conexion->query($sql_vacuno);
+
+$vacuno= $resultado_vacuno->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($vacuno["estado"]); ?>">
+
+<?php
+
+if($vacuno["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1633,6 +2294,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $vacuno["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1646,6 +2314,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Cáscara de huevo</h3>
             <img src="img/suplementos/cáscara de huevo.webp" alt="cascara de huevo Colabella" loading="lazy">
+
+<?php
+
+$sql_huevo = "SELECT * FROM productos WHERE nombre='Cáscara de huevo'";
+
+$resultado_huevo= $conexion->query($sql_huevo);
+
+$huevo= $resultado_huevo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($huevo["estado"]); ?>">
+
+<?php
+
+if($huevo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1677,6 +2373,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $huevo["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1690,6 +2393,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Caldo de huesos marino</h3>
             <img src="img/suplementos/caldo de huesos marino.webp" alt="Caldo de huesos marino Colabella" loading="lazy">
+
+<?php
+
+$sql_marino = "SELECT * FROM productos WHERE nombre='Caldo de huesos marino'";
+
+$resultado_marino= $conexion->query($sql_marino);
+
+$marino= $resultado_marino->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($marino["estado"]); ?>">
+
+<?php
+
+if($marino["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1723,6 +2454,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $marino["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1736,6 +2474,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Aceite de Romero</h3>
             <img src="img/suplementos/aceite de romero.jpg" alt="Aceite de romero" loading="lazy">
+
+<?php
+
+$sql_romero = "SELECT * FROM productos WHERE nombre='Aceite de romero'";
+
+$resultado_romero= $conexion->query($sql_romero);
+
+$romero= $resultado_romero->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($romero["estado"]); ?>">
+
+<?php
+
+if($romero["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1771,6 +2537,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $romero["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1785,6 +2558,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Aceite de orégano</h3>
             <img src="img/suplementos/aceite de orégano.webp" alt="Aceite de oregano" loading="lazy">
+
+<?php
+
+$sql_oregano = "SELECT * FROM productos WHERE nombre='Aceite de orégano'";
+
+$resultado_oregano= $conexion->query($sql_oregano);
+
+$oregano= $resultado_oregano->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($oregano["estado"]); ?>">
+
+<?php
+
+if($oregano["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1824,6 +2625,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $oregano["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1839,6 +2647,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Aceite de CBD Bioactiva</h3>
         <img src="img/suplementos/bioactiva.png" alt="Bioactiva" loading="lazy">
+
+
+<?php
+
+$sql_bioactiva = "SELECT * FROM productos WHERE nombre='Aceite de CBD bioactiva'";
+
+$resultado_bioactiva= $conexion->query($sql_bioactiva);
+
+$bioactiva= $resultado_bioactiva->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($bioactiva["estado"]); ?>">
+
+<?php
+
+if($bioactiva["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
             ▼ Tocá para mas información
@@ -1867,6 +2704,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $bioactiva["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1881,33 +2725,37 @@ if($clorofila["estado"] == "Disponible"){
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="producto-card" onclick="alternarProducto(this)">
-            <h3>Zeolita extracto liquido</h3>
+            <h3>Zeolita extracto líquido</h3>
             <img src="img/suplementos/zeolita extracto liquido.webp" alt="Zeolita" loading="lazy">
+
+<?php
+
+$sql_zeolita = "SELECT * FROM productos WHERE nombre='Zeolita extracto líquido'";
+
+$resultado_zeolita= $conexion->query($sql_zeolita);
+
+$zeolita= $resultado_zeolita->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($zeolita["estado"]); ?>">
+
+<?php
+
+if($zeolita["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1937,6 +2785,13 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $zeolita["precio"]; ?></p>
+
+        </div>
+
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
                 <p>
@@ -1952,6 +2807,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Lax Fibras</h3>
             <img src="img/suplementos/lax fibras.webp" alt="Lax fibras Geonat" loading="lazy">
+
+
+<?php
+
+$sql_fibras= "SELECT * FROM productos WHERE nombre='Lax fibras'";
+
+$resultado_fibras= $conexion->query($sql_fibras);
+
+$fibras= $resultado_fibras->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($fibras["estado"]); ?>">
+
+<?php
+
+if($fibras["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -1980,6 +2864,13 @@ if($clorofila["estado"] == "Disponible"){
                     Ablanda las heces facilitando la evacuación.
                 </li>
             </ul>
+
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $fibras["precio"]; ?></p>
+
+        </div>
 
             <div class="consumo">
                 <h4>Modo de consumo🛡️</h4>
@@ -2012,6 +2903,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>🌼Manzanilla</h3>
             <img src="img/hierbas/manzanilla.webp" alt="Manzanilla" loading="lazy">
 
+<?php
+
+$sql_manzanilla= "SELECT * FROM productos WHERE nombre='Manzanilla'";
+
+$resultado_manzanilla= $conexion->query($sql_manzanilla);
+
+$manzanilla= $resultado_manzanilla->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($manzanilla["estado"]); ?>">
+
+<?php
+
+if($manzanilla["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
             <p class="abrir-info">
                   ▼ Tocá para mas información
             </p>
@@ -2042,6 +2961,16 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+            <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $manzanilla["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $manzanilla["precio50"]; ?></p>
+
+                </div>
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
 
@@ -2057,6 +2986,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Cola de quirquincho</h3>
             <img src="img/hierbas/cola de quirquincho.webp" alt="Cola de quirquincho" loading="lazy">
+
+<?php
+
+$sql_quirquincho= "SELECT * FROM productos WHERE nombre='Cola de quirquincho'";
+
+$resultado_quirquincho= $conexion->query($sql_quirquincho);
+
+$quirquincho= $resultado_quirquincho->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($quirquincho["estado"]); ?>">
+
+<?php
+
+if($quirquincho["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2081,12 +3038,22 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+            <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $quirquincho["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $quirquincho["precio50"]; ?></p>
+
+                </div>
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
 
                 <p>
                     ↪ Hierve agua y colocalo en una taza.<br> 
-                    ↪ Añade una cucharita muy pequeña de la cola de quirquincho.<br>
+                    ↪ Añade una cucharita muy pequeña de la cola de menta.<br>
                     ↪ Tapa la taza y déjala reposar entre 10 y 15min, cuela el liquido y tómalo.<br>
                     <b>Puedes endulzarlo si te parece muy amargo.</b><br><br>
                     <b>💡También puedes agregar solo una ramita pequeña dentro del termo con agua caliente o en el mate.</b>
@@ -2100,6 +3067,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>🌺 Flor de Jamaica (Hibiscus)</h3>
 
             <img src="img/hierbas/flor hibiscus.png" alt="Flor hibiscus" loading="lazy">
+
+<?php
+
+$sql_jamaica= "SELECT * FROM productos WHERE nombre='Flor de jamaica'";
+
+$resultado_jamaica= $conexion->query($sql_jamaica);
+
+$jamaica= $resultado_jamaica->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($jamaica["estado"]); ?>">
+
+<?php
+
+if($jamaica["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2134,6 +3129,16 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+            <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $jamaica["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $jamaica["precio50"]; ?></p>
+
+                </div>
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
 
@@ -2151,6 +3156,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>🍃 Menta</h3>
             <img src="img/hierbas/menta.jpg" alt="Menta" loading="lazy">
+
+
+<?php
+
+$sql_menta= "SELECT * FROM productos WHERE nombre='Menta'";
+
+$resultado_menta= $conexion->query($sql_menta);
+
+$menta= $resultado_menta->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($menta["estado"]); ?>">
+
+<?php
+
+if($menta["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2185,6 +3219,17 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+            
+            <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $menta["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $menta["precio50"]; ?></p>
+
+                </div>
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
 
@@ -2201,6 +3246,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Laurel</h3>
             <img src="img/hierbas/laurel.png" alt="Laurel" loading="lazy">
+
+<?php
+
+$sql_laurel= "SELECT * FROM productos WHERE nombre='Laurel'";
+
+$resultado_laurel= $conexion->query($sql_laurel);
+
+$laurel= $resultado_laurel->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($laurel["estado"]); ?>">
+
+<?php
+
+if($laurel["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+            
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2235,6 +3309,17 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+             <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $laurel["precio100"]; ?></p>
+
+                    <p><strong>30 g:</strong> $<?php echo $laurel["precio30"]; ?></p>
+
+                </div>
+
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
 
@@ -2250,6 +3335,36 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Tomillo</h3>
             <img src="img/hierbas/tomillo.png" alt="Tomillo" loading="lazy">
+
+<?php
+
+$sql_tomillo= "SELECT * FROM productos WHERE nombre='Tomillo'";
+
+$resultado_tomillo= $conexion->query($sql_tomillo);
+
+$tomillo= $resultado_tomillo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($tomillo["estado"]); ?>">
+
+<?php
+
+if($tomillo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2280,6 +3395,16 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+             <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $tomillo["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $tomillo["precio50"]; ?></p>
+
+                </div>
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
 
@@ -2298,6 +3423,35 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Zarza</h3>
             <img src="img/hierbas/zarza.jpg" alt="Zarza" loading="lazy">
 
+<?php
+
+$sql_zarza= "SELECT * FROM productos WHERE nombre='Zarza'";
+
+$resultado_zarza= $conexion->query($sql_zarza);
+
+$zarza= $resultado_zarza->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($zarza["estado"]); ?>">
+
+<?php
+
+if($zarza["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+
             <p class="abrir-info">
                   ▼ Tocá para mas información
             </p>
@@ -2307,7 +3461,7 @@ if($clorofila["estado"] == "Disponible"){
                 <ul>
                     <li>
                         <strong>➥ Limpia la piel:</strong>
-                        Combate el acné, las eccemas, la psoriasis y la dermatitis.
+                        Combate el acné, las ecemas, la psoriasis y la dermatitis.
                     </li>
 
                     <li>
@@ -2331,6 +3485,16 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $zarza["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $zarza["precio50"]; ?></p>
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2347,6 +3511,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Peperina</h3>
             <img src="img/hierbas/peperina.jpg" alt="Peperina" loading="lazy">
+
+<?php
+
+$sql_peperina= "SELECT * FROM productos WHERE nombre='Peperina'";
+
+$resultado_peperina= $conexion->query($sql_peperina);
+
+$peperina= $resultado_peperina->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($peperina["estado"]); ?>">
+
+<?php
+
+if($peperina["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2374,6 +3566,17 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $peperina["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $peperina["precio50"]; ?></p>
+
+                </div>
+
                 <div class="consumo-hierbas">
 
                     <h4>🍵 Como preparar</h4>
@@ -2391,6 +3594,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Burrito</h3>
             <img src="img/hierbas/burrito.webp" alt="burrito" loading="lazy">
+
+
+<?php
+
+$sql_burrito= "SELECT * FROM productos WHERE nombre='Burrito'";
+
+$resultado_burrito= $conexion->query($sql_burrito);
+
+$burrito= $resultado_burrito->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($burrito["estado"]); ?>">
+
+<?php
+
+if($burrito["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2416,6 +3648,16 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>100 g:</strong> $<?php echo $burrito["precio100"]; ?></p>
+
+                    <p><strong>50 g:</strong> $<?php echo $burrito["precio50"]; ?></p>
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2434,6 +3676,37 @@ if($clorofila["estado"] == "Disponible"){
 
             <h3>Moringa</h3>
             <img src="img/hierbas/moringa.webp" alt="moringa" loading="lazy">
+
+<?php
+
+$sql_moringa= "SELECT * FROM productos WHERE nombre='Moringa'";
+
+$resultado_moringa= $conexion->query($sql_moringa);
+
+$moringa= $resultado_moringa->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($moringa["estado"]); ?>">
+
+<?php
+
+if($moringa["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+
+            
              <p class="abrir-info">
                   ▼ Tocá para mas información
             </p>
@@ -2473,6 +3746,16 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+
+                    <p><strong>50 g:</strong> $<?php echo $moringa["precio50"]; ?></p>
+
+                    <p><strong>30 g:</strong> $<?php echo $moringa["precio30"]; ?></p>
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar </h4>
 
@@ -2490,6 +3773,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Valeriana</h3>
             <img src="img/hierbas/valeriana.png" alt="Valeriana" loading="lazy">
+
+<?php
+
+$sql_valeriana= "SELECT * FROM productos WHERE nombre='Valeriana'";
+
+$resultado_valeriana= $conexion->query($sql_valeriana);
+
+$valeriana= $resultado_valeriana->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($valeriana["estado"]); ?>">
+
+<?php
+
+if($valeriana["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2516,6 +3827,15 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $valeriana["precio50"]; ?></p>
+                    <p><strong>30 g:</strong> $<?php echo $valeriana["precio30"]; ?></p>
+
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2533,6 +3853,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Stevia</h3>
             <img src="img/hierbas/stevia.png" alt="Stevia" loading="lazy">
+
+<?php
+
+$sql_stevia= "SELECT * FROM productos WHERE nombre='Stevia'";
+
+$resultado_stevia= $conexion->query($sql_stevia);
+
+$stevia= $resultado_stevia->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($stevia["estado"]); ?>">
+
+<?php
+
+if($stevia["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2558,6 +3906,17 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $stevia["precio50"]; ?></p>
+                    <p><strong>30 g:</strong> $<?php echo $stevia["precio30"]; ?></p>
+
+
+                </div>
+
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2571,6 +3930,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Boldo</h3>
             <img src="img/hierbas/boldo.webp" alt="Boldo" loading="lazy">
+
+<?php
+
+$sql_boldo= "SELECT * FROM productos WHERE nombre='Boldo'";
+
+$resultado_boldo= $conexion->query($sql_boldo);
+
+$boldo= $resultado_boldo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($boldo["estado"]); ?>">
+
+<?php
+
+if($boldo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2600,6 +3987,15 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>20 g:</strong> $<?php echo $boldo["precio20"]; ?></p>
+                    <p><strong>50 g:</strong> $<?php echo $boldo["precio50"]; ?></p>
+
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
                     <p>
@@ -2616,6 +4012,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Graviola</h3>
             <img src="img/hierbas/graviola.jpg" alt="Graviola" loading="lazy">
+
+<?php
+
+$sql_graviola= "SELECT * FROM productos WHERE nombre='Graviola'";
+
+$resultado_graviola= $conexion->query($sql_graviola);
+
+$graviola= $resultado_graviola->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($graviola["estado"]); ?>">
+
+<?php
+
+if($graviola["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
             
              <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2650,6 +4074,15 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>30 g:</strong> $<?php echo $graviola["precio30"]; ?></p>
+                
+
+                </div>
+
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2667,6 +4100,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Palta anisada</h3>
             <img src="img/hierbas/palta anisada.png" alt="Palta anisada" loading="lazy">
+
+<?php
+
+$sql_palta= "SELECT * FROM productos WHERE nombre='Palta anisada'";
+
+$resultado_palta= $conexion->query($sql_palta);
+
+$palta= $resultado_palta->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($palta["estado"]); ?>">
+
+<?php
+
+if($palta["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2691,6 +4152,14 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>100 g:</strong> $<?php echo $graviola["precio100"]; ?></p>
+                
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2707,6 +4176,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Ruda</h3>
             <img src="img/hierbas/ruda.webp" alt="Ruda" loading="lazy">
+
+<?php
+
+$sql_ruda= "SELECT * FROM productos WHERE nombre='Ruda'";
+
+$resultado_ruda= $conexion->query($sql_ruda);
+
+$ruda= $resultado_ruda->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($ruda["estado"]); ?>">
+
+<?php
+
+if($palta["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2745,6 +4242,14 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>100 g:</strong> $<?php echo $ruda["precio30"]; ?></p>
+                
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2763,6 +4268,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Lapacho</h3>
             <img src="img/hierbas/lapacho.jpg" alt="Lapacho" loading="lazy">
+
+<?php
+
+$sql_lapacho= "SELECT * FROM productos WHERE nombre='Lapacho'";
+
+$resultado_lapacho= $conexion->query($sql_lapacho);
+
+$lapacho= $resultado_lapacho->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($lapacho["estado"]); ?>">
+
+<?php
+
+if($lapacho["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
              <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2797,6 +4330,14 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                 <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $lapacho["precio50"]; ?></p>
+                
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
                     <p>
@@ -2810,7 +4351,35 @@ if($clorofila["estado"] == "Disponible"){
 
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Amargon - Diente de Leon</h3>
-        <img src="img/hierbas/Amargon-Diente-de-Leon.png" alt="Amargon-diente de leon" loading="lazy">
+        <img src="img/hierbas/Amargon-Diente-de-Leon.png" alt="Amargón-diente de león" loading="lazy">
+
+<?php
+
+$sql_amargon= "SELECT * FROM productos WHERE nombre='Amargón-diente de león'";
+
+$resultado_amargon= $conexion->query($sql_amargon);
+
+$amargon= $resultado_amargon->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($amargon["estado"]); ?>">
+
+<?php
+
+if($amargon["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
                   ▼ Tocá para mas información
@@ -2840,6 +4409,15 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+                
+                 <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>20 g:</strong> $<?php echo $amargon["precio20"]; ?></p>
+                
+
+                </div>
+
                 <div class="consumo-hierbas">
                     <h4>🍵 Como preparar</h4>
 
@@ -2856,6 +4434,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Carqueja</h3>
         <img src="img/hierbas/carqueja.webp" alt="Carqueja" loading="lazy">
+
+<?php
+
+$sql_carqueja= "SELECT * FROM productos WHERE nombre='Carqueja'";
+
+$resultado_carqueja= $conexion->query($sql_carqueja);
+
+$carqueja= $resultado_carqueja->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($carqueja["estado"]); ?>">
+
+<?php
+
+if($carqueja["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
             ▼ Tocá para mas información
@@ -2885,6 +4491,14 @@ if($clorofila["estado"] == "Disponible"){
                 </li>
             </ul>
 
+            <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $carqueja["precio50"]; ?></p>
+                
+
+                </div>
+
             <div class="consumo-hierbas">
                 <h4>🍵 Como preparar</h4>
                 
@@ -2901,6 +4515,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Pasionaria</h3>
         <img src="img/hierbas/pasionaria.png" alt="Pasionaria" loading="lazy">
+
+<?php
+
+$sql_pasionaria= "SELECT * FROM productos WHERE nombre='Pasionaria'";
+
+$resultado_pasionaria= $conexion->query($sql_pasionaria);
+
+$pasionaria= $resultado_pasionaria->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($pasionaria["estado"]); ?>">
+
+<?php
+
+if($pasionaria["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
              ▼ Tocá para mas información
@@ -2930,6 +4572,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+         <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>20 g:</strong> $<?php echo $pasionaria["precio20"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -2947,6 +4597,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Alcachofa</h3>
         <img src="img/hierbas/alcachofa.png" alt="Alcachofa" loading="lazy">
+
+<?php
+
+$sql_alcachof= "SELECT * FROM productos WHERE nombre='Alcachofa'";
+
+$resultado_alcachof= $conexion->query($sql_alcachof);
+
+$alcachof= $resultado_alcachof->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($alcachof["estado"]); ?>">
+
+<?php
+
+if($alcachof["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
          <p class="abrir-info">
              ▼ Tocá para mas información
@@ -2976,6 +4655,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $alcachof["precio50"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -2993,6 +4680,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Melisa</h3>
         <img src="img/hierbas/melisa.png" alt="Melisa" loading="lazy">
+
+<?php
+
+$sql_meli= "SELECT * FROM productos WHERE nombre='Melisa'";
+
+$resultado_meli= $conexion->query($sql_meli);
+
+$meli= $resultado_meli->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($meli["estado"]); ?>">
+
+<?php
+
+if($meli["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3027,6 +4742,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+         <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $meli["precio50"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -3044,6 +4767,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Cola de caballo</h3>
         <img src="img/hierbas/cola de caballo.png" alt="Cola de caballo" loading="lazy">
+
+<?php
+
+$sql_caballo= "SELECT * FROM productos WHERE nombre='Cola de caballo'";
+
+$resultado_caballo= $conexion->query($sql_caballo);
+
+$caballo= $resultado_caballo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($caballo["estado"]); ?>">
+
+<?php
+
+if($caballo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
         <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3073,6 +4825,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+         <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $caballo["precio50"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -3089,6 +4849,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Yerba de pollo</h3>
         <img src="img/hierbas/yerba de pollo.webp" alt="Yerba de pollo" loading="lazy">
+
+<?php
+
+$sql_pollo= "SELECT * FROM productos WHERE nombre='Yerba de pollo'";
+
+$resultado_pollo= $conexion->query($sql_pollo);
+
+$pollo= $resultado_pollo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($pollo["estado"]); ?>">
+
+<?php
+
+if($pollo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3118,6 +4906,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+         <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>30 g:</strong> $<?php echo $pollo["precio30"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -3133,6 +4929,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Salvia</h3>
         <img src="img/hierbas/salvia.webp" alt="Salvia" loading="lazy">
+
+<?php
+
+$sql_salvia= "SELECT * FROM productos WHERE nombre='Salvia'";
+
+$resultado_salvia= $conexion->query($sql_salvia);
+
+$salvia= $resultado_salvia->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($salvia["estado"]); ?>">
+
+<?php
+
+if($salvia["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3172,6 +4996,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>30 g:</strong> $<?php echo $salvia["precio30"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -3190,6 +5022,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Eucalipto</h3>
         <img src="img/hierbas/eucalipto.webp" alt="Eucalipto" loading="lazy">
+
+
+<?php
+
+$sql_euca= "SELECT * FROM productos WHERE nombre='Eucalipto'";
+
+$resultado_euca= $conexion->query($sql_euca);
+
+$euca= $resultado_euca->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($euca["estado"]); ?>">
+
+<?php
+
+if($euca["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3219,6 +5080,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>50 g:</strong> $<?php echo $euca["precio50"]; ?></p>
+                
+
+        </div>
+
        <div class="consumo-hierbas">
         <h4>🍵 Como preparar</h4>
 
@@ -3235,6 +5104,34 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Ambay</h3>
         <img src="img/hierbas/Ambay.png" alt="Ambay" loading="lazy">
+
+<?php
+
+$sql_ambay= "SELECT * FROM productos WHERE nombre='Ambay'";
+
+$resultado_ambay= $conexion->query($sql_ambay);
+
+$ambay= $resultado_ambay->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($ambay["estado"]); ?>">
+
+<?php
+
+if($ambay["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3269,6 +5166,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+         <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>20 g:</strong> $<?php echo $ambay["precio20"]; ?></p>
+                
+
+        </div>
+
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
 
@@ -3286,6 +5191,35 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Cedron</h3>
         <img src="img/hierbas/cedron.webp" alt="Cedron" loading="lazy">
+
+
+<?php
+
+$sql_cedron= "SELECT * FROM productos WHERE nombre='Cedrón'";
+
+$resultado_cedron= $conexion->query($sql_cedron);
+
+$cedron= $resultado_cedron->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($cedron["estado"]); ?>">
+
+<?php
+
+if($cedron["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info">
              ▼ Tocá para mas información
@@ -3314,6 +5248,18 @@ if($clorofila["estado"] == "Disponible"){
                 Ayuda a defender el cuerpo en estados gripales.
             </li>
         </ul>
+
+         <div class="precios-producto">
+
+                    <h4>💰 Precios</h4>
+                    <p><strong>20 g:</strong> $<?php echo $cedron["precio20"]; ?></p>
+                
+
+        </div>
+
+
+
+
 
         <div class="consumo-hierbas">
             <h4>🍵 Como preparar</h4>
@@ -3351,6 +5297,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Almendras</h3>
             <img src="img/frutos secos/almendras.jpg" alt="Almendras" loading="lazy">
 
+<?php
+
+$sql_almendras = "SELECT * FROM productos WHERE nombre='Almendras'";
+
+$resultado_almendras= $conexion->query($sql_almendras);
+
+$almendras= $resultado_almendras->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($almendras["estado"]); ?>">
+
+<?php
+
+if($almendras["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
             <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
         </p>
@@ -3373,6 +5347,17 @@ if($clorofila["estado"] == "Disponible"){
                 <strong>Promueve la salud de la piel y el cerebro.</strong>
             </li>
         </ul>
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $almendras["precio100"]; ?></p>
+
+    <p><strong>500 g:</strong> $<?php echo $almendras["precio500"]; ?></p>
+
+    <p><strong>1 kg:</strong> $<?php echo $almendras["precio1000"]; ?></p>
+    </div>
+
+        
 
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
@@ -3388,6 +5373,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Nueces</h3>
             <img src="img/frutos secos/nueces.png" alt="Nueces" loading="lazy">
+
+<?php
+
+$sql_nueces = "SELECT * FROM productos WHERE nombre='Nueces'";
+
+$resultado_nueces= $conexion->query($sql_nueces);
+
+$nueces= $resultado_nueces->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($nueces["estado"]); ?>">
+
+<?php
+
+if($nueces["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
             <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3418,6 +5432,16 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $nueces["precio100"]; ?></p>
+
+    <p><strong>500 g:</strong> $<?php echo $nueces["precio500"]; ?></p>
+
+    <p><strong>1 kg:</strong> $<?php echo $nueces["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3434,6 +5458,34 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
        <h3>Pistacho</h3> 
        <img src="img/frutos secos/pistacho.webp" alt="Pistachos" loading="lazy">
+
+<?php
+
+$sql_pistacho = "SELECT * FROM productos WHERE nombre='Pistacho'";
+
+$resultado_pistacho= $conexion->query($sql_pistacho);
+
+$pistacho= $resultado_pistacho->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($pistacho["estado"]); ?>">
+
+<?php
+
+if($pistacho["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
        <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3468,6 +5520,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $pistacho["precio100"]; ?></p>
+
+    <p><strong>500 g:</strong> $<?php echo $pistacho["precio200"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3484,6 +5544,34 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Damasco deshidratado</h3>
         <img src="img/frutos secos/damasco deshidratado.jpg" alt="Damasco deshidratado" loading="lazy">
+
+<?php
+
+$sql_damasco = "SELECT * FROM productos WHERE nombre='Damasco'";
+
+$resultado_damasco= $conexion->query($sql_damasco);
+
+$damasco= $resultado_damasco->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($damasco["estado"]); ?>">
+
+<?php
+
+if($damasco["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3523,6 +5611,15 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $damasco["precio100"]; ?></p>
+
+    <p><strong>500 g:</strong> $<?php echo $damasco["precio200"]; ?></p>
+    <p><strong>150 g:</strong> $<?php echo $damasco["precio150"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3537,6 +5634,34 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Maní sin sal</h3>
         <img src="img/frutos secos/mani sin sal.webp" alt="Maní sin sal" loading="lazy">
+
+<?php
+
+$sql_mani_sinsal = "SELECT * FROM productos WHERE nombre='Maní sin sal'";
+
+$resultado_mani_sinsal= $conexion->query($sql_mani_sinsal);
+
+$mani_sinsal= $resultado_mani_sinsal->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($mani_sinsal["estado"]); ?>">
+
+<?php
+
+if($mani_sinsal["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3571,6 +5696,15 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $mani_sinsal["precio100"]; ?></p>
+
+    <p><strong>150 g:</strong> $<?php echo $mani_sinsal["precio150"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $mani_sinsal["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3587,6 +5721,34 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Maní con sal</h3>
         <img src="img/frutos secos/mani con sal.webp" alt="Maní con sal" loading="lazy">
+
+ <?php
+
+$sql_mani_consal = "SELECT * FROM productos WHERE nombre='Maní con sal'";
+
+$resultado_mani_consal= $conexion->query($sql_mani_consal);
+
+$mani_consal= $resultado_mani_consal->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($mani_consal["estado"]); ?>">
+
+<?php
+
+if($mani_consal["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3611,6 +5773,15 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+     <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $mani_consal["precio100"]; ?></p>
+
+    <p><strong>150 g:</strong> $<?php echo $mani_consal["precio150"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $mani_consal["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄Ideas para disfrutar</h4>
             <p>
@@ -3624,6 +5795,34 @@ if($clorofila["estado"] == "Disponible"){
     <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Maní saborizado</h3>
         <img src="img/frutos secos/mani saborizado.png" alt="Maní saborizado" loading="lazy">
+
+<?php
+
+$sql_mani_saborizado = "SELECT * FROM productos WHERE nombre='Maní saborizado'";
+
+$resultado_mani_saborizado= $conexion->query($sql_mani_saborizado);
+
+$mani_saborizado= $resultado_mani_saborizado->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($mani_saborizado["estado"]); ?>">
+
+<?php
+
+if($mani_saborizado["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3653,6 +5852,16 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $mani_saborizado["precio100"]; ?></p>
+
+    <p><strong>150 g:</strong> $<?php echo $mani_saborizado["precio150"]; ?></p>
+    <p><strong>500 g:</strong> $<?php echo $mani_saborizado["precio500"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $mani_saborizado["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3676,6 +5885,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
             <h3>Pasas Morochas</h3>
             <img src="img/frutos secos/pasas-de-uva.jpg" alt="Pasas de uva" loading="lazy">
+
+<?php
+
+$sql_pasas = "SELECT * FROM productos WHERE nombre='Pasas morochas'";
+
+$resultado_pasas= $conexion->query($sql_pasas);
+
+$pasas= $resultado_pasas->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($pasas["estado"]); ?>">
+
+<?php
+
+if($pasas["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3710,6 +5947,15 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $pasas["precio100"]; ?></p>
+    <p><strong>200 g:</strong> $<?php echo $pasas["precio200"]; ?></p>
+    <p><strong>500 g:</strong> $<?php echo $pasas["precio500"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $pasas["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3725,6 +5971,36 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Pasas de uva Rubias</h3>
         <img src="img/frutos secos/pasas rubias.jpg" alt="Pasas de uva rubia" loading="lazy">
+
+
+<?php
+
+$sql_rubias = "SELECT * FROM productos WHERE nombre='Pasas de uva rubias'";
+
+$resultado_rubias= $conexion->query($sql_rubias);
+
+$rubias= $resultado_rubias->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($rubias["estado"]); ?>">
+
+<?php
+
+if($rubias["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3764,6 +6040,17 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+   
+
+    <p><strong>100 g:</strong> $<?php echo $rubias["precio100"]; ?></p>
+    <p><strong>200 g:</strong> $<?php echo $rubias["precio200"]; ?></p>
+    <p><strong>500 g:</strong> $<?php echo $rubias["precio500"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $rubias["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3779,6 +6066,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Arándanos</h3>
         <img src="img/frutos secos/arandanos.webp" alt="Arándanos" loading="lazy">
+
+<?php
+
+$sql_arandanoseco = "SELECT * FROM productos WHERE nombre='Arándano seco'";
+
+$resultado_arandanoseco= $conexion->query($sql_arandanoseco);
+
+$arandanoseco= $resultado_arandanoseco->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($arandanoseco["estado"]); ?>">
+
+<?php
+
+if($arandanoseco["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3808,6 +6123,15 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $arandanoseco["precio100"]; ?></p>
+    <p><strong>200 g:</strong> $<?php echo $arandanoseco["precio200"]; ?></p>
+    <p><strong>500 g:</strong> $<?php echo $arandanoseco["precio500"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $arandanoseco["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3824,6 +6148,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Dátiles</h3>
         <img src="img/frutos secos/datiles.jpg" alt="Dátiles" loading="lazy">
+
+
+<?php
+
+$sql_datiles = "SELECT * FROM productos WHERE nombre='Dátiles'";
+
+$resultado_datiles= $conexion->query($sql_datiles);
+
+$datiles= $resultado_datiles->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($datiles["estado"]); ?>">
+
+<?php
+
+if($datiles["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3848,6 +6201,12 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>250 g:</strong> $<?php echo $datiles["precio100"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3862,6 +6221,34 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Higos negros</h3>
         <img src="img/frutos secos/higos negros.jpeg" alt="Higos negros" loading="lazy">
+
+<?php
+
+$sql_higos = "SELECT * FROM productos WHERE nombre='Higos negros'";
+
+$resultado_higos= $conexion->query($sql_higos);
+
+$higos= $resultado_higos->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($higos["estado"]); ?>">
+
+<?php
+
+if($higos["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3885,6 +6272,12 @@ if($clorofila["estado"] == "Disponible"){
                 <strong>Ideales para un snack saludable ncualquier momento del día.</strong>
             </li>
         </ul>
+
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>250 g:</strong> $<?php echo $datiles["precio100"]; ?></p>
+    </div>
 
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
@@ -3910,6 +6303,34 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Coco rallado</h3>
             <img src="img/coco y derivados/coco rallado.webp" alt="Coco rallado" loading="lazy">
 
+<?php
+
+$sql_cocorallado = "SELECT * FROM productos WHERE nombre='Coco rallado'";
+
+$resultado_cocorallado= $conexion->query($sql_cocorallado);
+
+$cocorallado= $resultado_cocorallado->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($cocorallado["estado"]); ?>">
+
+<?php
+
+if($cocorallado["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
             <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
         </p>
@@ -3933,6 +6354,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $cocorallado["precio100"]; ?></p>
+    <p><strong>500 g:</strong> $<?php echo $cocorallado["precio500"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $cocorallado["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3948,6 +6377,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card" onclick="alternarProducto(this)">
            <h3>Coco en escamas</h3> 
            <img src="img/coco y derivados/coco en escamas.jpg" alt="Coco escamas" loading="lazy">
+
+<?php
+
+$sql_cocoescamas = "SELECT * FROM productos WHERE nombre='Coco en escamas'";
+
+$resultado_cocoescamas= $conexion->query($sql_cocoescamas);
+
+$cocoescamas= $resultado_cocoescamas->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($cocoescamas["estado"]); ?>">
+
+<?php
+
+if($cocoescamas["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
            <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -3972,6 +6429,14 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+
+    <p><strong>100 g:</strong> $<?php echo $cocoescamas["precio100"]; ?></p>
+    <p><strong>500 g:</strong> $<?php echo $cocoescamas["precio500"]; ?></p>
+    <p><strong>1 kg:</strong> $<?php echo $cocoescamas["precio1000"]; ?></p>
+    </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -3987,6 +6452,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Aceite de coco neutro</h3>
         <img src="img/coco y derivados/aceite de coco neutro.jpg" alt="Aceite de coco" loading="lazy">
+
+
+<?php
+
+$sql_aceitecoco = "SELECT * FROM productos WHERE nombre='Aceite de coco neutro'";
+
+$resultado_aceitecoco= $conexion->query($sql_aceitecoco);
+
+$aceitecoco= $resultado_aceitecoco->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($aceitecoco["estado"]); ?>">
+
+<?php
+
+if($aceitecoco["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
          <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -4016,6 +6510,13 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $aceitecoco["precio"]; ?></p>
+
+        </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -4032,6 +6533,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Aceite de coco virgen</h3>
         <img src="img/coco y derivados/aceite de coco virgen.jpg" alt="Aceite de coco virgen" loading="lazy">
+
+
+<?php
+
+$sql_aceitecoco_virgen = "SELECT * FROM productos WHERE nombre='Aceite de coco virgen'";
+
+$resultado_aceitecoco_virgen= $conexion->query($sql_aceitecoco_virgen);
+
+$aceitecoco_virgen= $resultado_aceitecoco_virgen->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($aceitecoco_virgen["estado"]); ?>">
+
+<?php
+
+if($aceitecoco_virgen["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -4061,6 +6591,13 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+         <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $aceitecoco_virgen["precio"]; ?></p>
+
+        </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -4077,6 +6614,35 @@ if($clorofila["estado"] == "Disponible"){
        <div class="producto-card" onclick="alternarProducto(this)">
         <h3>Leche de coco en polvo</h3>
         <img src="img/coco y derivados/leche de coco en polvo.webp" alt="Leche de coco en polvo" loading="lazy">
+
+<?php
+
+$sql_lechecoco = "SELECT * FROM productos WHERE nombre='Leche de coco en polvo'";
+
+$resultado_lechecoco= $conexion->query($sql_lechecoco);
+
+$lechecoco= $resultado_lechecoco->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($lechecoco["estado"]); ?>">
+
+<?php
+
+if($lechecoco["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
 
         <p class="abrir-info-frutos">
              ✨ Descubrí sus propiedades
@@ -4121,6 +6687,13 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+        <div class="precios-producto">
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $lechecoco["precio"]; ?></p>
+
+        </div>
+
         <div class="consumo-frutos">
             <h4>🥄 Ideas para disfrutar</h4>
 
@@ -4154,13 +6727,41 @@ if($clorofila["estado"] == "Disponible"){
             <h3>Harina de Pistacho</h3>
             <img src="img/harinas y premezcla/harina pistacho.jpg" alt="Harina pistacho" loading="lazy">
 
+<?php
+
+$sql_harina_pistacho = "SELECT * FROM productos WHERE nombre='Harina de pistacho'";
+
+$resultado_harina_pistacho= $conexion->query($sql_harina_pistacho);
+
+$harina_pistacho= $resultado_harina_pistacho->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_pistacho["estado"]); ?>">
+
+<?php
+
+if($harina_pistacho["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
         </p>
 
        <div class="contenido-producto">
 
-        <div class="beneficios-harinas">
+        <ul class="beneficios-harinas">
             <li>
                 <span class="flecha-harinas">➥</span>
                 <strong>Aporta proteínas vegetales, clave para los músculos</strong>
@@ -4195,7 +6796,12 @@ if($clorofila["estado"] == "Disponible"){
                 <span class="flecha-harinas">➥</span>
                 <strong>Libre de gluten, ideal para celíacos.</strong>
             </li>
-        </div>
+        </ul>
+
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_pistacho["precio500"]; ?></p>
+    </div>
 
         <div class="consumo-harinas">
             <h4>👩‍🍳 Ideas para preparar</h4>
@@ -4213,6 +6819,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harina" onclick="alternarProducto(this)">
             <h3>Harina de Arroz</h3>
             <img src="img/harinas y premezcla/harina arroz.webp" alt="Harina de arroz" loading="lazy">
+
+<?php
+
+$sql_harina_arroz = "SELECT * FROM productos WHERE nombre='Harina de arroz'";
+
+$resultado_harina_arroz= $conexion->query($sql_harina_arroz);
+
+$harina_arroz= $resultado_harina_arroz->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_arroz["estado"]); ?>">
+
+<?php
+
+if($harina_arroz["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4257,6 +6891,11 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_arroz["precio500"]; ?></p>
+    </div>
+
         <div class="consumo-harinas">
             <h4>👩‍🍳 Ideas para preparar</h4>
 
@@ -4272,6 +6911,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harina" onclick="alternarProducto(this)">
             <h3>Harina de coco</h3>
             <img src="img/harinas y premezcla/harina coco.jpg" alt="Harina de coco" loading="lazy">
+
+<?php
+
+$sql_harina_coco = "SELECT * FROM productos WHERE nombre='Harina de coco'";
+
+$resultado_harina_coco= $conexion->query($sql_harina_coco);
+
+$harina_coco= $resultado_harina_coco->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_coco["estado"]); ?>">
+
+<?php
+
+if($harina_coco["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4306,6 +6973,11 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_coco["precio500"]; ?></p>
+    </div>
+
         <div class="consumo-harinas">
             <h4>👩‍🍳 Ideas para preparar</h4>
 
@@ -4321,6 +6993,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de maíz</h3>
             <img src="img/harinas y premezcla/harina maiz.jpg" alt="Harina de maíz" loading="lazy">
+
+<?php
+
+$sql_harina_maiz = "SELECT * FROM productos WHERE nombre='Harina de maíz'";
+
+$resultado_harina_maiz= $conexion->query($sql_harina_maiz);
+
+$harina_maiz= $resultado_harina_maiz->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_maiz["estado"]); ?>">
+
+<?php
+
+if($harina_maiz["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4360,6 +7060,12 @@ if($clorofila["estado"] == "Disponible"){
             </li>
         </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_maiz["precio500"]; ?></p>
+    </div>
+
+
         <div class="consumo-harinas">
             <h4>👩‍🍳 Ideas para preparar</h4>
 
@@ -4375,6 +7081,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de Almendra</h3>
             <img src="img/harinas y premezcla/harina almendras.webp" alt="Harina de almendra" loading="lazy">
+
+<?php
+
+$sql_harina_almendras = "SELECT * FROM productos WHERE nombre='Harina de almendras'";
+
+$resultado_harina_almendras= $conexion->query($sql_harina_almendras);
+
+$harina_almendras= $resultado_harina_almendras->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_almendras["estado"]); ?>">
+
+<?php
+
+if($harina_almendras["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4404,6 +7138,11 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_almendras["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4419,6 +7158,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de Arveja</h3>
             <img src="img/harinas y premezcla/harina arveja.jpg" alt="Harina arveja" loading="lazy">
+
+
+<?php
+
+$sql_harina_arveja = "SELECT * FROM productos WHERE nombre='Harina de arveja'";
+
+$resultado_harina_arveja= $conexion->query($sql_harina_arveja);
+
+$harina_arveja= $resultado_harina_arveja->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_arveja["estado"]); ?>">
+
+<?php
+
+if($harina_arveja["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4448,6 +7216,11 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_arveja["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4463,6 +7236,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de lino molido</h3>
             <img src="img/harinas y premezcla/harina lino molido.png" alt="Harina lino molido" loading="lazy">
+
+<?php
+
+$sql_harina_lino = "SELECT * FROM productos WHERE nombre='Harina de lino molido'";
+
+$resultado_harina_lino= $conexion->query($sql_harina_lino);
+
+$harina_lino= $resultado_harina_lino->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_lino["estado"]); ?>">
+
+<?php
+
+if($harina_lino["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4487,6 +7288,11 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_lino["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4502,6 +7308,35 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de sésamo</h3>
             <img src="img/harinas y premezcla/harina sesamo.jpg" alt="Harina sésamo" loading="lazy">
+
+
+<?php
+
+$sql_harina_sesamo = "SELECT * FROM productos WHERE nombre='Harina de sésamo'";
+
+$resultado_harina_sesamo= $conexion->query($sql_harina_sesamo);
+
+$harina_sesamo= $resultado_harina_sesamo->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_sesamo["estado"]); ?>">
+
+<?php
+
+if($harina_sesamo["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4536,6 +7371,11 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_sesamo["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4552,6 +7392,34 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de avena</h3>
             <img src="img/harinas y premezcla/harina avena.jpg" alt="Harina avena" loading="lazy">
+
+<?php
+
+$sql_harina_avena = "SELECT * FROM productos WHERE nombre='Harina de avena'";
+
+$resultado_harina_avena= $conexion->query($sql_harina_avena);
+
+$harina_avena= $resultado_harina_avena->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_avena["estado"]); ?>">
+
+<?php
+
+if($harina_avena["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
 
 
             <p class="abrir-info-harinas">
@@ -4587,6 +7455,12 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_avena["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4600,9 +7474,37 @@ if($clorofila["estado"] == "Disponible"){
             </div>
         </div>
         
-        <div class="producto-card producto-card-harinas"    onclick="alternarProducto(this)">
+        <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina integral de sarraceno</h3>
             <img src="img/harinas y premezcla/harina integral sarraceno.webp" alt="Harina integral sarraceno" loading="lazy">
+
+
+<?php
+
+$sql_harina_sarraceno = "SELECT * FROM productos WHERE nombre='Harina integral sarraceno'";
+
+$resultado_harina_sarraceno= $conexion->query($sql_harina_sarraceno);
+
+$harina_sarraceno= $resultado_harina_sarraceno->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_sarraceno["estado"]); ?>">
+
+<?php
+
+if($harina_sarraceno["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4637,6 +7539,12 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_sarraceno["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4654,6 +7562,33 @@ if($clorofila["estado"] == "Disponible"){
         <div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
             <h3>Harina de algarroba</h3>
             <img src="img/harinas y premezcla/harina de algarroba.webp" alt="Harina de algarroba" loading="lazy">
+
+<?php
+
+$sql_harina_algarroba = "SELECT * FROM productos WHERE nombre='Harina de algarroba'";
+
+$resultado_harina_algarroba= $conexion->query($sql_harina_algarroba);
+
+$harina_algarroba= $resultado_harina_algarroba->fetch_assoc();
+
+?>
+
+<div class="estado-producto <?php echo strtolower($harina_algarroba["estado"]); ?>">
+
+<?php
+
+if($harina_algarroba["estado"] == "Disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+</div>
 
             <p class="abrir-info-harinas">
              🌾 Descubrí sus beneficios.
@@ -4688,6 +7623,11 @@ if($clorofila["estado"] == "Disponible"){
                     </li>
                 </ul>
 
+    <div class="precios-producto">
+    <h4>💰 Precios</h4>
+    <p><strong>500 g:</strong> $<?php echo $harina_algarroba["precio500"]; ?></p>
+    </div>
+
                 <div class="consumo-harinas">
                     <h4>👩‍🍳 Ideas para preparar</h4>
                     <p>
@@ -4700,9 +7640,358 @@ if($clorofila["estado"] == "Disponible"){
                 </div>
             </div>
         </div>
+        </div>
+        
+
+    <!-- ==================== REBOZADORES ==================== -->
+    
+
+<h3 class="titulo-categoria subtitulo-categoria">
+    Rebozadores
+</h3>
+
+<div class="grilla-productos">
+
+<div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
+
+<h3>Rebozador de arroz</h3>
+
+<img src="img/rebozadores/rebozador de arroz.webp" alt="Rebozador de arroz" loading="lazy">
+
+<?php
+// Buscar el producto en la base de datos
+$sql_rebozador_arroz = "SELECT * FROM productos WHERE nombre='Rebozador de arroz'";
+
+$resultado_rebozador_arroz = $conexion->query($sql_rebozador_arroz);
+
+$rebozador_arroz = $resultado_rebozador_arroz->fetch_assoc();
+?>
+
+<!-- Estado -->
+<div class="estado-producto <?php echo strtolower(trim($rebozador_arroz["estado"])); ?>">
+
+<?php
+
+if(strtolower(trim($rebozador_arroz["estado"])) == "disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+ <p class="abrir-info-harinas">
+    🌾 Descubrí sus beneficios.
+</p>
+
+    <div class="contenido-producto">
+
+<ul class="beneficios-harinas">
+
+<?php
+
+$beneficios = explode("|", $rebozador_arroz["beneficios"]);
+
+// Recorre todos los beneficios
+foreach($beneficios as $beneficio){
+
+?>
+
+        <li>
+            <span class="flecha-harinas">➥</span>
+
+             <!-- Muestra un beneficio -->
+            <strong><?php echo $beneficio; ?></strong>
+        </li>
+
+<?php
+
+}
+
+?>
+
+</ul>
+
+    <!-- Precio -->
+    <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $rebozador_arroz["precio"]; ?></p>
+
     </div>
 
+    <!-- Consumo -->
+    <div class="consumo">
+
+        <h4>Modo de uso 🛡️</h4>
+
+<?php
+
+$consumos = explode("|", $rebozador_arroz["consumo"]);
+
+foreach($consumos as $consumo){
+
+?>
+
+<p>➜ <?php echo $consumo; ?></p>
+
+<?php
+
+}
+
+?>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!------------------ Rebozador de arroz integral con y sin sal------------------------>
+
+<div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
+
+<h3>Rebozador de arroz integral con sal</h3>
+
+<img src="img/rebozadores/rebozador con sal.jpg" alt="Rebozador de arroz integral con sal" loading="lazy">
+
+<?php
+// Buscar el producto en la base de datos
+$sql_rebozador_sal = "SELECT * FROM productos WHERE nombre='Rebozador con sal'";
+
+$resultado_rebozador_sal = $conexion->query($sql_rebozador_sal);
+
+$rebozador_sal = $resultado_rebozador_sal->fetch_assoc();
+?>
+
+<!-- Estado -->
+<div class="estado-producto <?php echo strtolower(trim($rebozador_sal["estado"])); ?>">
+
+<?php
+
+if(strtolower(trim($rebozador_sal["estado"])) == "disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+ <p class="abrir-info-harinas">
+    🌾 Descubrí sus beneficios.
+</p>
+
+    <div class="contenido-producto">
+
+<ul class="beneficios-harinas">
+
+<?php
+
+$beneficios = explode("|", $rebozador_sal["beneficios"]);
+
+// Recorre todos los beneficios
+foreach($beneficios as $beneficio){
+
+?>
+
+        <li>
+            <span class="flecha-harinas">➥</span>
+
+             <!-- Muestra un beneficio -->
+            <strong><?php echo $beneficio; ?></strong>
+        </li>
+
+<?php
+
+}
+
+?>
+
+</ul>
+
+    <!-- Precio -->
+    <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $rebozador_sal["precio"]; ?></p>
+
+    </div>
+
+    <!-- Consumo -->
+    <div class="consumo">
+
+        <h4>Modo de uso 🛡️</h4>
+
+<?php
+
+$consumos = explode("|", $rebozador_sal["consumo"]);
+
+foreach($consumos as $consumo){
+
+// Si está vacío, lo saltea
+    if(trim($consumo) == ""){
+        continue;
+    }
+
+?>
+
+<p style="margin-bottom:15px;">
+    ➜ <?php echo $consumo; ?>
+</p>
+
+<?php
+}
+
+?>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="producto-card producto-card-harinas" onclick="alternarProducto(this)">
+
+<h3>Rebozador de arroz integral sin sal</h3>
+
+<img src="img/rebozadores/rebozador sin sal.jpg" alt="Rebozador de arroz integral sin sal" loading="lazy">
+
+<?php
+// Buscar el producto en la base de datos
+$sql_rebozador_sin_sal = "SELECT * FROM productos WHERE nombre='Rebozador sin sal'";
+
+$resultado_rebozador_sin_sal = $conexion->query($sql_rebozador_sin_sal);
+
+$rebozador_sin_sal = $resultado_rebozador_sin_sal->fetch_assoc();
+?>
+
+<!-- Estado -->
+<div class="estado-producto <?php echo strtolower(trim($rebozador_sin_sal["estado"])); ?>">
+
+<?php
+
+if(strtolower(trim($rebozador_sin_sal["estado"])) == "disponible"){
+
+    echo "🟢 Disponible";
+
+}else{
+
+    echo "🔴 Agotado";
+
+}
+
+?>
+
+</div>
+
+ <p class="abrir-info-harinas">
+    🌾 Descubrí sus beneficios.
+</p>
+
+    <div class="contenido-producto">
+
+<ul class="beneficios-harinas">
+
+<?php
+
+$beneficios = explode("|", $rebozador_sin_sal["beneficios"]);
+
+// Recorre todos los beneficios
+foreach($beneficios as $beneficio){
+
+?>
+
+        <li>
+            <span class="flecha-harinas">➥</span>
+
+             <!-- Muestra un beneficio -->
+            <strong><?php echo $beneficio; ?></strong>
+        </li>
+
+<?php
+
+}
+
+?>
+
+</ul>
+
+    <!-- Precio -->
+    <div class="precios-producto">
+
+        <h4>💰 Precio</h4>
+
+        <p>$<?php echo $rebozador_sin_sal["precio"]; ?></p>
+
+    </div>
+
+    <!-- Consumo -->
+    <div class="consumo">
+
+        <h4>Modo de uso 🛡️</h4>
+
+<?php
+
+$consumos = explode("|", $rebozador_sin_sal["consumo"]);
+
+foreach($consumos as $consumo){
+
+// Si está vacío, lo saltea
+    if(trim($consumo) == ""){
+        continue;
+    }
+
+?>
+
+<p style="margin-bottom:15px;">
+    ➜ <?php echo $consumo; ?>
+</p>
+
+<?php
+}
+
+?>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!----------------CARRUSEL 3 PREMEZCLAS---------------->
+
 <h2 class="titulo-categoria subtitulo-categoria">
     🥣 Premezclas Chacabuco
 </h2>
@@ -4726,6 +8015,10 @@ if($clorofila["estado"] == "Disponible"){
             class="imagen-carrusel"
             loading="lazy"
         >
+
+    <div id="estadoPremezcla" class="estado-carrusel"></div>
+
+    <div id="precioPremezcla" class="precio-carrusel"></div>
 
     </div>
 
@@ -4775,7 +8068,23 @@ if($clorofila["estado"] == "Disponible"){
     🌾 ¿Qué contiene?
 </h3>
 
-<div id="modalIngredientes">
+<div id="modalIngredientes"></div>
+
+<hr class="linea-modal">
+
+<h3 class="titulo-modal">
+    💰 Precio
+</h3>
+
+<p id="modalPrecio"></p>
+
+<hr class="linea-modal">
+
+<h3 class="titulo-modal">
+    📦 Estado
+</h3>
+
+<div id="modalEstado" class="estado-producto"></div>
 
 </div>
 
@@ -4809,6 +8118,9 @@ if($clorofila["estado"] == "Disponible"){
             loading="lazy"
         >
 
+    <div id="estadoPremium" class="estado-producto"></div>
+    <div id="precioPremium" class="precio-carrusel"></div>
+
     </div>
 
     <button id="siguientePremium" class="flecha-carrusel">
@@ -4841,6 +8153,9 @@ if($clorofila["estado"] == "Disponible"){
             class="imagen-carrusel"
             loading="lazy"
         >
+
+    <div id="estadoHarinas" class="estado-producto"></div>
+    <div id="precioHarinas" class="precio-carrusel"></div>
 
     </div>
 
@@ -8857,7 +12172,7 @@ foreach($consumos as $consumo){
 
 </div>   <!--Grilla productos cerrar-->
 
-</section>   <!--cerrar seccion frut. congeladas-->
+</section>   <!--cerrar  congeladas-->
 
    
 
@@ -9034,7 +12349,7 @@ foreach($consumos as $consumo){
 
             <div class="tarjeta" onclick="abrirCategoria('harinas-categoria')">
                 <h3>🌾</h3>
-                <h4>Harinas y Premezclas.</h4>
+                <h4>Harinas, Premezclas y Rebozadores.</h4>
 
                 <p class="ver-categoria">
                     Toca para ver →

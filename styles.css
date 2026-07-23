@@ -767,7 +767,7 @@ html {
 ========================================== */
 
 .grilla-productos{
-    display:grid;
+    display:flex;
     justify-content: center;
     flex-wrap:wrap;
     justify-content: center;
@@ -2167,3 +2167,50 @@ color: #222;
     font-size: .95rem;
 
 }
+
+/*-------------------- PRECIO CARRUSEL --------------------*/
+
+.precio-carrusel{
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 10px 22px;
+
+    background: linear-gradient(135deg,#fff8e1,#ffe082);
+
+    border: 2px solid #f0b429;
+
+    border-radius: 30px;
+
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+    color: #7a5200;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.estado-carrusel{
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    margin-bottom: 15px;
+
+    padding: 8px 20px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    font-size: .95rem;
+
+    color: white;
+
+}
+
