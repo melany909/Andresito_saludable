@@ -2941,18 +2941,18 @@
    "sabores": [
       {
          "nombre": "🥜 Maní",
-         "peso": "500 g",
-         "precio": 4200
+         "peso": "200 g",
+         "precio": 2400
       },
       {
          "nombre": "🍓 Frutilla",
-         "peso": "180 g",
-         "precio": 2300
+         "peso": "200 g",
+         "precio": 2600
       },
       {
          "nombre": "🌰 Avellana",
-         "peso": "500 g",
-         "precio": 4700
+         "peso": "200 g",
+         "precio": 2600
       },
       {
          "nombre": "🍋 Limón",
@@ -2961,13 +2961,13 @@
       },
       {
          "nombre": "🍫 Chocolate",
-         "peso": "180 g",
-         "precio": 2400
+         "peso": "200 g",
+         "precio": 3200
       },
       {
          "nombre": "🌾 Salvado",
-         "peso": "250 g",
-         "precio": 2800
+         "peso": "150 g",
+         "precio": 1700
       }
    ],
 
