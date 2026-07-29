@@ -2073,6 +2073,10 @@ color: #222;
 
 }
 
+.ver-info-semillas{
+    cursor: pointer;
+}
+
 
 
 .producto img{
@@ -2089,128 +2093,162 @@ color: #222;
 
 }
 
-/*-------------------- DISPONIBLE/AGOTADO -------------------*/
-.estado-producto{
 
-   position: absolute;
+/*================== CAJA DE PRECIO ==================*/
 
-    top: 12px;
-    right: 12px;
+.info-producto{
 
-    padding: 7px 14px;
-
-    border-radius: 30px;
-
-    font-size: 0.8rem;
-
-    font-weight: 700;
-
-    color: white;
-
-    letter-spacing: .3px;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.18);
-
-    z-index: 10;
-
-    user-select: none;
-}
-
-.estado-producto.disponible{
-
-    background: linear-gradient(135deg,#31c85b,#1e9e43);
+    margin:20px 0;
+    background:#ffffff;
+    border:1px solid #dcdcdc;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
 
 }
 
-.estado-producto.agotado{
+/*========== TITULO ==========*/
 
-    background: linear-gradient(135deg,#ef5350,#c62828);
+.precios{
 
-}
+    margin-top:15px;
 
-/*-------------------- PRECIOS --------------------*/
+    background:#fafafa;
 
-.precios-producto{
+    border-radius:12px;
 
-    margin: 20px 0;
+    padding:15px;
 
-    background: #fff9ec;
-
-    border-left: 5px solid #f0b429;
-
-    border-radius: 12px;
-
-    padding: 15px;
-
-    width: 100%;
-
-    box-sizing: border-box;
+    border:1px solid #ececec;
 
 }
 
-.precios-producto h4{
+.precios h4{
 
-    margin-bottom: 10px;
-
-    color: #9a6b00;
-
-    font-size: 1rem;
-
-}
-
-.precios-producto p{
-
-    margin: 6px 0;
-
-    color: #444;
-
-    font-size: .95rem;
+    margin-bottom:15px;
+    color:#2e7d32;
+    font-size:1rem;
+    text-align:center;
 
 }
 
-/*-------------------- PRECIO CARRUSEL --------------------*/
+/*========== CADA PRECIO ==========*/
 
-.precio-carrusel{
+.precios p{
 
-    display: inline-block;
+    display:flex;
 
-    margin-top: 18px;
+    align-items:center;
 
-    padding: 10px 22px;
-
-    background: linear-gradient(135deg,#fff8e1,#ffe082);
-
-    border: 2px solid #f0b429;
-
-    border-radius: 30px;
-
-    font-size: 1.2rem;
-
-    font-weight: bold;
-
-    color: #7a5200;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    margin:10px 0;
 
 }
 
-.estado-carrusel{
+.precios p span:first-child{
 
-    display: inline-block;
+    font-weight:600;
 
-    margin-top: 15px;
-
-    margin-bottom: 15px;
-
-    padding: 8px 20px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    font-size: .95rem;
-
-    color: white;
+    white-space:nowrap;
 
 }
 
+.precios p span:last-child{
+
+    color:#2e7d32;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+.linea-precio{
+
+    flex:1;
+
+    border-bottom:2px dotted #cfcfcf;
+
+    margin:0 8px;
+
+}
+
+
+.estado-imagen{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    margin-bottom:15px;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:.85rem;
+
+    font-weight:bold;
+
+}
+
+.estado-imagen.disponible{
+
+    background:#e8f8ec;
+
+    color:#188038;
+
+    border:1px solid #b7e4c7;
+
+}
+
+.estado-imagen.agotado{
+
+    background:#fdeaea;
+
+    color:#c62828;
+
+    border:1px solid #f3b3b3;
+
+}
+
+.precio-simple{
+
+    margin-top:15px;
+
+    background:#ffffff;
+
+    border:1px solid #e3e3e3;
+
+    border-radius:14px;
+
+    padding:10px 18px;
+
+    display:inline-flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:6px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+
+}
+
+.precio-simple span{
+
+    color:#2e7d32;
+
+    font-weight:bold;
+
+    font-size:.95rem;
+
+}
+
+.precio-simple strong{
+
+    font-size:1.35rem;
+
+    color:#000;
+
+}

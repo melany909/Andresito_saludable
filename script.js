@@ -81,13 +81,11 @@ function abrirCategoria(id) {
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
     congeladosCategoria.style.display = "none";
-    
-    
-    
-    
 
     document.getElementById(id).style.display = "block";
 }
+
+
 
 function volverCategorias() {
 
@@ -177,32 +175,30 @@ const tituloPremezcla = document.getElementById("tituloPremezcla");
 
 function actualizarPremezcla() {
 
-
     imagenPremezcla.src = imagenesPremezclas[indicePremezcla];
 
     tituloPremezcla.textContent = titulosPremezclas[indicePremezcla];
 
-const estado = document.getElementById("estadoPremezcla");
+    const estado = document.getElementById("estadoPremezcla");
+    const precio = document.getElementById("precioPremezcla");
 
-const precio = document.getElementById("precioPremezcla");
+    if (datosPremezclas[indicePremezcla].estado == "Disponible") {
 
-if (datosPremezclas[indicePremezcla].estado == "Disponible") {
+        estado.innerHTML = "🟢 Disponible";
+        estado.className = "estado-imagen disponible";
 
-    estado.className = "estado-carrusel disponible";
+    } else {
 
-} else {
+        estado.innerHTML = "🔴 Agotado";
+        estado.className = "estado-imagen agotado";
 
-  estado.innerHTML = "CHAU";
-    estado.className = "estado-carrusel agotado";
+    }
 
-}
-
-precio.innerHTML = datosPremezclas[indicePremezcla].precio;
-
-
-
+    // ← ESTA LÍNEA TE FALTA
+    precio.innerHTML = datosPremezclas[indicePremezcla].precio;
 
 }
+
 const imagenesPremezclas = [
     "img/harinas y premezcla/prem-pastas.png",
     "img/harinas y premezcla/prem-panqueso.png",
@@ -324,12 +320,11 @@ function actualizarPremium() {
     if (datosPremium[indicePremium].estado == "Disponible") {
 
         estado.innerHTML = "🟢 Disponible";
-        estado.className = "estado-producto disponible";
-
+        estado.className = "estado-imagen disponible";
     } else {
 
         estado.innerHTML = "🔴 Agotado";
-        estado.className = "estado-producto agotado";
+        estado.className = "estado-imagen agotado";
 
     }
 
@@ -571,28 +566,25 @@ const datosHarinas = [
 /* ================= ELEMENTOS ================= */
 
 const imagenHarinas = document.getElementById("imagenHarinas");
-
 const tituloHarinas = document.getElementById("tituloHarinas");
 
 function actualizarHarinas() {
 
     imagenHarinas.src = imagenesHarinas[indiceHarinas];
-
     tituloHarinas.textContent = titulosHarinas[indiceHarinas];
 
     const estado = document.getElementById("estadoHarinas");
-
     const precio = document.getElementById("precioHarinas");
 
     if (datosHarinas[indiceHarinas].estado == "Disponible") {
 
         estado.innerHTML = "🟢 Disponible";
-        estado.className = "estado-producto disponible";
+        estado.className = "estado-imagen disponible";
 
     } else {
 
         estado.innerHTML = "🔴 Agotado";
-        estado.className = "estado-producto agotado";
+        estado.className = "estado-imagen agotado";
 
     }
 
@@ -606,7 +598,7 @@ let indiceHarinas = 0;
 
 window.addEventListener("DOMContentLoaded", function () {
 
-   actualizarHarinas();
+    actualizarHarinas();
 
 });
 
@@ -616,7 +608,7 @@ document.getElementById("siguienteHarinas").addEventListener("click", function (
 
     indiceHarinas++;
 
-    if(indiceHarinas >= imagenesHarinas.length){
+    if (indiceHarinas >= imagenesHarinas.length) {
 
         indiceHarinas = 0;
 
@@ -632,13 +624,13 @@ document.getElementById("anteriorHarinas").addEventListener("click", function ()
 
     indiceHarinas--;
 
-    if(indiceHarinas < 0){
+    if (indiceHarinas < 0) {
 
         indiceHarinas = imagenesHarinas.length - 1;
 
     }
 
-   actualizarHarinas();
+    actualizarHarinas();
 
 });
 
@@ -649,25 +641,8 @@ imagenHarinas.addEventListener("click", function () {
     modalProducto.style.display = "flex";
 
     modalTitulo.textContent = titulosHarinas[indiceHarinas];
-
     modalBeneficios.innerHTML = datosHarinas[indiceHarinas].beneficios;
-
     modalPreparacion.innerHTML = datosHarinas[indiceHarinas].preparacion;
-
     modalIngredientes.innerHTML = datosHarinas[indiceHarinas].ingredientes;
-
-    modalPrecio.innerHTML = datosHarinas[indiceHarinas].precio;
-
-if (datosHarinas[indiceHarinas].estado == "Disponible") {
-
-    modalEstado.innerHTML = "🟢 Disponible";
-    modalEstado.className = "estado-producto disponible";
-
-} else {
-
-    modalEstado.innerHTML = "🔴 Agotado";
-    modalEstado.className = "estado-producto agotado";
-
-}
 
 });
