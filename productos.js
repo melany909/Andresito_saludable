@@ -146,7 +146,7 @@ cargarProducto("Harina de arveja");
 cargarProducto("Harina de lino molido");
 cargarProducto("Harina de sésamo");
 cargarProducto("Harina de avena");
-cargarProducto("Harina integral de sarraceno");
+cargarProducto("Harina integral sarraceno");
 cargarProducto("Harina de algarroba");
 
 
