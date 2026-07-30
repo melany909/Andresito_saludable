@@ -141,7 +141,7 @@ cargarProducto("Harina de pistacho");
 cargarProducto("Harina de arroz");
 cargarProducto("Harina de coco");
 cargarProducto("Harina de maíz");
-cargarProducto("Harina de Almendras");
+cargarProducto("Harina de almendras");
 cargarProducto("Harina de arveja");
 cargarProducto("Harina de lino molido");
 cargarProducto("Harina de sésamo");
@@ -276,5 +276,50 @@ precios.innerHTML = html;
 
 });
 
+/*================ BUSCADOR DE CATEGORÍAS ================*/
+
+function crearBuscador(idInput, idCategoria) {
+
+    const input = document.getElementById(idInput);
+    const categoria = document.getElementById(idCategoria);
+
+    if (!input || !categoria) return;
+
+    const tarjetas = categoria.querySelectorAll(".producto-card");
+
+    input.addEventListener("input", function () {
+
+        const texto = this.value.toLowerCase();
+
+        tarjetas.forEach(tarjeta => {
+
+            const nombre = tarjeta.querySelector("h3").textContent.toLowerCase();
+
+            if (nombre.includes(texto)) {
+
+                tarjeta.style.display = "";
+
+            } else {
+
+                tarjeta.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+}
+
+crearBuscador("buscar-harinas", "harinas-categoria");
+crearBuscador("buscar-suplementos", "productos-categoria");
+crearBuscador("buscar-hierbas medicinales", "hierbas-categoria");
+crearBuscador("buscar-frutos secos", "frutsecos-categoria");
+crearBuscador("buscar-frutas desecadas", "grilla-frutas desecadas");
+crearBuscador("buscar-coco", "grilla-coco");
+crearBuscador("buscar-cereales", "cereales-categoria");
+crearBuscador("buscar-semillas", "semillas-categoria");
+crearBuscador("buscar-especias y condimentos", "especias y condimentos");
+crearBuscador("buscar-fruta congelada", "congelados-categoria");
 
     
