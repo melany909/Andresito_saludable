@@ -156,6 +156,11 @@ cargarProducto("Harina de sésamo");
 cargarProducto("Harina de avena");
 cargarProducto("Harina integral sarraceno");
 cargarProducto("Harina de algarroba");
+cargarProducto("Rebozador sin sal");
+cargarProducto("Rebozador con sal");
+cargarProducto("Rebozador de arroz");
+
+
 
 
 
