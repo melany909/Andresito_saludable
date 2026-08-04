@@ -159,6 +159,17 @@ cargarProducto("Harina de algarroba");
 cargarProducto("Rebozador sin sal");
 cargarProducto("Rebozador con sal");
 cargarProducto("Rebozador de arroz");
+cargarProducto("Aceite de lino");
+cargarProducto("Aceite de chia");
+cargarProducto("Aceite de lino y vitamina e");
+cargarProducto("Aceite de lino y vitamina e");
+cargarProducto("Aceite de sesamo");
+cargarProducto("Aceite de oliva");
+
+
+
+
+
 
 
 
@@ -334,5 +345,7 @@ crearBuscador("buscar-cereales", "cereales-categoria");
 crearBuscador("buscar-semillas", "semillas-categoria");
 crearBuscador("buscar-especias y condimentos", "especias y condimentos");
 crearBuscador("buscar-fruta congelada", "congelados-categoria");
+crearBuscador("buscar-aceite", "aceites-categoria");
+
 
     

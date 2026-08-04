@@ -9543,7 +9543,7 @@
                     </li>
                 </ul>
 
-<div class=precios">
+<div class="precios">
 
     <h4>💰 Precio</h4>
 
@@ -9604,7 +9604,7 @@
                     </li>
                 </ul>
 
-<div class=precios">
+<div class="precios">
 
     <h4>💰 Precio</h4>
 
@@ -9652,7 +9652,7 @@
 
                     <li>
                         <span class="flecha-congelados">❄</span>
-                        <strong>Rico en carbohidratos saludables y proteínas, ideal para deportistas o paa empezar el día.</strong>
+                        <strong>Rico en carbohidratos saludables y proteínas, ideal para deportistas o para empezar el día.</strong>
                     </li>
 
                     <li>
@@ -9661,7 +9661,7 @@
                     </li>
                 </ul>
 
-<div class=precios">
+<div class="precios">
 
     <h4>💰 Precio</h4>
 
@@ -9681,32 +9681,381 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>   <!--Grilla productos cerrar-->
+    
 
 </section>   <!--cerrar  congeladas-->
 
+<!-- ================= ACEITES ================= -->
+<section id="aceites-categoria">
+
+    <button class="btn-volver" onclick="volverCategorias()">
+        ← Volver a Categorías
+    </button>
+
+    <div class="buscador-categoria">
+
+        <input
+            type="text"
+            placeholder="🔍 Buscar aceite..."
+            class="input-buscador"
+            id="buscar-aceite"
+        >
+
+    </div>
+
+    <p class="mensaje-no-encontrado"
+       id="mensaje-aceite"
+       style="display:none;">
+       😕 No se encontró ningún producto.
+    </p>
+
+    <h2 class="titulo-categoria">
+        Aceites
+    </h2>
+
+    <div class="grilla-productos">
+
+        <!-- PRODUCTO -->
+
+        <div class="producto-card producto-card-aceites" onclick="alternarProducto(this)">
+
+            <h3>Aceite de Lino</h3>
+
+            <img src="img/aceites/aceite de lino.jpg" alt="Aceite de lino" loading="lazy">
+
+            <div class="estado-imagen" id="estado-Aceite de lino"></div>
+
+            <div class="ver-info-aceites">
+                ✨ Descubre sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+
+                <ul class="beneficios-aceites">
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Alto contenido de Omega-3.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Protege el corazón.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Reduce inflamaciones.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Ayuda al tránsito intestinal.</strong>
+                    </li>
+
+                </ul>
+
+                <div class="precios">
+
+                    <h4>💰 Precio</h4>
+
+                    <div id="precios-Aceite de lino"></div>
+
+                </div>
+
+                <div class="consumo-aceites">
+
+                    <h4>🌿 Consumo</h4>
+
+                    <p>
+
+                        ➼ Consumir 1 cucharada por día.<br><br>
+
+                        ➼ Agregar a ensaladas.<br><br>
+
+                        ➼ No cocinar con él.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="producto-card producto-card-aceites" onclick="alternarProducto(this)">
+        <h3>Aceite de Chía</h3>
+        <img src="img/aceites/aceite de chia.png" alt="Aceite de chia" loading="Lazy">
+
+        <div class="estado-imagen" id="estado-Aceite de chia"></div>
+
+            <div class="ver-info-aceites">
+                ✨ Descubre sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-aceites">
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Reduce triglicéridos y equilibra el colesterol.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Aporta ácidos grasos esenciales para el cuerpo.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Alivia inflamaciones en articulaciones y arterias.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Mejora la concentración y protege las neuronas.</strong>
+                    </li>
+                </ul>
+
+                 <div class="precios">
+
+                    <h4>💰 Precio</h4>
+
+                    <div id="precios-Aceite de chia"></div>
+
+                </div>
+
+                <div class="consumo-aceites">
+
+                    <h4>🌿 Consumo</h4>
+
+                    <p>
+
+                        ➼ Consumir 1 cucharada por día.<br><br>
+
+                        ➼ Agregar a ensaladas.<br><br>
+
+                        ➼ No cocinar con él.
+
+                    </p>
+
+                </div>
+            </div>
+    </div>
+
+    <div class="producto-card producto-card-aceites" onclick="alternarProducto(this)">
+        <h3>Aceite de Oliva</h3>
+        <img src="img/aceites/aceite de oliva.png" alt="Aceite de oliva" loading="Lazy">
+
+        <div class="estado-imagen" id="estado-Aceite de oliva"></div>
+
+            <div class="ver-info-aceites">
+                ✨ Descubre sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-aceites">
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Reduce el colesterol malo y la presión.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Alivia dolores corporales de forma natural.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Retrasa el envejecimiento gracias a sus antioxidantes.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Regula el azúcar y previene la diabetes.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Protege al estómago y mejora el tránsito.</strong>
+                    </li>
+                </ul>
+
+                 <div class="precios">
+
+                    <h4>💰 Precio</h4>
+
+                    <div id="precios-Aceite de oliva"></div>
+
+                </div>
+
+                <div class="consumo-aceites">
+
+                    <h4>🌿 Consumo</h4>
+
+                    <p>
+
+                        ➼ Consumir 1 cucharada por día.<br><br>
+
+                        ➼ Directo sobre ensaladas de hojas verdes, tomates o ñlegumbres.<br><br>
+
+                        ➼ Ideal para cocinar verduras, pollo o pescados a la plancha (calor moderado).
+
+                    </p>
+
+                </div>
+            </div>
+    </div>
+
+
+    <!------>
+
+    <div class="producto-card producto-card-aceites" onclick="alternarProducto(this)">
+        <h3>Aceite de Lino y Vitamina E</h3>
+        <img src="img/aceites/aceite delino y vit E.png" alt="Aceite de lino y vitamina E" loading="Lazy">
+
+        <div class="estado-imagen" id="estado-Aceite de lino y vitamina e"></div>
+
+            <div class="ver-info-aceites">
+                ✨ Descubre sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-aceites">
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Fuente vegetal premium de Omega-3.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Protege el sistema cardiovascular.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Reduce el colesterol y triglicéridos.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Mejora hidratación de piel/cabello.</strong>
+                    </li>
+                </ul>
+
+                 <div class="precios">
+
+                    <h4>💰 Precio</h4>
+
+                    <div id="precios-Aceite de lino y vitamina e"></div>
+
+                </div>
+
+                <div class="consumo-aceites">
+
+                    <h4>🌿 Consumo</h4>
+
+                    <p>
+
+                        ➼ Consumir 1 cucharada por día.<br><br>
+
+                        ➼ En licuados, ensaladas, sobre vegetales,etc.<br><br>
+
+                        ➼ No cocinar con él.
+
+                    </p>
+
+                </div>
+            </div>
+    </div>
+
+    <!------->
+    <div class="producto-card producto-card-aceites" onclick="alternarProducto(this)">
+        <h3>Aceite de Sésamo</h3>
+        <img src="img/aceites/aceite de sesamo.png" alt="Aceite de sésamo" loading="Lazy">
+
+        <div class="estado-imagen" id="estado-Aceite de sesamo"></div>
+
+            <div class="ver-info-aceites">
+                ✨ Descubre sus beneficios
+            </div>
+
+            <div class="contenido-producto">
+                <ul class="beneficios-aceites">
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Protege al corazón gracias a sus grasas saluda les Omega 3 y 6.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Aporta antioxidantes y Vitamina E.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Reduce la inflamación en articulaciones y músculos.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Hidrata en profundidad la piel y el cabello.</strong>
+                    </li>
+
+                    <li>
+                        <span class="flecha-aceites">🌿</span>
+                        <strong>Facilita el proceso de digestión.</strong>
+                    </li>
+                </ul>
+
+                 <div class="precios">
+
+                    <h4>💰 Precio</h4>
+
+                    <div id="precios-Aceite de lino y vitamina e"></div>
+
+                </div>
+
+                <div class="consumo-aceites">
+
+                    <h4>🌿 Consumo</h4>
+
+                    <p>
+
+                        ➼ Consumir 1 cucharada por día.<br><br>
+
+                        ➼ Saborizar cualquier tipo de comidas (arroz, pastas, verduras).<br><br>
+
+                        ➼ No cocinar con él.
+
+                    </p>
+
+                </div>
+            </div>
+    </div>
+
+    <!----------->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- FIN PRODUCTO -->
+
+    </div>
+
+</section>
    
 
 
@@ -9906,6 +10255,15 @@
                     Especias y Condimentos
                 </h4>
             
+
+                <p class="ver-categoria">
+                    Toca para ver →
+                </p>
+            </div>
+
+             <div class="tarjeta" onclick="abrirCategoria('aceites-categoria')">
+                <h3>🫒</h3>
+                <h4>Aceites</h4>
 
                 <p class="ver-categoria">
                     Toca para ver →

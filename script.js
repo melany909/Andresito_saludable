@@ -14,6 +14,8 @@ const harinasCategoria = document.getElementById("harinas-categoria");
 const cerealesCategoria = document.getElementById("cereales-categoria");
 const semillasCategoria = document.getElementById("semillas-categoria");
 const congeladosCategoria = document.getElementById("congelados-categoria");
+const aceitesCategoria = document.getElementById("aceites-categoria");
+
 
 boton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -81,6 +83,7 @@ function abrirCategoria(id) {
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
     congeladosCategoria.style.display = "none";
+    aceitesCategoria.style.display = "none";
 
     document.getElementById(id).style.display = "block";
 }
@@ -96,6 +99,7 @@ function volverCategorias() {
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
     congeladosCategoria.style.display = "none";
+    aceitesCategoria.style.display = "none";
     
 
     productos.style.display = "block";
@@ -110,6 +114,7 @@ function ocultarCategorias() {
     cerealesCategoria.style.display = "none";
     semillasCategoria.style.display = "none";
     congeladosCategoria.style.display = "none";
+    aceitesCategoria.style.display = "none";
    
     
 }
