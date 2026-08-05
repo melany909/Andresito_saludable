@@ -162,9 +162,48 @@ cargarProducto("Rebozador de arroz");
 cargarProducto("Aceite de lino");
 cargarProducto("Aceite de chia");
 cargarProducto("Aceite de lino y vitamina e");
-cargarProducto("Aceite de lino y vitamina e");
 cargarProducto("Aceite de sesamo");
 cargarProducto("Aceite de oliva");
+cargarProducto("Aceite de almendras");
+cargarProducto("Garbanzos");
+cargarProducto("Soja");
+cargarProducto("Poroto mung");
+cargarProducto("Porotos pallares");
+cargarProducto("Arroz yamani");
+cargarProducto("Trigo burgol");
+cargarProducto("Azúcar Mascabo");
+cargarProducto("Polvo para hornear Dicomere");
+cargarProducto("Polvo para hornear Procal");
+cargarProducto("Polvo para panificar panes");
+cargarProducto("Bicarbonato de sodio");
+cargarProducto("Sal himalaya gruesa");
+cargarProducto("Sal himalaya fina");
+cargarProducto("Cacao amargo alcalino");
+cargarProducto("Cacao amargo natural");
+cargarProducto("Sal marina líquida");
+cargarProducto("Propoleo verde");
+cargarProducto("Propoleo Rojo");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -196,9 +235,10 @@ cargarProducto("Aceite de oliva");
 function cargarProducto(nombreProducto) {
 
     const producto = listaProductos.find(p =>
+        
         p.nombre.toLowerCase() === nombreProducto.toLowerCase()
     );
-
+console.log(listaProductos.find(p => p.nombre === "Azúcar Mascabo"));
     if (!producto) return;
 
     /*================ ESTADO ================*/
@@ -230,16 +270,17 @@ function cargarProducto(nombreProducto) {
     let html = "";
 
     const presentaciones = [
-        ["20 g", producto.precio20],
-        ["30 g", producto.precio30],
-        ["50 g", producto.precio50],
-        ["100 g", producto.precio100],
-        ["150 g", producto.precio150],
-        ["200 g", producto.precio200],
-        ["250 g", producto.precio250],
-        ["500 g", producto.precio500],
-        ["1 kg", producto.precio1000]
-    ];
+    ["20 g", producto.precio20],
+    ["30 g", producto.precio30],
+    ["50 g", producto.precio50],
+    ["100 g", producto.precio100],
+    ["150 g", producto.precio150],
+    ["200 g", producto.precio200],
+    ["250 g", producto.precio250],
+    ["500 g", producto.precio500],
+    ["1 kg", producto.precio1000],
+    ["300 g", producto.precio300]
+];
 
     presentaciones.forEach(([nombre, precio]) => {
 
@@ -269,11 +310,7 @@ function cargarProducto(nombreProducto) {
 
     });
 
-}
-
-// Si no tiene presentaciones ni sabores, usa un solo precio
-
-else if (html === "" && producto.precio > 0) {
+} else if (html === "" && producto.precio > 0) {
 
     html = `
 <p>
@@ -346,6 +383,8 @@ crearBuscador("buscar-semillas", "semillas-categoria");
 crearBuscador("buscar-especias y condimentos", "especias y condimentos");
 crearBuscador("buscar-fruta congelada", "congelados-categoria");
 crearBuscador("buscar-aceite", "aceites-categoria");
+crearBuscador("buscar-despensa", "despensa-categoria");
+
 
 
     

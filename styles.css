@@ -2392,3 +2392,171 @@ color: #222;
     line-height:1.6;
 
 }
+
+/*================ LEGUMBRES ================*/
+
+.producto-card-legumbres{
+
+    cursor:pointer;
+
+}
+
+.ver-info-legumbres{
+
+    margin-top:15px;
+    text-align:center;
+    font-size:1.05rem;
+    color:#111;
+
+}
+
+.beneficios-legumbres{
+
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+
+}
+
+.beneficios-legumbres li{
+
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+
+    margin-bottom:14px;
+
+    line-height:1.6;
+
+}
+
+.beneficios-legumbres strong{
+    color:#000;
+}
+
+.flecha-legumbres{
+
+    color:#2e7d32;
+    font-size:1.1rem;
+    flex-shrink:0;
+
+}
+
+.consumo-legumbres{
+
+    margin-top:20px;
+
+}
+
+.consumo-legumbres h4{
+
+    color:#2e7d32;
+    margin-bottom:10px;
+
+}
+
+.consumo-legumbres p{
+
+    line-height:1.7;
+
+}
+
+#legumbres-categoria{
+   display: none;
+
+    min-height: 100vh;
+    padding: 120px 20px;
+    background: white;
+
+    padding-top: 185px;
+}
+
+/*================ SUBTÍTULOS DENTRO DE LAS CATEGORÍAS ================*/
+
+.subtitulo-categoria{
+
+    grid-column: 1 / -1;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    color: #4b6b3c;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #d8e6cf;
+
+}
+
+@media (max-width:768px){
+
+    .subtitulo-categoria{
+
+        font-size: 1.4rem;
+
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+    }
+
+}
+
+/* ======================= DESPENSA SALUDABLE ======================= */
+
+#despensa-categoria{
+    display:none;
+    padding:40px 20px;
+    min-height: 100vh;
+    padding: 120px 20px;
+    background: white;
+
+}
+
+.producto-card-despensa{
+    cursor:pointer;
+}
+
+.ver-info-despensa{
+    text-align:center;
+    font-weight:bold;
+    margin:12px 0;
+    color:#4d7c0f;
+}
+
+.beneficios-despensa{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.beneficios-despensa li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.beneficios-despensa strong{
+    color:#000;
+}
+
+.flecha-despensa{
+    color:#4d7c0f;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.consumo-despensa{
+    margin-top:20px;
+}
+
+.consumo-despensa h4{
+    margin-bottom:10px;
+}
+
+.consumo-despensa p{
+    line-height:1.6;
+}
