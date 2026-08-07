@@ -167,9 +167,10 @@ cargarProducto("Aceite de oliva");
 cargarProducto("Aceite de almendras");
 cargarProducto("Garbanzos");
 cargarProducto("Soja");
+cargarProducto("Soja texturizada");
 cargarProducto("Poroto mung");
 cargarProducto("Porotos pallares");
-cargarProducto("Arroz yamani");
+cargarProducto("Arroz Yamani");
 cargarProducto("Trigo burgol");
 cargarProducto("Azúcar Mascabo");
 cargarProducto("Polvo para hornear Dicomere");
@@ -180,9 +181,14 @@ cargarProducto("Sal himalaya gruesa");
 cargarProducto("Sal himalaya fina");
 cargarProducto("Cacao amargo alcalino");
 cargarProducto("Cacao amargo natural");
+cargarProducto("Cascarilla de cacao");
 cargarProducto("Sal marina líquida");
 cargarProducto("Propoleo verde");
 cargarProducto("Propoleo Rojo");
+cargarProducto("Miel");
+cargarProducto("Edulcorante Stevia");
+
+
 
 
 
@@ -279,7 +285,14 @@ console.log(listaProductos.find(p => p.nombre === "Azúcar Mascabo"));
     ["250 g", producto.precio250],
     ["500 g", producto.precio500],
     ["1 kg", producto.precio1000],
-    ["300 g", producto.precio300]
+    ["300 g", producto.precio300],
+    ["250 ml", producto.precio250ml],
+    ["125 ml", producto.precio125ml]
+
+
+
+
+
 ];
 
     presentaciones.forEach(([nombre, precio]) => {
