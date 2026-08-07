@@ -2398,11 +2398,8 @@ color: #222;
 .producto-card-legumbres{
 
     cursor:pointer;
-<<<<<<< HEAD
     display: grid;
     gap: 25px;
-=======
->>>>>>> 0b5695ed1150586e3bbb48a01b22355bcc5b3760
 
 }
 
@@ -2467,21 +2464,17 @@ color: #222;
 }
 
 #legumbres-categoria{
-<<<<<<< HEAD
+
    display:none;
     padding:40px 20px;
     min-height: 100vh;
     padding: 120px 20px;
     background: white;
-=======
    display: none;
-
     min-height: 100vh;
     padding: 120px 20px;
     background: white;
-
     padding-top: 185px;
->>>>>>> 0b5695ed1150586e3bbb48a01b22355bcc5b3760
 }
 
 /*================ SUBTÍTULOS DENTRO DE LAS CATEGORÍAS ================*/
