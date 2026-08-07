@@ -3759,6 +3759,7 @@
    "precio150": 0
  },
  {
+<<<<<<< HEAD
    "id": 181,
    "nombre": "Soja texturizada",
    "categoria": "Legumbres",
@@ -3781,6 +3782,8 @@
    "precio150": 0
  },
  {
+=======
+>>>>>>> 0b5695ed1150586e3bbb48a01b22355bcc5b3760
    "id": 182,
    "nombre": "Poroto mung",
    "categoria": "Legumbres",
@@ -3826,7 +3829,11 @@
  },
  {
    "id": 184,
+<<<<<<< HEAD
    "nombre": "Arroz Yamani",
+=======
+   "nombre": "Arroz yamani",
+>>>>>>> 0b5695ed1150586e3bbb48a01b22355bcc5b3760
    "categoria": "Granos",
    "imagen": "",
    "descripcion": "",
@@ -4089,6 +4096,7 @@
    "precio30": 0,
    "precio20": 0,
    "precio150": 0
+<<<<<<< HEAD
  },
  {
    "id": 196,
@@ -4113,10 +4121,16 @@
    "precio150": 0,
    "precio250ml": 9600,
    "precio125ml": 6300
+=======
+>>>>>>> 0b5695ed1150586e3bbb48a01b22355bcc5b3760
  }
  
  
  
 ]
 
+<<<<<<< HEAD
  
+=======
+ 
+>>>>>>> 0b5695ed1150586e3bbb48a01b22355bcc5b3760
