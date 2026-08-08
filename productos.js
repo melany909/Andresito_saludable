@@ -81,6 +81,7 @@ cargarProducto("Cáscara de huevo");
 cargarProducto("Caldo de huesos marino");
 cargarProducto("Aceite de romero");
 cargarProducto("Aceite de orégano");
+cargarProducto("Aceite de Ricino");
 cargarProducto("Aceite de CBD bioactiva");
 cargarProducto("Zeolita extracto líquido");
 cargarProducto("Lax fibras");
