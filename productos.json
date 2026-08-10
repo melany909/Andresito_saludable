@@ -396,6 +396,28 @@
    "precio150": 8700
  },
  {
+   "id": 27,
+   "nombre": "Anís en grano",
+   "categoria": "Especias y condimentos",
+   "imagen": "",
+   "descripcion": "",
+   "precio": 0,
+   "stock": 0,
+   "disponible": 1,
+   "beneficios": "",
+   "consumo": "",
+   "estado": "Disponible",
+   "precio100": 2300,
+   "precio500": 0,
+   "precio1000": 0,
+   "precio200": 0,
+   "precio250": 0,
+   "precio50": 1200,
+   "precio30": 0,
+   "precio20": 0,
+   "precio150": 0
+ },
+ {
    "id": 28,
    "nombre": "Anís estrellado en tallo",
    "categoria": "Especias y condimentos",

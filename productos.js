@@ -26,6 +26,7 @@ cargarProducto("Canela quebrada");
 cargarProducto("Clavo de olor");
 cargarProducto("Clavo de olor en polvo");
 cargarProducto("Anís estrellado");
+cargarProducto("Anís en grano");
 cargarProducto("Anís estrellado en tallo");
 cargarProducto("Cúrcuma en polvo");
 cargarProducto("Jengibre en polvo");
