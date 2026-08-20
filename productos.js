@@ -118,6 +118,7 @@ cargarProducto("Ambay");
 cargarProducto("Cedrón");
 cargarProducto("Almendras");
 cargarProducto("Nueces");
+cargarProducto("Nuez Brasil");
 cargarProducto("Pistacho");
 cargarProducto("Damasco");
 cargarProducto("Maní sin sal");
