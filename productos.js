@@ -146,6 +146,8 @@ cargarProducto("Cereal de arroz");
 cargarProducto("Cereal multisemillas");
 cargarProducto("Ositos de avena y miel");
 cargarProducto("Trigo inflado dulce");
+cargarProducto("Avena arrollada");
+cargarProducto("Avena instantánea");
 cargarProducto("Granola tradicional");
 cargarProducto("Granola energética");
 cargarProducto("Granola cocada");
