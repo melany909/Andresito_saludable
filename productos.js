@@ -21,6 +21,8 @@ cargarProducto("Amaranto");
 cargarProducto("Mijo");
 cargarProducto("Amapola");
 cargarProducto("Canela en polvo");
+cargarProducto("Eneldo");
+cargarProducto("Cardamomo");
 cargarProducto("Canela en rama");
 cargarProducto("Canela quebrada");
 cargarProducto("Clavo de olor");
