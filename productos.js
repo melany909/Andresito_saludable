@@ -17,6 +17,7 @@ cargarProducto("Sésamo integral");
 cargarProducto("Sésamo negro");
 cargarProducto("Zaragatona psyllium");
 cargarProducto("Quinoa");
+cargarProducto("Urucum");
 cargarProducto("Amaranto");
 cargarProducto("Mijo");
 cargarProducto("Amapola");
