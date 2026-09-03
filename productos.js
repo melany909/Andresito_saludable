@@ -62,6 +62,7 @@ cargarProducto("Maca roja");
 cargarProducto("Maca tradicional");
 cargarProducto("Vitamaca");
 cargarProducto("Semillas de palta en polvo");
+cargarProducto("Matcha");
 cargarProducto("Clorofila");
 cargarProducto("Vinagre de Manzana");
 cargarProducto("Vinagre de sidra de manzana en capsulas");
