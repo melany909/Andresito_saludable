@@ -1370,6 +1370,29 @@
    "precio20": 0,
    "precio150": 0
  },
+
+ {
+   "id": 66,
+   "nombre": "Colágeno en polvo",
+   "categoria": "Suplementos",
+   "imagen": "",
+   "descripcion": "",
+   "precio": 2500,
+   "stock": 0,
+   "disponible": 1,
+   "beneficios": "",
+   "consumo": "",
+   "estado": "Disponible",
+   "precio100": 0,
+   "precio500": 0,
+   "precio1000": 0,
+   "precio200": 0,
+   "precio250": 0,
+   "precio50": 0,
+   "precio30": 0,
+   "precio20": 0,
+   "precio150": 0
+ },
  {
    "id": 67,
    "nombre": "Jugo de uva tinto",

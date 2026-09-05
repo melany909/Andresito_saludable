@@ -75,6 +75,7 @@ cargarProducto("jugo de aloe vera máximas defensas");
 cargarProducto("Centella asiática");
 cargarProducto("Hierro quelado");
 cargarProducto("Creatina Dark Lab");
+cargarProducto("Colágeno en polvo");
 cargarProducto("Jugo de uva tinto");
 cargarProducto("Tintura madre melissa");
 cargarProducto("Tintura madre fucus");
