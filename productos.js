@@ -188,6 +188,8 @@ cargarProducto("Porotos pallares");
 cargarProducto("Arroz Yamani");
 cargarProducto("Trigo burgol");
 cargarProducto("Azúcar Mascabo");
+cargarProducto("Sal marina fina");
+cargarProducto("Sal marina gruesa");
 cargarProducto("Polvo para hornear Dicomere");
 cargarProducto("Polvo para hornear Procal");
 cargarProducto("Polvo para panificar panes");
