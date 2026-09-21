@@ -51,6 +51,10 @@ function mostrarProductos() {
 
     productos.style.display = "block";
 
+    productos.classList.remove("seccion-animada");
+    void productos.offsetWidth;
+    productos.classList.add("seccion-animada");
+
     ocultarCategorias();
 }
 
@@ -61,6 +65,10 @@ function mostrarNosotros() {
     contacto.style.display = "none";
     productos.style.display = "none";
 
+    nosotros.classList.remove("seccion-animada");
+    void nosotros.offsetWidth;
+    nosotros.classList.add("seccion-animada");
+
     ocultarCategorias();
 }
 
@@ -70,6 +78,10 @@ function mostrarContacto() {
     nosotros.style.display = "none";
     contacto.style.display = "block";
     productos.style.display = "none";
+
+    contacto.classList.remove("seccion-animada");
+    void contacto.offsetWidth;
+    contacto.classList.add("seccion-animada");
 
     ocultarCategorias();
 }
@@ -163,6 +175,132 @@ function alternarProducto(tarjeta) {
     }
 }
 
+/* ==================================================
+       PESTAÑAS BENEFICIOS / CONSUMO
+================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const tarjetas = document.querySelectorAll(".producto-card");
+
+    tarjetas.forEach(function (tarjeta) {
+
+        const contenido = tarjeta.querySelector(".contenido-producto");
+
+        if (!contenido) return;
+
+
+        /* Buscar la lista de beneficios */
+
+        const beneficios = contenido.querySelector("ul");
+        const precios = contenido.querySelector(".precios");
+
+
+        /* Buscar cualquier tipo de consumo */
+
+        const consumo = contenido.querySelector(`
+            .consumo,
+            .consumo-hierbas,
+            .consumo-frutos,
+            .consumo-cereales,
+            .consumo-harinas,
+            .consumo-semillas,
+            .consumo-congelados,
+            .consumo-legumbres,
+            .consumo-despensa
+        `);
+
+
+        /* Si no tiene beneficios o consumo,
+           dejamos esa tarjeta como está */
+
+        if (!beneficios || !consumo) return;
+
+
+        /* Crear las pestañas */
+
+        const pestañas = document.createElement("div");
+
+        pestañas.className = "pestanas-producto";
+
+        pestañas.innerHTML = `
+            <button
+                type="button"
+                class="pestana-producto activa"
+                data-pestana="beneficios">
+                🌿 Beneficios
+            </button>
+
+            <button
+                type="button"
+                class="pestana-producto"
+                data-pestana="consumo">
+                🍽️ Consumo
+            </button>
+        `;
+
+
+        /* Colocarlas antes de los beneficios */
+
+        contenido.insertBefore(pestañas, beneficios);
+
+        /* Mover los precios al final de la información */
+        if (precios) {
+            contenido.appendChild(precios);
+}
+
+
+        /* Al principio mostramos beneficios */
+
+        beneficios.classList.add("panel-beneficios");
+        consumo.classList.add("panel-consumo");
+
+        consumo.style.display = "none";
+
+
+        /* Funcionamiento de botones */
+
+        const botones =
+            pestañas.querySelectorAll(".pestana-producto");
+
+
+        botones.forEach(function (boton) {
+
+            boton.addEventListener("click", function (event) {
+
+                /* Evita que el clic cierre la tarjeta */
+
+                event.stopPropagation();
+
+
+                botones.forEach(function (btn) {
+                    btn.classList.remove("activa");
+                });
+
+
+                boton.classList.add("activa");
+
+
+                if (boton.dataset.pestana === "beneficios") {
+
+                    beneficios.style.display = "";
+                    consumo.style.display = "none";
+
+                } else {
+
+                    beneficios.style.display = "none";
+                    consumo.style.display = "block";
+
+                }
+
+            });
+
+        });
+
+    });
+
+});
+
 /* ================= MODAL BASE ================= */
 
 const modalProducto = document.getElementById("modalProducto");
@@ -184,6 +322,553 @@ modalProducto.addEventListener("click", (e) => {
     if (e.target === modalProducto) {
         modalProducto.style.display = "none";
     }
+});
+
+
+
+/* =========================================================
+   CARRUSEL DELICEL
+========================================================= */
+
+/*
+    Todos los productos Delicel están guardados acá.
+    Para agregar otro producto en el futuro,
+    solamente agregamos otro objeto al array.
+*/
+
+const productosDelicel = [
+
+    {
+        nombre: "Premezcla para pan casero",
+        imagen: "img/harinas y premezcla/premezcla para pan casero delicel.png",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para preparar panes caseros de manera práctica."
+    },
+
+    {
+        nombre: "Premezcla para pizza",
+        imagen: "img/harinas y premezcla/premezcla para pizza delicel.png",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para preparar pizzas caseras."
+    },
+
+    {
+        nombre: "Premezcla universal",
+        imagen: "img/harinas y premezcla/premezcla universal delicel.webp",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Una opción versátil para preparaciones de panadería, repostería y pastas."
+    },
+
+    {
+        nombre: "Bizcochuelo de chocolate",
+        imagen: "img/harinas y premezcla/premezcla bizcochuelo de chocolate delicel.jpg",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para preparar bizcochuelos de chocolate."
+    },
+
+    {
+        nombre: "Bizcochuelo de vainilla",
+        imagen: "img/harinas y premezcla/premezcla biszcochuelo de vainilla delicel.webp",
+        peso: "500 g",
+        precio: 0, 
+        estado: "Disponible",
+        descripcion: "Ideal para preparar bizcochuelos de vainilla."
+    },
+
+    {
+        nombre: "Rebozador",
+        imagen: "img/harinas y premezcla/rebozador delicel.webp",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+         descripcion: "Ideal para utilizar en preparaciones horneadas o fritas."
+    },
+
+    {
+        nombre: "Premezcla para pan integral",
+        imagen: "img/harinas y premezcla/premezcla para pan integral delicel.png",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para preparar pan integral de manera práctica."
+    },
+
+    {
+        nombre: "Premezcla para ñoquis de papa",
+        imagen: "img/harinas y premezcla/premezcla para ñoquis delicel.webp",
+        peso: "500 g",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para preparar ñoquis de papa."
+    }
+
+];
+
+
+/* =========================================================
+   ELEMENTOS DEL CARRUSEL
+========================================================= */
+
+const imagenDelicel = document.getElementById("imagenDelicel");
+const tituloDelicel = document.getElementById("tituloDelicel");
+const pesoDelicel = document.getElementById("pesoDelicel");
+const contadorDelicel = document.getElementById("contadorDelicel");
+
+const anteriorDelicel = document.getElementById("anteriorDelicel");
+const siguienteDelicel = document.getElementById("siguienteDelicel");
+const precioDelicel = document.getElementById("precioDelicel");
+const estadoDelicel = document.getElementById("estadoDelicel");
+
+
+/* Producto que estamos viendo actualmente */
+
+let indiceDelicel = 0;
+
+
+/* =========================================================
+   ACTUALIZAR PRODUCTO
+========================================================= */
+
+function actualizarDelicel() {
+
+    const producto = productosDelicel[indiceDelicel];
+
+    /* Cambiamos imagen */
+    imagenDelicel.src = producto.imagen;
+
+    /* Cambiamos texto alternativo de la imagen */
+    imagenDelicel.alt = producto.nombre + " Delicel";
+
+    /* Cambiamos nombre */
+    tituloDelicel.textContent = producto.nombre;
+
+    /* Cambiamos presentación */
+    pesoDelicel.textContent = producto.peso;
+
+    precioDelicel.textContent =
+    "$" + producto.precio.toLocaleString("es-AR");
+
+    /* Actualizamos contador: 1 / 8, 2 / 8, etc. */
+    contadorDelicel.textContent =
+        (indiceDelicel + 1) + " / " + productosDelicel.length;
+
+        /* Actualizamos el estado */
+
+if (producto.estado === "Disponible") {
+
+    estadoDelicel.textContent = "🟢 Disponible";
+    estadoDelicel.className = "estado-imagen disponible";
+
+} else {
+
+    estadoDelicel.textContent = "🔴 Agotado";
+    estadoDelicel.className = "estado-imagen agotado";
+
+}
+}
+
+
+/* =========================================================
+   FLECHA SIGUIENTE
+========================================================= */
+
+siguienteDelicel.addEventListener("click", function () {
+
+    indiceDelicel++;
+
+    /* Si llegamos al final, volvemos al primero */
+    if (indiceDelicel >= productosDelicel.length) {
+        indiceDelicel = 0;
+    }
+
+    actualizarDelicel();
+
+});
+
+
+/* =========================================================
+   FLECHA ANTERIOR
+========================================================= */
+
+anteriorDelicel.addEventListener("click", function () {
+
+    indiceDelicel--;
+
+    /* Si estamos en el primero, vamos al último */
+    if (indiceDelicel < 0) {
+        indiceDelicel = productosDelicel.length - 1;
+    }
+
+    actualizarDelicel();
+
+});
+
+
+/* =========================================================
+   MOSTRAR PRIMER PRODUCTO AL CARGAR
+========================================================= */
+
+actualizarDelicel();
+
+/* =========================================================
+   MODAL DELICEL
+========================================================= */
+
+const verInfoDelicel = document.getElementById("verInfoDelicel");
+
+const modalDelicel = document.getElementById("modalDelicel");
+const cerrarModalDelicel = document.getElementById("cerrarModalDelicel");
+
+const modalDelicelTitulo = document.getElementById("modalDelicelTitulo");
+const modalDelicelImagen = document.getElementById("modalDelicelImagen");
+const modalDelicelPeso = document.getElementById("modalDelicelPeso");
+const modalDelicelDescripcion = document.getElementById("modalDelicelDescripcion");
+const modalDelicelEstado = document.getElementById("modalDelicelEstado");
+const modalDelicelPrecio = document.getElementById("modalDelicelPrecio");
+
+
+/* =========================================================
+   ABRIR MODAL
+========================================================= */
+
+verInfoDelicel.addEventListener("click", function () {
+
+    const producto = productosDelicel[indiceDelicel];
+
+
+    /* NOMBRE */
+
+    modalDelicelTitulo.textContent = producto.nombre;
+
+
+    /* IMAGEN */
+
+    modalDelicelImagen.src = producto.imagen;
+    modalDelicelImagen.alt = producto.nombre + " Delicel";
+
+
+    /* PRESENTACIÓN */
+
+    modalDelicelPeso.textContent = producto.peso;
+
+
+    /* DESCRIPCIÓN */
+
+    modalDelicelDescripcion.textContent = producto.descripcion;
+
+
+    /* PRECIO */
+
+    modalDelicelPrecio.textContent =
+        "$" + producto.precio.toLocaleString("es-AR");
+
+
+    /* ESTADO */
+
+    if (producto.estado === "Disponible") {
+
+        modalDelicelEstado.textContent = "🟢 Disponible";
+        modalDelicelEstado.className = "estado-imagen disponible";
+
+    } else {
+
+        modalDelicelEstado.textContent = "🔴 Agotado";
+        modalDelicelEstado.className = "estado-imagen agotado";
+
+    }
+
+
+    /* MOSTRAR MODAL */
+
+    modalDelicel.style.display = "flex";
+
+});
+
+
+/* =========================================================
+   CERRAR CON LA X
+========================================================= */
+
+cerrarModalDelicel.addEventListener("click", function () {
+
+    modalDelicel.style.display = "none";
+
+});
+
+
+/* =========================================================
+   CERRAR TOCANDO FUERA DE LA CAJA
+========================================================= */
+
+modalDelicel.addEventListener("click", function (e) {
+
+    if (e.target === modalDelicel) {
+
+        modalDelicel.style.display = "none";
+
+    }
+
+});
+
+
+/* =========================================================
+   CARRUSEL GLUTAL
+========================================================= */
+
+const productosGlutal = [
+
+    {
+        nombre: "Harina de Arroz",
+        imagen: "img/harinas y premezcla/harina de arroz glutal.png",
+        peso: "1 kg",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para elaborar panificados y distintas recetas."
+    },
+
+    {
+        nombre: "Premezcla para Panificados",
+        imagen: "img/harinas y premezcla/premezcla para panificados glutal.png",
+        peso: "1 kg",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Premezcla especialmente pensada para elaborar panificados."
+    },
+
+    {
+        nombre: "Fécula de Mandioca",
+        imagen: "img/harinas y premezcla/fecula de mandioca glutal.png",
+        peso: "1 kg",
+        precio: 0,
+        estado: "Disponible",
+        descripcion: "Ideal para utilizar en la elaboración de panificados."
+    }
+
+];
+
+/* =========================================================
+   ELEMENTOS DEL CARRUSEL GLUTAL
+========================================================= */
+
+const imagenGlutal = document.getElementById("imagenGlutal");
+const tituloGlutal = document.getElementById("tituloGlutal");
+const pesoGlutal = document.getElementById("pesoGlutal");
+const contadorGlutal = document.getElementById("contadorGlutal");
+
+const precioGlutal = document.getElementById("precioGlutal");
+const estadoGlutal = document.getElementById("estadoGlutal");
+
+const anteriorGlutal = document.getElementById("anteriorGlutal");
+const siguienteGlutal = document.getElementById("siguienteGlutal");
+
+
+/* Producto que estamos viendo */
+
+let indiceGlutal = 0;
+
+/* =========================================================
+   ACTUALIZAR PRODUCTO GLUTAL
+========================================================= */
+
+function actualizarGlutal() {
+
+    const producto = productosGlutal[indiceGlutal];
+
+
+    /* IMAGEN */
+
+    imagenGlutal.src = producto.imagen;
+    imagenGlutal.alt = producto.nombre + " Glutal";
+
+
+    /* NOMBRE */
+
+    tituloGlutal.textContent = producto.nombre;
+
+
+    /* PESO */
+
+    pesoGlutal.textContent = producto.peso;
+
+
+    /* PRECIO */
+
+    precioGlutal.textContent =
+        "$" + producto.precio.toLocaleString("es-AR");
+
+
+    /* ESTADO */
+
+    if (producto.estado === "Disponible") {
+
+        estadoGlutal.textContent = "🟢 Disponible";
+        estadoGlutal.className = "estado-imagen disponible";
+
+    } else {
+
+        estadoGlutal.textContent = "🔴 Agotado";
+        estadoGlutal.className = "estado-imagen agotado";
+
+    }
+
+
+    /* CONTADOR */
+
+    contadorGlutal.textContent =
+        (indiceGlutal + 1) + " / " + productosGlutal.length;
+
+}
+
+
+/* =========================================================
+   FLECHA SIGUIENTE GLUTAL
+========================================================= */
+
+siguienteGlutal.addEventListener("click", function () {
+
+    indiceGlutal++;
+
+    /* Si llegamos al último, volvemos al primero */
+
+    if (indiceGlutal >= productosGlutal.length) {
+        indiceGlutal = 0;
+    }
+
+    actualizarGlutal();
+
+});
+
+
+/* =========================================================
+   FLECHA ANTERIOR GLUTAL
+========================================================= */
+
+anteriorGlutal.addEventListener("click", function () {
+
+    indiceGlutal--;
+
+    /* Si retrocedemos desde el primero, vamos al último */
+
+    if (indiceGlutal < 0) {
+        indiceGlutal = productosGlutal.length - 1;
+    }
+
+    actualizarGlutal();
+
+});
+
+
+/* Mostrar el primer producto */
+
+actualizarGlutal();
+
+
+/* =========================================================
+   MODAL GLUTAL
+========================================================= */
+
+const verInfoGlutal = document.getElementById("verInfoGlutal");
+
+const modalGlutal = document.getElementById("modalGlutal");
+const cerrarModalGlutal = document.getElementById("cerrarModalGlutal");
+
+const modalGlutalTitulo = document.getElementById("modalGlutalTitulo");
+const modalGlutalImagen = document.getElementById("modalGlutalImagen");
+const modalGlutalPeso = document.getElementById("modalGlutalPeso");
+const modalGlutalDescripcion = document.getElementById("modalGlutalDescripcion");
+const modalGlutalEstado = document.getElementById("modalGlutalEstado");
+const modalGlutalPrecio = document.getElementById("modalGlutalPrecio");
+
+
+/* =========================================================
+   ABRIR MODAL GLUTAL
+========================================================= */
+
+verInfoGlutal.addEventListener("click", function () {
+
+    const producto = productosGlutal[indiceGlutal];
+
+
+    /* NOMBRE */
+
+    modalGlutalTitulo.textContent = producto.nombre;
+
+
+    /* IMAGEN */
+
+    modalGlutalImagen.src = producto.imagen;
+    modalGlutalImagen.alt = producto.nombre + " Glutal";
+
+
+    /* PESO */
+
+    modalGlutalPeso.textContent = producto.peso;
+
+
+    /* DESCRIPCIÓN */
+
+    modalGlutalDescripcion.textContent = producto.descripcion;
+
+
+    /* PRECIO */
+
+    modalGlutalPrecio.textContent =
+        "$" + producto.precio.toLocaleString("es-AR");
+
+
+    /* ESTADO */
+
+    if (producto.estado === "Disponible") {
+
+        modalGlutalEstado.textContent = "🟢 Disponible";
+        modalGlutalEstado.className = "estado-imagen disponible";
+
+    } else {
+
+        modalGlutalEstado.textContent = "🔴 Agotado";
+        modalGlutalEstado.className = "estado-imagen agotado";
+
+    }
+
+
+    /* MOSTRAR MODAL */
+
+    modalGlutal.style.display = "flex";
+
+});
+
+
+/* =========================================================
+   CERRAR MODAL CON LA X
+========================================================= */
+
+cerrarModalGlutal.addEventListener("click", function () {
+
+    modalGlutal.style.display = "none";
+
+});
+
+
+/* =========================================================
+   CERRAR TOCANDO FUERA
+========================================================= */
+
+modalGlutal.addEventListener("click", function (e) {
+
+    if (e.target === modalGlutal) {
+
+        modalGlutal.style.display = "none";
+
+    }
+
 });
 
 /* =========================================================

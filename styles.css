@@ -15,237 +15,591 @@ body {
 
 
 /* ==========================================
-   ENCABEZADO (HEADER)
+            HEADER / NAVEGACIÓN PRO
 ========================================== */
-header {
-    background: rgba(76, 175, 80, 0.85);
-    color: white;
-    font-family: garamond, serif;
-    font-weight: 100;
-    padding: 10px 20px;
 
+header {
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
 
-    backdrop-filter: blur(2px);
+    width: 100%;
+
+    padding: 16px 7% 14px;
+
+    background: rgba(20, 48, 27, 0.78);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
 
     z-index: 1000;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-header h1 {
 
-    text-align: center;
+/* ==========================================
+              NOMBRE / "LOGO"
+========================================== */
+
+header h1 {
+    position: relative;
 
     width: fit-content;
 
     margin: 0 auto;
+    padding: 0;
 
-    padding: 8px 25px;
+    overflow: visible;
 
-    border-radius: 50px;
+    background: none;
+    border: none;
+    border-radius: 0;
 
-    background: rgba(255,255,255,0.15);
+    box-shadow: none;
+    backdrop-filter: none;
 
-    backdrop-filter: blur(10px);
+    color: #ffffff;
 
-    border: 1px solid rgba(255,255,255,0.2);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.75rem;
+    font-weight: 500;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    letter-spacing: 0.3px;
 
-    position: relative;      /* Necesario para el brillo */
-    overflow: hidden;        /* Oculta el brillo cuando entra y sale */
-}
-
-/* ================= BRILLO DEL LOGO ================= */
-
-header h1::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:40%;
-
-    height:100%;
-
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(200,255,200,.65),
-        transparent
-    );
-
-    transform:skewX(-25deg);
-
-    animation: brilloSuave 5s linear infinite;
-
-}
-
-/* ================= ANIMACIÓN DEL BRILLO ================= */
-
-@keyframes brilloSuave{
-
-    0%{
-
-        left:-120%;
-
-    }
-
-    100%{
-
-        left:140%;
-
-    }
-
+    text-align: center;
 }
 
 
+/* Quitamos el brillo viejo */
 
+header h1::before {
+    display: none;
+}
+
+
+/* ==========================================
+                 NAVEGACIÓN
+========================================== */
 
 nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+
+    gap: 38px;
+
+    margin-top: 12px;
 
     list-style: none;
-
-    margin-top: 15px;
 }
+
 
 nav li {
-    margin: 0 15px;
+    margin: 0;
 }
+
 
 nav a {
-    color: rgb(196, 222, 198);
-    text-decoration: none;
-    font-weight: bold;
     position: relative;
-    padding: 5px;
+
+    display: inline-block;
+
+    padding: 5px 2px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
 }
 
-nav a::after{
+
+/* LÍNEA DEBAJO DEL ENLACE */
+
+nav a::after {
     content: "";
 
     position: absolute;
 
-    left: 0;
-    bottom: -5px;
+    left: 50%;
+    bottom: -4px;
 
-    width: 0%;
-    height: 3px;
+    width: 0;
+    height: 2px;
 
-    background: white;
+    background: #cde8b7;
 
-    transition: 0.4s;
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
 }
 
-nav a:hover::after{
+
+/* HOVER */
+
+nav a:hover {
+    color: #ffffff;
+}
+
+
+nav a:hover::after {
     width: 100%;
 }
 
 /* ==========================================
-   SECCIÓN INICIO
+            SECCIÓN INICIO / HERO
 ========================================== */
 
 .inicio {
     position: relative;
 
     min-height: 100vh;
-
-    padding: 120px 20px 60px;
+    padding: 150px 7% 80px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
 
-    text-align: center;
-
-    background-image: url("fondo-celular.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    color: white;
-
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18, 45, 25, 0.94) 0%,
+            rgba(31, 69, 38, 0.82) 42%,
+            rgba(25, 58, 31, 0.40) 72%,
+            rgba(18, 45, 25, 0.25) 100%
+        ),
+        url("fondo-celular.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
 }
 
-.inicio::before{
+
+/* ==========================================
+      CONTENIDO PRINCIPAL DEL HERO
+========================================== */
+
+.inicio-contenido {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    max-width: 720px;
+
+    /* Quitamos la caja transparente vieja */
+    background: none;
+    backdrop-filter: none;
+
+    padding: 0;
+
+    text-align: left;
+}
+
+
+/* ==========================================
+          ETIQUETA SUPERIOR
+========================================== */
+
+.inicio-etiqueta {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 22px;
+    padding: 9px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(8px);
+
+    color: #e8f4e7;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+              TÍTULO PRINCIPAL
+========================================== */
+
+.inicio h2 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 0 0 22px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    font-weight: 500;
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+/* PARTE DESTACADA DEL TÍTULO */
+
+.inicio h2 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #cde8b7;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+                DESCRIPCIÓN
+========================================== */
+
+.inicio-descripcion {
+    position: relative;
+    z-index: 2;
+
+    max-width: 580px;
+
+    margin: 0 0 32px;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    font-size: 1.08rem;
+    line-height: 1.75;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==========================================
+                  BOTONES
+========================================== */
+
+.inicio-botones {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 42px;
+}
+
+
+.btn {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* BOTÓN VER PRODUCTOS */
+
+.btn-productos {
+    background: #e8f3d8;
+    color: #31553a;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.btn-productos span {
+    font-size: 1.15rem;
+
+    transition: transform 0.3s ease;
+}
+
+
+.btn-productos:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+
+.btn-productos:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+              DESTACADOS INFERIORES
+========================================== */
+
+.inicio-destacados {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    max-width: 650px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.inicio-destacado {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.inicio-destacado > span {
+    font-size: 1.1rem;
+}
+
+
+.inicio-destacado p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    text-shadow: none;
+}
+
+
+.inicio-separador {
+    width: 1px;
+    height: 30px;
+
+    background: rgba(255, 255, 255, 0.20);
+}
+
+
+/* ==========================================
+           DECORACIONES DEL FONDO
+========================================== */
+
+.inicio-decoracion {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(5px);
+
+    z-index: 1;
+}
+
+
+.inicio-decoracion-1 {
+    width: 420px;
+    height: 420px;
+
+    top: -170px;
+    right: -120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(169, 211, 139, 0.18),
+            transparent 68%
+        );
+}
+
+
+.inicio-decoracion-2 {
+    width: 350px;
+    height: 350px;
+
+    left: -170px;
+    bottom: -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(213, 235, 185, 0.12),
+            transparent 70%
+        );
+}
+
+
+/* ==========================================
+             INDICADOR INFERIOR
+========================================== */
+
+.inicio-scroll {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+.inicio-scroll-linea {
+    position: relative;
+
+    width: 1px;
+    height: 28px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+.inicio-scroll-linea::after {
     content: "";
 
     position: absolute;
 
-    top: 0;
+    top: -100%;
     left: 0;
 
     width: 100%;
     height: 100%;
 
-    background: rgba(0,0,0,0.4);
+    background: #ffffff;
+
+    animation: moverLineaInicio 2s ease-in-out infinite;
 }
 
+
+@keyframes moverLineaInicio {
+
+    0% {
+        top: -100%;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+
+}
+
+
+/* ==========================================
+          ENTRADA SUAVE DEL CONTENIDO
+========================================== */
+
+.inicio-etiqueta,
 .inicio h2,
-.inicio p{
-    position: relative;
-    z-index: 2;
+.inicio-descripcion,
+.inicio-botones,
+.inicio-destacados {
+    opacity: 0;
+
+    animation: aparecerInicio 0.8s ease forwards;
+}
+
+
+.inicio-etiqueta {
+    animation-delay: 0.10s;
 }
 
 .inicio h2 {
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-size: 3rem;
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    animation-delay: 0.20s;
 }
 
-.inicio p {
-    font-size: 1.1rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    margin-bottom: 30px;
-    line-height: 1.5;
+.inicio-descripcion {
+    animation-delay: 0.30s;
 }
 
-.inicio-contenido{
-    position: relative;
-    z-index: 2;
-
-    background: rgba(158, 182, 153, 0.2);
-
-    padding: 40px;
-
-    border-radius: 25px;
-
-    max-width: 900px;
-
-    backdrop-filter: blur(2px);
+.inicio-botones {
+    animation-delay: 0.40s;
 }
-    
 
-/*BOTON VER PRODUCTOS*/
-.btn {
-    
-    background-color: #4caf50;
-    position: relative;
-    z-index: 2;
-    color: white;
+.inicio-destacados {
+    animation-delay: 0.50s;
+}
 
-    text-decoration: none;
 
-    padding: 15px 35px;
+@keyframes aparecerInicio {
 
-    border-radius: 50px;
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-    margin-top: 20px;
-    display: inline-block;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-    animation: flotar 2.5s ease-in-out infinite;
 }
 
 
@@ -253,154 +607,1008 @@ html {
     scroll-behavior: smooth;
 }
 
+
+/* ==========================================
+          FRANJA ANIMADA DEL INICIO
+========================================== */
+
+.franja-inicio {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 11px 0;
+
+    background: rgba(232, 243, 216, 0.96);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    z-index: 4;
+}
+
+
+.franja-inicio-contenido {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    white-space: nowrap;
+
+    animation: moverFranjaInicio 25s linear infinite;
+}
+
+
+.franja-inicio-contenido span {
+    margin: 0 20px;
+
+    color: #31553a;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+.franja-inicio-contenido .franja-punto {
+    margin: 0 3px;
+
+    color: #729668;
+
+    font-size: 0.65rem;
+}
+
+
+/* MOVIMIENTO CONTINUO */
+
+@keyframes moverFranjaInicio {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
 /* ==========================================
    SECCIÓN PRODUCTOS (CATEGORÍAS)
 ========================================== */
 
 #productos {
-    min-height: 100vh;
-    padding: 120px 20px;
-    background: #f5f5f5;
     display: none;
+
+    min-height: 100vh;
+
+    padding: 155px 7% 90px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(183, 214, 165, 0.20),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #f8faf4 0%,
+            #ffffff 100%
+        );
+
+    color: #263b2a;
 }
 
-#productos h2 {
-    text-align:center;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    font-family: 'Times New Roman', Times, serif;
-}
 
-/* CONTENIDO DE LA SECCIÓN PRODUCTOS */
-.contenedor-categorias {
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-evenly;
-    gap: 25px;
-    
-    
-}
+/* ==================================================
+             ENCABEZADO DEL CATÁLOGO
+================================================== */
 
-.tarjeta {
+.encabezado-catalogo {
+    max-width: 760px;
 
-    width: 250px;
-    height: 180px;
-    flex-direction:column;
+    margin: 0 auto 55px;
+
     text-align: center;
+}
 
-    background: white;
+
+/* ETIQUETA PEQUEÑA */
+
+.catalogo-etiqueta {
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    background: #eaf3e2;
+
+    color: #527258;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
 
 
-    border-radius: 15px;
+/* TÍTULO */
 
-    display:flex;
+.encabezado-catalogo h2 {
+    margin: 0;
+
+    color: #294c31;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2.5rem, 5vw, 4.3rem);
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+
+.encabezado-catalogo h2 span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #70936a;
+
+    font-style: italic;
+}
+
+
+/* TEXTO */
+
+.encabezado-catalogo > p {
+    max-width: 590px;
+
+    margin: 20px auto 0;
+
+    color: #6c796d;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+            DATOS DEBAJO DEL TÍTULO
+================================================== */
+
+.catalogo-datos {
+    display: flex;
     justify-content: center;
     align-items: center;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    gap: 25px;
 
-    transition: all 0.4s ease;
-
-    opacity: 0;
-
-    transform: scale(0.95);
-
-    animation: aparecer 0.8s forwards;
-    
+    margin-top: 30px;
 }
 
-.tarjeta h3{
-    font-size: 2rem;
-    margin-bottom: 10px;
+
+.catalogo-datos > div:not(.catalogo-linea) {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
 }
 
-.tarjeta h4{
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+
+.catalogo-datos strong {
+    color: #3d6745;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.25rem;
+}
+
+
+.catalogo-datos span {
+    color: #778279;
+
+    font-size: 0.75rem;
     font-weight: 600;
-    color:#333;
 }
 
-@keyframes aparecer{
 
-    from{
+.catalogo-linea {
+    width: 1px;
+    height: 32px;
+
+    background: #d7e1d2;
+}
+
+
+/* CONTENIDO DE LA SECCIÓN PRODUCTOS */
+.contenedor-categorias {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.tarjeta {
+    position: relative;
+
+    min-height: 155px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 65px 25px 25px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid #e3eadf;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(43, 74, 49, 0.06);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* PEQUEÑO BRILLO DECORATIVO */
+
+.tarjeta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    right: -75px;
+    bottom: -85px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(158, 196, 139, 0.20),
+            transparent 68%
+        );
+
+    transition: transform 0.4s ease;
+}
+
+
+/* HOVER */
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+
+    border-color: #cadcc3;
+
+    box-shadow:
+        0 16px 38px rgba(43, 74, 49, 0.12);
+}
+
+
+.tarjeta:hover::before {
+    transform: scale(1.4);
+}
+
+/* ==================================================
+                  ÍCONO
+================================================== */
+
+.categoria-icono {
+    flex-shrink: 0;
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef5e9,
+            #f8faf4
+        );
+
+    border: 1px solid #e0eadb;
+
+    font-size: 1.85rem;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==================================================
+              TEXTO DE LA CATEGORÍA
+================================================== */
+
+.categoria-texto {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+}
+
+
+.categoria-numero {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #9aaf96;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.categoria-texto h3 {
+    margin: 0 0 7px;
+
+    color: #31553a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+.categoria-texto p {
+    max-width: 350px;
+
+    margin: 0;
+
+    color: #7a847b;
+
+    font-size: 0.83rem;
+    line-height: 1.45;
+}
+
+
+/* ==================================================
+                FLECHA DE LA TARJETA
+================================================== */
+
+.categoria-flecha {
+    position: absolute;
+
+    top: 50%;
+    right: 24px;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eff5eb;
+
+    color: #557b5d;
+
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.tarjeta:hover .categoria-flecha {
+    transform:
+        translateY(-50%)
+        translateX(4px);
+
+    background: #527b59;
+
+    color: #ffffff;
+}
+
+
+/* ==================================================
+           APARICIÓN DE LAS TARJETAS
+================================================== */
+
+.tarjeta {
+    animation: aparecerCategoria 0.55s ease both;
+}
+
+
+.tarjeta:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.tarjeta:nth-child(3) {
+    animation-delay: 0.10s;
+}
+
+.tarjeta:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.tarjeta:nth-child(5) {
+    animation-delay: 0.20s;
+}
+
+.tarjeta:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.tarjeta:nth-child(7) {
+    animation-delay: 0.30s;
+}
+
+.tarjeta:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.tarjeta:nth-child(9) {
+    animation-delay: 0.40s;
+}
+
+.tarjeta:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+
+@keyframes aparecerCategoria {
+
+    from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(15px);
     }
 
-    to{
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 
 }
 
-@keyframes flotar{
 
-        0%{
-        transform: translateY(0);
-    }
 
-    25%{
-        transform: translateY(-4px);
-    }
 
-    50%{
-        transform: translateY(-8px);
-    }
-
-    75%{
-        transform: translateY(-4px);
-    }
-
-    100%{
-        transform: translateY(0);
-    }
-
-}
-
-.tarjeta:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
 
 /* ==========================================
    SECCIÓN NOSOTROS
 ========================================== */
 
 #nosotros {
+    display: none;
+
+    position: relative;
+
     min-height: 100vh;
-    padding: 120px 20px;
-    background: #ffffff;
+
+    padding: 145px 7% 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(178, 207, 164, 0.20),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 75%,
+            rgba(215, 229, 204, 0.25),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #f8faf4 0%,
+            #ffffff 58%,
+            #f7f9f3 100%
+        );
+
+    color: #263b2a;
+}
+
+
+/* CONTENEDOR GENERAL */
+
+.nosotros-contenedor {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+/* ==================================================
+                    ENCABEZADO
+================================================== */
+
+.nosotros-encabezado {
+    max-width: 760px;
+
+    margin: 0 auto 65px;
+
     text-align: center;
 }
 
-#nosotros h2 {
-    font-size: 3rem;
-    font-family: 'Times New Roman', Times, serif;
-    
-    color: #4caf50;
-    margin-bottom: 35px;
+
+.nosotros-etiqueta {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    padding: 7px 13px;
+
+    background: #edf4e9;
+    border: 1px solid #dce8d7;
+    border-radius: 50px;
+
+    color: #55745b;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
 
-/*CONTENIDO DE LA SECCIÓN NOSOTROS*/
 
-.nosotros-contenido {
-    max-width: 900px;
+.nosotros-encabezado h2 {
+    margin: 0;
+
+    color: #294b31;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 500;
+
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+
+.nosotros-encabezado h2 span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #668368;
+    font-style: italic;
+}
+
+
+.nosotros-encabezado > p {
+    max-width: 610px;
+
+    margin: 22px auto 0;
+
+    color: #6b766d;
+
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+                CONTENIDO PRINCIPAL
+================================================== */
+
+.nosotros-principal {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 75px;
+
+    align-items: center;
+}
+
+
+/* ==================================================
+                  PARTE VISUAL
+================================================== */
+
+.nosotros-visual {
+    position: relative;
+
+    max-width: 480px;
+
     margin: 0 auto;
-    background: rgba(76, 175, 80, 0.1);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.nosotros-contenido p {
-    font-size: 1.2rem;
+
+.nosotros-imagen {
+    position: relative;
+
+    width: 100%;
+    min-height: 520px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e9de;
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 55px rgba(43, 74, 49, 0.11);
+
+    transform: rotate(-1.5deg);
+}
+
+
+/* POR AHORA USAMOS ESTE FONDO
+   HASTA COLOCAR UNA FOTO REAL */
+
+.nosotros-imagen-placeholder {
+    width: 100%;
+    height: 496px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, 0.28),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #b7cda9,
+            #759276
+        );
+
+    border-radius: 22px;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+.nosotros-imagen-placeholder > span {
+    margin-bottom: 18px;
+
+    font-size: 3rem;
+}
+
+
+.nosotros-imagen-placeholder > p {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+
+.nosotros-imagen-placeholder strong {
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+/* SELLO SUPERPUESTO */
+
+.nosotros-sello {
+    position: absolute;
+
+    right: -35px;
+    bottom: 45px;
+
+    width: 185px;
+
+    padding: 17px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #dfe8db;
+    border-radius: 17px;
+
+    box-shadow:
+        0 13px 32px rgba(43, 74, 49, 0.14);
+
+    transform: rotate(2deg);
+}
+
+
+.nosotros-sello > span {
+    font-size: 1.35rem;
+}
+
+
+.nosotros-sello p {
+    margin: 0;
+
+    color: #69746b;
+
+    font-size: 0.73rem;
+    line-height: 1.4;
+}
+
+
+.nosotros-sello strong {
+    color: #365c3e;
+
+    font-size: 0.78rem;
+}
+
+
+/* ==================================================
+                    TEXTO
+================================================== */
+
+.nosotros-texto {
+    max-width: 590px;
+}
+
+
+.nosotros-mini-titulo {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #7d9a7d;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.nosotros-texto > h3 {
+    max-width: 520px;
+
+    margin: 0 0 23px;
+
+    color: #31553a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(1.8rem, 3vw, 2.55rem);
+    font-weight: 500;
+
+    line-height: 1.18;
+}
+
+
+.nosotros-texto > p {
+    margin: 0 0 17px;
+
+    color: #69736b;
+
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+
+.nosotros-texto > p strong {
+    color: #42694a;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+                     VALORES
+================================================== */
+
+.nosotros-valores {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.nosotros-valor {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid #e2e9de;
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.nosotros-valor:hover {
+    transform: translateY(-3px);
+
+    border-color: #cdddc8;
+
+    box-shadow:
+        0 9px 22px rgba(43, 74, 49, 0.07);
+}
+
+
+.nosotros-valor > span {
+    flex-shrink: 0;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edf4e9;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+}
+
+
+.nosotros-valor h4 {
+    margin: 1px 0 5px;
+
+    color: #3e6446;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+
+.nosotros-valor p {
+    margin: 0;
+
+    color: #7a837c;
+
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+                    FRASE FINAL
+================================================== */
+
+.nosotros-frase {
+    max-width: 760px;
+
+    margin: 85px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 25px 35px;
+
+    border-top: 1px solid #dfe7dc;
+    border-bottom: 1px solid #dfe7dc;
+
+    text-align: center;
+}
+
+
+.nosotros-frase span {
+    color: #a4b89e;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+
+.nosotros-frase p {
+    margin: 0;
+
+    color: #55705b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.08rem;
+    font-style: italic;
+
     line-height: 1.6;
-    color: #584f4f;
-    margin-bottom: 20px;
-
 }
+
+
+/* ==================================================
+              DECORACIONES DE FONDO
+================================================== */
+
+.nosotros-decoracion {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.nosotros-decoracion-1 {
+    top: 190px;
+    left: -90px;
+
+    width: 220px;
+    height: 220px;
+
+    border: 1px solid rgba(112, 145, 109, 0.12);
+}
+
+
+.nosotros-decoracion-2 {
+    right: -100px;
+    bottom: 120px;
+
+    width: 290px;
+    height: 290px;
+
+    border: 1px solid rgba(112, 145, 109, 0.10);
+}
+
 
 #nosotros,
 #contacto,
@@ -413,393 +1621,846 @@ html {
 ========================================== */
 
 #contacto {
+    display: none;
+
+    position: relative;
+
     min-height: 100vh;
-    padding: 140px 20px;
-    display:none;
-    background: #f5f5f5;
+
+    padding: 145px 7% 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(178, 207, 164, 0.18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 5% 82%,
+            rgba(215, 229, 204, 0.24),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #f8faf4 0%,
+            #ffffff 58%,
+            #f7f9f3 100%
+        );
+
+    color: #263b2a;
 }
 
-.contacto-contenido {
-    max-width: 1100px;
-    margin: auto;
+
+/* CONTENEDOR */
+
+.contacto-contenedor {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+                    ENCABEZADO
+================================================== */
+
+.contacto-encabezado {
+    max-width: 760px;
+
+    margin: 0 auto 65px;
+
     text-align: center;
 }
 
-.contacto-contenido h2 {
-    color: #4caf50;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', Times, serif;
+
+.contacto-etiqueta {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    padding: 7px 13px;
+
+    background: #edf4e9;
+    border: 1px solid #dce8d7;
+    border-radius: 50px;
+
+    color: #55745b;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
 
-.contacto-contenido > p{
-    font-size: 1.2rem;
-    margin-bottom: 50px;
-    color: #555;
+
+.contacto-encabezado h2 {
+    margin: 0;
+
+    color: #294b31;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 500;
+
+    line-height: 1.08;
+    letter-spacing: -1.5px;
 }
 
-.info-contacto{
+
+.contacto-encabezado h2 span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #668368;
+
+    font-style: italic;
+}
+
+
+.contacto-encabezado > p {
+    max-width: 610px;
+
+    margin: 22px auto 0;
+
+    color: #6b766d;
+
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+                CONTENIDO PRINCIPAL
+================================================== */
+
+.contacto-principal {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    gap: 65px;
+
+    align-items: start;
+}
+
+
+/* ==================================================
+                  INFORMACIÓN
+================================================== */
+
+.contacto-informacion {
+    width: 100%;
+}
+
+
+.contacto-mini-titulo {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #7d9a7d;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.contacto-informacion > h3 {
+    max-width: 500px;
+
+    margin: 0 0 15px;
+
+    color: #31553a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(1.8rem, 3vw, 2.45rem);
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+.contacto-intro {
+    margin: 0 0 30px;
+
+    color: #707a72;
+
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+               OPCIONES DE CONTACTO
+================================================== */
+
+.contacto-opcion {
+    width: 100%;
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
+    align-items: center;
 
-.contacto-card{
-    width: 280px;
-    display: inline-block;
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
+    gap: 15px;
 
-    transition: 0.3s;
-    box-shadow: inset 0 0 4px 1px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    padding: 16px;
 
+    background: rgba(255, 255, 255, 0.88);
 
-}
-
-.contacto-card p{
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.contacto-card:hover{
-    transform: translateY(-8px);
-}
-
-.contacto-card h3{
-    color: #4caf50;
-
-    margin-bottom: 15px;
-}
-
-.whatsapp{
-    text-decoration: none;
+    border: 1px solid #e1e9de;
+    border-radius: 17px;
 
     color: inherit;
+    text-decoration: none;
 
-    cursor: pointer;
+    box-shadow:
+        0 7px 24px rgba(43, 74, 49, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.whatsapp:hover{
-    transform: translateY(-10px) scale(1.03);
 
-    box-shadow: 0 15px 35px rgba(37,211,102,0.3);
+a.contacto-opcion:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbdcc6;
+
+    box-shadow:
+        0 13px 30px rgba(43, 74, 49, 0.09);
 }
 
-.btn-whatsapp{
-    display: inline-block;
 
-    margin-top: 15px;
+.contacto-icono {
+    flex-shrink: 0;
 
-    background: #25D366;
+    width: 46px;
+    height: 46px;
 
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    padding: 10px 20px;
+    background: #edf4e9;
+
+    border-radius: 13px;
+
+    font-size: 1.2rem;
+}
+
+
+.contacto-opcion-texto {
+    flex: 1;
+}
+
+
+.contacto-opcion-texto > span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #8a9b8a;
+
+    font-size: 0.61rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.contacto-opcion-texto h4 {
+    margin: 0 0 4px;
+
+    color: #3d6245;
+
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+
+.contacto-opcion-texto p {
+    margin: 0;
+
+    color: #78817a;
+
+    font-size: 0.73rem;
+    line-height: 1.5;
+}
+
+
+.contacto-flecha {
+    flex-shrink: 0;
+
+    color: #789078;
+
+    font-size: 1.15rem;
+
+    transition: transform 0.3s ease;
+}
+
+
+a.contacto-opcion:hover .contacto-flecha {
+    transform: translateX(4px);
+}
+
+
+/* WHATSAPP CON UN DETALLE VERDE */
+
+.contacto-whatsapp {
+    border-color: #d6e5d1;
+}
+
+
+/* ==================================================
+                    HORARIOS
+================================================== */
+
+.contacto-horarios {
+    margin-top: 22px;
+    padding: 20px;
+
+    background: #31553a;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 15px 35px rgba(43, 74, 49, 0.14);
+}
+
+
+.contacto-horarios-titulo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.13);
+}
+
+
+.contacto-horarios-titulo > span {
+    font-size: 1.25rem;
+}
+
+
+.contacto-horarios-titulo small {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #b9cab7;
+
+    font-size: 0.59rem;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.contacto-horarios-titulo h4 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 0.9rem;
+}
+
+
+.contacto-horario {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 11px 0;
+
+    color: #dce7d9;
+
+    font-size: 0.75rem;
+}
+
+
+.contacto-horario > span {
+    font-weight: 700;
+}
+
+
+.contacto-horario > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    text-align: right;
+}
+
+
+.contacto-horario strong {
+    color: #ffffff;
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+                       MAPA
+================================================== */
+
+.contacto-mapa-contenedor {
+    position: relative;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8dd;
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 55px rgba(43, 74, 49, 0.10);
+}
+
+
+.contacto-mapa {
+    width: 100%;
+    height: 520px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+
+.contacto-mapa iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+
+.contacto-mapa-etiqueta {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 30px;
+    left: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 15px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #e2e8df;
+    border-radius: 13px;
+
+    box-shadow:
+        0 8px 25px rgba(43, 74, 49, 0.12);
+}
+
+
+.contacto-mapa-etiqueta > span {
+    font-size: 1.1rem;
+}
+
+
+.contacto-mapa-etiqueta small {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #8a988a;
+
+    font-size: 0.55rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.contacto-mapa-etiqueta strong {
+    display: block;
+
+    color: #3b6043;
+
+    font-size: 0.78rem;
+}
+
+
+.contacto-mapa-pie {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 16px 10px 6px;
+}
+
+
+.contacto-mapa-pie > span {
+    font-size: 1rem;
+}
+
+
+.contacto-mapa-pie p {
+    margin: 0;
+
+    color: #727d74;
+
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+                  DECORACIONES
+================================================== */
+
+.contacto-decoracion {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.contacto-decoracion-1 {
+    top: 180px;
+    right: -90px;
+
+    width: 230px;
+    height: 230px;
+
+    border:
+        1px solid rgba(112, 145, 109, 0.11);
+}
+
+
+.contacto-decoracion-2 {
+    left: -110px;
+    bottom: 100px;
+
+    width: 300px;
+    height: 300px;
+
+    border:
+        1px solid rgba(112, 145, 109, 0.09);
+}
+
+
+
+
+
+
+/* ==================================================
+        PANTALLAS INTERNAS DE CATEGORÍAS
+================================================== */
+
+#productos-categoria,
+#hierbas-categoria,
+#frutsecos-categoria,
+#harinas-categoria,
+#cereales-categoria,
+#semillas-categoria,
+#aceites-categoria,
+#legumbres-categoria,
+#despensa-categoria,
+#congelados-categoria {
+
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 155px 7% 90px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(183, 214, 165, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #f8faf4 0%,
+            #ffffff 55%
+        );
+
+    color: #263b2a;
+}
+
+.titulo-categoria {
+    position: relative;
+
+    margin: 0 auto 42px;
+
+    color: #294c31;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+
+    text-align: center;
+    text-transform: none;
+
+    text-shadow: none;
+}
+
+/* ==================================================
+         SUBTÍTULO - FRUTAS DESECADAS
+================================================== */
+
+.titulo-categoria-desecada {
+    position: relative;
+
+    width: 100%;
+
+    margin: 65px auto 28px;
+    padding-bottom: 20px;
+
+    clear: both;
+    display: block;
+
+    color: #31553a;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 3vw, 2.15rem);
+    font-weight: 500;
+
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+
+    text-align: center;
+    text-transform: none;
+
+    text-shadow: none;
+}
+
+
+.titulo-categoria::before {
+    content: "🌿 NUESTRO CATÁLOGO";
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 13px;
+
+    padding: 7px 14px;
+
+    background: #eaf3e2;
+
+    color: #527258;
 
     border-radius: 50px;
 
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 0.67rem;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
 }
 
-.mapa{
-    margin-top: 50px;
+.titulo-categoria-desecada::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 2px;
+
+    margin: 14px auto 0;
+
+    background: #a8bea1;
+
+    border-radius: 20px;
+}
+
+
+.titulo-categoria::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 2px;
+
+    margin: 17px auto 0;
+
+    background: #9db995;
+
+    border-radius: 20px;
+}
+
+
+
+
+
+/* ==================================================
+                BOTÓN VOLVER
+================================================== */
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 32px;
+
+    padding: 10px 17px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #527258;
+
+    border: 1px solid #dce7d7;
+    border-radius: 50px;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 18px rgba(43, 74, 49, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn-volver:hover {
+    transform: translateX(-4px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 22px rgba(43, 74, 49, 0.10);
+}
+
+/* ==================================================
+                GRILLA DE PRODUCTOS
+================================================== */
+
+.grilla-productos {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: start;
+
+    filter: none;
+}
+
+/* ==================================================
+                 TARJETA DE PRODUCTO
+================================================== */
+
+.producto-card {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
 
     display: flex;
-    justify-content: center;
-}
-
-.mapa iframe {
-    border-radius: 20px;
-}
-
-.contacto-card p{
-    line-height: 1.8;
-    color: #555;
-}
-
-.contacto-card strong{
-    color: #4caf50;
-}
-
-/* ==========================================
-   EFECTO MÁQUINA DE ESCRIBIR
-========================================== */
-
-.maquina{
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: 'Courier New', Courier, monospace;
-    justify-content: center;
-
-    border-right: 3px solid #4caf50;
-
-    width: 0;
-
-    animation:
-        escribir 4s steps(90, end) forwards,
-        cursor 0.8s infinite;
-}
-
-@keyframes escribir{
-
-    from{
-        width: 0;
-    }
-
-    to{
-        width: 100%;
-    }
-
-}
-
-@keyframes cursor{
-
-    50%{
-        border-color: transparent;
-    }
-
-}
-
-/* ==========================================
-   CATEGORÍAS DE PRODUCTOS
-   (SUPLEMENTOS - HIERBAS - FRUTOS SECOS)
-========================================== */
-
-#productos-categoria{
-
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-#hierbas-categoria{
-
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-#frutsecos-categoria{
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-#harinas-categoria{
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-#cereales-categoria{
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-#semillas-categoria{
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-#congelados-categoria{
-    display: none;
-
-    min-height: 100vh;
-
-    padding: 120px 20px;
-
-    background: white;
-
-    padding-top: 185px;
-}
-
-.titulo-categoria{
-
-    text-align: center;
-
-    margin-bottom: 40px;
-
-    color: #2e7d32;
-    text-transform: uppercase;
-
-    letter-spacing: 3px;
-
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
-}
-
-.titulo-categoria-desecada{
-    
-    text-align: center;
-
-    margin-top: 40px;
-    clear: both;
-    display:block;
-
-    margin-bottom: 20px;
-
-    color: #2e7d32;
-    text-transform: uppercase;
-
-    letter-spacing: 3px;
-
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
-}
-
-.titulo-categoria-desecada::after{
-
-    content: "";
-
-    display: block;
-
-    width: 120px;
-
-    height: 4px;
-
-    background: #4caf50;
-
-    margin: 15px auto;
-
-    border-radius: 20px;
-}
-
-
-.titulo-categoria::after{
-
-    content: "";
-
-    display: block;
-
-    width: 120px;
-
-    height: 4px;
-
-    background: #4caf50;
-
-    margin: 15px auto;
-
-    border-radius: 20px;
-}
-
-
-    
-/*ES LO QUE APRETAMOS PARA ABRIR LAS CATEGORIAS*/
-.ver-categoria{
-
-    margin-top: 10px;
-
-    color: #4caf50;
-
-    font-size: 0.9rem;
-
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-volver{
-
-    background: #4caf50;
-
-    color: white;
-
-    border: none;
-
-    padding: 12px 20px;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    margin-bottom: 30px;
-
-    transition: 0.3s;
-}
-
-.btn-volver:hover{
-
-    background: #3d9140;
-
-    transform: translateX(-5px);
-}
-
-/* ==========================================
-   TARJETAS DE PRODUCTOS
-========================================== */
-
-.grilla-productos{
-    display:flex;
-    justify-content: center;
-    flex-wrap:wrap;
-    justify-content: center;
-    gap:25px;
-    align-items: flex-start;
-    filter: drop-shadow(0px 2px 4px rgb(97, 233, 142));
-    
-}
-
-.producto-card{
-    width: 300px;
-    background: white;
-    border: 1px solid #e5e5e5;
-    display:flex;
     flex-direction: column;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
-    align-items: center;
-    position: relative;
-    
+    align-items: stretch;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e3eadf;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 28px rgba(43, 74, 49, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
-.producto-card.abierta .contenido-producto{
-    max-height: 900px;
-    opacity: 1;
-    margin-top: 15px;
-}
 
-.producto-card.abierta{
+.producto-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 35px rgba(76,175,80,.18);
+
+    border-color: #cfdfc9;
+
+    box-shadow:
+        0 16px 38px rgba(43, 74, 49, 0.12);
+}
+
+/* ==================================================
+               CONTENIDO DESPLEGABLE
+================================================== */
+
+.producto-card.abierta .contenido-producto {
+    max-height: 1200px;
+
+    opacity: 1;
+
+    margin-top: 18px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e6ece2;
+}
+
+.producto-card.abierta {
+    transform: translateY(-5px);
+
+    border-color: #cbdcc5;
+
+    box-shadow:
+        0 18px 42px rgba(43, 74, 49, 0.13);
 }
 
 .producto-card:hover{
@@ -807,64 +2468,128 @@ html {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.producto-card h3{
-    text-align: center;
-    color: #1b5e20;
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 18px;
-    line-height: 1.3;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #d8f3dc;
+/* ==================================================
+                  NOMBRE DEL PRODUCTO
+================================================== */
+
+.producto-card h3 {
+    min-height: 52px;
+
+    margin: 0;
+    padding: 0 4px 13px;
+
+    display: flex;
+    align-items: center;
+
+    color: #31553a;
+
+    border-bottom: 1px solid #e8eee4;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.18rem;
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    text-align: left;
 }
 
-.producto-card img{
-    width:100%;
-    height: 100%;
-    object-fit: contain;
-    border-bottom: 20px;
-    margin-bottom: 15px;
-    display: block;
-    margin: 0 auto 15px;
+/* ==================================================
+                  IMAGEN DEL PRODUCTO
+================================================== */
+
+.producto-card img {
     order: -1;
 
-}
+    width: 100%;
+    height: 250px;
 
-.producto-card ul{
-    padding-left: 20px;
-    margin-bottom: 15px;
+    margin: 0 0 20px;
+
+    padding: 14px;
+
+    object-fit: contain;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7f9f3,
+            #ffffff
+        );
+
+    border: 1px solid #edf1e9;
+    border-radius: 17px;
+
+    display: block;
+}
+/* ==================================================
+                 BENEFICIOS DEL PRODUCTO
+================================================== */
+
+.producto-card ul {
+    margin: 0 0 18px;
+    padding: 0;
+
     list-style: none;
 }
 
-.producto-card li{
-    margin-bottom: 10px;
-    line-height: 1.5;
+
+.producto-card li {
+    margin-bottom: 12px;
+    padding: 0 3px;
+
+    color: #626d64;
+
+    font-size: 0.86rem;
+    line-height: 1.6;
 }
 
-.producto-card strong{
-    color:#4caf50;
+
+.producto-card li:last-child {
+    margin-bottom: 0;
 }
 
-/* ==========================================
-   ESTILOS DE SUPLEMENTOS
-========================================== */
 
-.consumo{
-    background: #f5f5f5;
-    border-left: 4px solid #4caf50;
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 15px;
+.producto-card strong {
+    color: #42694a;
+    font-weight: 700;
 }
 
-.consumo h4{
-    color: #4caf50;
-    margin-bottom: 8px;
+/* ==================================================
+                MODO DE CONSUMO
+================================================== */
+
+.consumo {
+    margin-top: 18px;
+    padding: 17px;
+
+    background: #f3f7f0;
+
+    border: 1px solid #e0e9dc;
+    border-left: 3px solid #91ae87;
+
+    border-radius: 14px;
 }
 
-.consumo p{
-    font-size: 0.9rem;
-    line-height: 1.4;
+
+.consumo h4 {
+    margin: 0 0 9px;
+
+    color: #42694a;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+
+.consumo p {
+    margin: 0;
+
+    color: #657067;
+
+    font-size: 0.84rem;
+    line-height: 1.65;
 }
 
 /* ==========================================
@@ -874,113 +2599,70 @@ html {
 
 @media (max-width: 768px){
 
-    header{
+    header {
+    padding: 10px 16px 11px;
 
-    padding: 8px;
-    }
-
-    header h1{
-        font-size: 1.2rem;
-        padding: 8px 18px
-    }
-
-    nav ul{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 0;
-    margin-top: 10px;
+
+    gap: 7px;
+}
+
+
+/* NOMBRE */
+
+header h1 {
+    margin: 0;
     padding: 0;
-    }
 
-    nav li{
-        margin: 0;
-    }
+    font-size: 1.05rem;
+    line-height: 1.2;
 
-    nav a{
-        font-size: 1rem;
-    }
+    text-align: center;
 
-    .inicio h2{
-        font-size: 2rem;
-    }
-
-    .inicio p{
-        font-size: 1rem;
-    }
-
-    .maquina{
-        white-space: normal;
-        width: 100%;
-        border-right: none;
-        animation: none;
-    }
-
-    #titulo-categoria{
-        font-size: 2rem;
-    }
-
-    .tarjeta{
-        width: 90%;
-        max-width: 320px;
-        
-    }
-
-    .producto-card{
-         width:95%;
-         max-width:360px;
-
-         margin:0 auto;
-         padding:18px;
-    }
-
-    .producto-card img{
-         width:100%;
-         max-width:180px;
-         height:180px;
-         object-fit:contain;
-         margin:15px auto;
-    }
-
-    .inicio{
-
-    min-height: 100vh;
-    padding: 210px 20px 60px;
-    background-size: cover;
-    background-position: center;
-    }
-
-    #nosotros,
-    #contacto,
-    #productos,
-    #productos-categoria,
-    #hierbas-categoria{
-
-    padding-top:180px;
+    white-space: nowrap;
 }
 
-.mapa iframe{
+
+/* NAVEGACIÓN */
+
+header nav {
     width: 100%;
-    height: 250px;
 }
 
-.info-contacto{
-    align-items: center;
-}
 
-.contacto-card{
-    width:95%;
-    max-width:320px;
-}
+header nav ul {
+    width: 100%;
 
-.grilla-productos{
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+
     gap: 25px;
-    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    flex-wrap: nowrap;
 }
+
+
+header nav li {
+    margin: 0;
+}
+
+
+header nav a {
+    padding: 5px 0;
+
+    font-size: 0.78rem;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
 
 /*================ BUSCADOR RESPONSIVE ================*/
 
@@ -1001,6 +2683,1272 @@ html {
     padding: 11px 16px;
 
 }
+
+
+.inicio {
+    min-height: 100svh;
+
+    padding:
+        145px
+        22px
+        105px;
+
+    display: flex;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* CONTENIDO */
+
+.inicio-contenido {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* ETIQUETA SUPERIOR */
+
+.inicio-etiqueta {
+    margin-bottom: 16px;
+
+    padding: 7px 11px;
+
+    font-size: 0.65rem;
+}
+
+
+/* TÍTULO */
+
+.inicio-contenido h2 {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+
+    line-height: 1.04;
+    letter-spacing: -1px;
+}
+
+
+.inicio-contenido h2 span {
+    margin-top: 5px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.inicio-descripcion {
+    max-width: 340px;
+
+    margin:
+        19px
+        auto
+        25px;
+
+    font-size: 0.86rem;
+    line-height: 1.65;
+}
+
+
+/* BOTÓN */
+
+.inicio-botones {
+    justify-content: center;
+}
+
+
+.btn-productos {
+    padding: 13px 20px;
+
+    font-size: 0.8rem;
+}
+
+
+/* ==================================================
+             DESTACADOS DEL HERO
+================================================== */
+
+.inicio-destacados {
+    max-width: 360px;
+
+    margin:
+        30px
+        auto
+        0;
+
+    gap: 9px;
+
+    justify-content: center;
+}
+
+
+.inicio-destacado {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.inicio-destacado span {
+    font-size: 1rem;
+}
+
+
+.inicio-destacado p {
+    font-size: 0.62rem;
+    line-height: 1.3;
+}
+
+
+.inicio-separador {
+    height: 30px;
+}
+
+
+/* ==================================================
+              SCROLL DEL HERO
+================================================== */
+
+.inicio-scroll {
+    display: none;
+}
+
+
+/* ==================================================
+            DECORACIONES DEL HERO
+================================================== */
+
+.inicio-decoracion-1 {
+    width: 150px;
+    height: 150px;
+
+    left: -75px;
+}
+
+
+.inicio-decoracion-2 {
+    width: 115px;
+    height: 115px;
+
+    right: -55px;
+}
+
+
+/* ==================================================
+               FRANJA INFERIOR
+================================================== */
+
+.franja-inicio {
+    height: 42px;
+}
+
+
+.franja-inicio-contenido {
+    gap: 22px;
+
+    font-size: 0.68rem;
+}
+
+/* ==================================================
+          CATÁLOGO PRINCIPAL - CELULAR
+================================================== */
+
+/* CONTENEDOR DE CATEGORÍAS */
+
+.grid-categorias {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+    width: 100%;
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* TARJETA */
+
+.tarjeta {
+    position: relative;
+
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 17px 55px 17px 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 17px;
+}
+
+
+/* ICONO */
+
+.categoria-icono {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.15rem;
+}
+
+
+/* TEXTO */
+
+.categoria-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.categoria-numero {
+    margin-bottom: 3px;
+
+    font-size: 0.58rem;
+}
+
+
+.tarjeta h3 {
+    min-height: 0;
+
+    margin: 0 0 4px;
+
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+
+.tarjeta p {
+    margin: 0;
+
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+
+/* ==================================================
+                 FLECHA
+================================================== */
+
+.categoria-flecha {
+    position: absolute;
+
+    top: 50%;
+    right: 17px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    transform: translateY(-50%);
+
+    flex-shrink: 0;
+
+    font-size: 0.9rem;
+}
+
+
+/* ==================================================
+       CATEGORÍAS INTERNAS - CELULAR
+================================================== */
+
+#productos-categoria,
+#hierbas-categoria,
+#frutsecos-categoria,
+#harinas-categoria,
+#cereales-categoria,
+#semillas-categoria,
+#aceites-categoria,
+#legumbres-categoria,
+#despensa-categoria,
+#congelados-categoria {
+
+    min-height: 100svh;
+
+    padding:
+        130px
+        16px
+        65px;
+}
+
+
+/* BOTÓN VOLVER */
+
+.btn-volver {
+    margin-bottom: 28px;
+
+    padding: 10px 15px;
+
+    font-size: 0.72rem;
+}
+
+
+/* TÍTULO */
+
+.titulo-categoria {
+    margin-bottom: 25px;
+
+    font-size: clamp(1.8rem, 8vw, 2.35rem);
+
+    line-height: 1.15;
+}
+
+
+.titulo-categoria::before {
+    margin-bottom: 11px;
+
+    font-size: 0.6rem;
+}
+
+
+/* ==================================================
+                    BUSCADOR
+================================================== */
+
+.buscador-categoria {
+    width: 100%;
+    max-width: 440px;
+
+    margin:
+        0
+        auto
+        28px;
+}
+
+
+.input-buscador {
+    width: 100%;
+    max-width: none;
+
+    padding: 12px 16px;
+
+    font-size: 0.8rem;
+}
+
+
+/* ==================================================
+              GRILLA DE PRODUCTOS
+================================================== */
+
+.grilla-productos,
+.grilla-productos-harinas {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    align-items: start;
+}
+
+
+/* ==================================================
+                TARJETA PRODUCTO
+================================================== */
+
+.producto-card {
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 11px;
+
+    border-radius: 16px;
+}
+
+
+/* IMAGEN */
+
+.producto-card img {
+    width: 100%;
+    height: 145px;
+
+    margin:
+        0
+        0
+        13px;
+
+    padding: 8px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+
+/* NOMBRE */
+
+.producto-card h3 {
+    min-height: 44px;
+
+    padding:
+        0
+        2px
+        10px;
+
+    font-size: 0.88rem;
+    line-height: 1.3;
+}
+
+
+/* DISPONIBLE / AGOTADO */
+
+.estado-imagen {
+    margin-top: 9px;
+
+    padding: 5px 8px;
+
+    font-size: 0.61rem;
+}
+
+
+/* VER INFORMACIÓN */
+
+.abrir-info,
+.abrir-info-frutos,
+.abrir-info-cereales,
+.abrir-info-semillas,
+.abrir-info-congelados,
+.abrir-info-harinas,
+.ver-info-aceites,
+.ver-info-congelados,
+.ver-info-semillas,
+.ver-info-legumbres,
+.ver-info-despensa {
+
+    margin-top: 10px;
+
+    padding: 9px 5px;
+
+    font-size: 0.63rem;
+}
+
+
+/* ==================================================
+             TARJETA CUANDO SE ABRE
+================================================== */
+
+.producto-card.abierta {
+    /*
+       Al abrir una tarjeta hacemos que ocupe
+       las dos columnas.
+    */
+
+    grid-column: 1 / -1;
+
+    padding: 16px;
+}
+
+
+.producto-card.abierta img {
+    height: 210px;
+
+    padding: 12px;
+}
+
+
+.producto-card.abierta h3 {
+    min-height: 0;
+
+    font-size: 1.05rem;
+}
+
+
+/* ==================================================
+       SUBTÍTULOS INTERNOS - CELULAR
+================================================== */
+
+.subtitulo-categoria {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin:
+        45px
+        auto
+        22px;
+
+    padding:
+        0
+        10px
+        16px;
+
+    font-size: 1.45rem;
+    line-height: 1.25;
+
+    text-align: center;
+}
+
+
+.subtitulo-categoria::after {
+    width: 35px;
+
+    margin-top: 11px;
+}
+
+
+/* FRUTOS DESECADOS */
+
+.titulo-categoria-desecada {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    margin:
+        45px
+        auto
+        22px;
+
+    padding-bottom: 16px;
+
+    font-size: 1.45rem;
+    line-height: 1.25;
+
+    text-align: center;
+}
+
+
+.titulo-categoria-desecada::after {
+    width: 35px;
+
+    margin-top: 11px;
+}
+
+/* ==================================================
+       BENEFICIOS / CONSUMO - CELULAR
+================================================== */
+
+.pestanas-producto {
+    gap: 4px;
+
+    margin-bottom: 15px;
+
+    padding: 4px;
+
+    border-radius: 12px;
+}
+
+
+.pestana-producto {
+    min-height: 38px;
+
+    padding: 9px 7px;
+
+    font-size: 0.7rem;
+
+    line-height: 1.2;
+}
+
+
+/* BENEFICIOS */
+
+.contenido-producto li {
+    margin-bottom: 8px;
+
+    padding:
+        10px
+        10px
+        10px
+        35px;
+
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+
+.contenido-producto li::before {
+    left: 11px;
+    top: 10px;
+}
+
+
+/* CONSUMO */
+
+.consumo,
+.consumo-hierbas,
+.consumo-frutos,
+.consumo-cereales,
+.consumo-harinas,
+.consumo-semillas,
+.consumo-congelados,
+.consumo-legumbres,
+.consumo-despensa {
+
+    margin-top: 0;
+
+    padding: 14px;
+
+    border-radius: 12px;
+}
+
+
+.consumo p,
+.consumo-hierbas p,
+.consumo-frutos p,
+.consumo-cereales p,
+.consumo-harinas p,
+.consumo-semillas p,
+.consumo-congelados p,
+.consumo-legumbres p,
+.consumo-despensa p {
+
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+
+/* PRECIOS */
+
+.precios {
+    margin-top: 17px;
+
+    padding: 14px;
+
+    border-radius: 13px;
+}
+
+
+.precios h4 {
+    margin-bottom: 11px;
+
+    padding-bottom: 9px;
+
+    font-size: 0.72rem;
+}
+
+
+.precios p {
+    margin: 8px 0;
+
+    font-size: 0.75rem;
+}
+
+
+.precios p span:last-child {
+    font-size: 0.82rem;
+}
+
+
+/* ==================================================
+                  NOSOTROS - CELULAR
+================================================== */
+
+#nosotros {
+    padding:
+        130px
+        18px
+        65px;
+}
+
+
+/* ENCABEZADO */
+
+.nosotros-encabezado {
+    margin-bottom: 45px;
+}
+
+
+.nosotros-etiqueta {
+    margin-bottom: 14px;
+
+    font-size: 0.63rem;
+}
+
+
+.nosotros-encabezado h2 {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+
+.nosotros-encabezado > p {
+    margin-top: 18px;
+
+    font-size: 0.84rem;
+    line-height: 1.65;
+}
+
+
+/* DE DOS COLUMNAS A UNA */
+
+.nosotros-principal {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+}
+
+
+/* IMAGEN */
+
+.nosotros-visual {
+    width: 100%;
+    max-width: 400px;
+}
+
+
+.nosotros-imagen {
+    min-height: 390px;
+
+    padding: 9px;
+
+    border-radius: 23px;
+
+    transform: rotate(-1deg);
+}
+
+
+.nosotros-imagen-placeholder {
+    height: 370px;
+
+    border-radius: 17px;
+}
+
+
+.nosotros-imagen-placeholder > span {
+    margin-bottom: 13px;
+
+    font-size: 2.3rem;
+}
+
+
+.nosotros-imagen-placeholder > p {
+    font-size: 1.6rem;
+}
+
+
+/* SELLO */
+
+.nosotros-sello {
+    right: -4px;
+    bottom: 24px;
+
+    width: 165px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+}
+
+
+/* TEXTO */
+
+.nosotros-texto {
+    width: 100%;
+    max-width: none;
+}
+
+
+.nosotros-texto > h3 {
+    font-size: 1.75rem;
+}
+
+
+.nosotros-texto > p {
+    font-size: 0.84rem;
+    line-height: 1.7;
+}
+
+
+/* VALORES */
+
+.nosotros-valores {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+
+.nosotros-valor {
+    gap: 9px;
+
+    padding: 12px;
+
+    border-radius: 13px;
+}
+
+
+.nosotros-valor > span {
+    width: 31px;
+    height: 31px;
+
+    font-size: 0.85rem;
+}
+
+
+.nosotros-valor h4 {
+    font-size: 0.75rem;
+}
+
+
+.nosotros-valor p {
+    font-size: 0.65rem;
+}
+
+
+/* FRASE FINAL */
+
+.nosotros-frase {
+    margin-top: 55px;
+
+    gap: 10px;
+
+    padding: 20px 8px;
+}
+
+
+.nosotros-frase span {
+    font-size: 1.7rem;
+}
+
+
+.nosotros-frase p {
+    font-size: 0.92rem;
+}
+
+/* ==================================================
+                  CONTACTO - CELULAR
+================================================== */
+
+#contacto {
+    padding:
+        130px
+        18px
+        65px;
+}
+
+
+/* =========================
+        ENCABEZADO
+========================= */
+
+.contacto-encabezado {
+    margin-bottom: 42px;
+}
+
+.contacto-etiqueta {
+    margin-bottom: 14px;
+
+    font-size: 0.63rem;
+}
+
+.contacto-encabezado h2 {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+.contacto-encabezado > p {
+    margin-top: 18px;
+
+    font-size: 0.84rem;
+    line-height: 1.65;
+}
+
+
+/* =========================
+       ESTRUCTURA GENERAL
+========================= */
+
+.contacto-principal {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+}
+
+
+/* =========================
+       INFORMACIÓN
+========================= */
+
+.contacto-informacion {
+    width: 100%;
+}
+
+
+/* WHATSAPP / INSTAGRAM /
+         UBICACIÓN
+========================= */
+
+.contacto-opcion {
+    width: 100%;
+
+    padding: 15px;
+
+    gap: 13px;
+
+    border-radius: 15px;
+}
+
+.contacto-opcion-icono {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    font-size: 1rem;
+}
+
+.contacto-opcion-texto {
+    min-width: 0;
+}
+
+.contacto-opcion-texto span {
+    font-size: 0.61rem;
+}
+
+.contacto-opcion-texto h3 {
+    font-size: 0.92rem;
+}
+
+.contacto-opcion-texto p {
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.contacto-opcion-flecha {
+    flex-shrink: 0;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+          HORARIOS
+========================= */
+
+.contacto-horarios {
+    margin-top: 14px;
+
+    padding: 20px 17px;
+
+    border-radius: 17px;
+}
+
+.contacto-horarios-encabezado {
+    margin-bottom: 17px;
+}
+
+.contacto-horarios-encabezado span {
+    font-size: 1rem;
+}
+
+.contacto-horarios-encabezado h3 {
+    font-size: 0.95rem;
+}
+
+.contacto-horario {
+    gap: 12px;
+
+    padding: 11px 0;
+}
+
+.contacto-horario span {
+    font-size: 0.72rem;
+}
+
+.contacto-horario strong {
+    font-size: 0.72rem;
+
+    text-align: right;
+}
+
+
+/* =========================
+             MAPA
+========================= */
+
+.contacto-mapa-contenedor {
+    width: 100%;
+}
+
+.contacto-mapa {
+    height: 380px;
+
+    border-radius: 20px;
+}
+
+.contacto-mapa iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.contacto-mapa-etiqueta {
+    top: 13px;
+    left: 13px;
+
+    padding: 8px 11px;
+
+    font-size: 0.65rem;
+}
+
+.contacto-mapa-footer {
+    margin-top: 15px;
+
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+
+
+/* =========================
+       DECORACIONES
+========================= */
+
+.contacto-decoracion-1 {
+    width: 150px;
+    height: 150px;
+
+    left: -80px;
+}
+
+.contacto-decoracion-2 {
+    width: 110px;
+    height: 110px;
+
+    right: -60px;
+}
+
+}
+
+/* ==================================================
+          CELULARES PEQUEÑOS
+================================================== */
+
+@media (max-width: 380px) {
+
+    /* =========================
+             HEADER
+    ========================= */
+
+    header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    header h1 {
+        font-size: 0.96rem;
+    }
+
+    header nav ul {
+        gap: 19px;
+    }
+
+    header nav a {
+        font-size: 0.73rem;
+    }
+
+
+    /* =========================
+              INICIO
+    ========================= */
+
+    .inicio {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .inicio-contenido h2 {
+        font-size: 2.05rem;
+    }
+
+    .inicio-descripcion {
+        max-width: 300px;
+
+        font-size: 0.8rem;
+    }
+
+    .inicio-destacados {
+        gap: 6px;
+    }
+
+    .inicio-destacado p {
+        font-size: 0.57rem;
+    }
+
+
+    /* =========================
+         CATÁLOGO PRINCIPAL
+    ========================= */
+
+    .tarjeta {
+        padding:
+            15px
+            48px
+            15px
+            13px;
+
+        gap: 10px;
+    }
+
+    .categoria-icono {
+        width: 39px;
+        height: 39px;
+
+        font-size: 1rem;
+    }
+
+    .tarjeta h3 {
+        font-size: 0.91rem;
+    }
+
+    .tarjeta p {
+        font-size: 0.65rem;
+    }
+
+    .categoria-flecha {
+        right: 13px;
+
+        width: 27px;
+        height: 27px;
+    }
+
+
+    /* =========================
+        PRODUCTOS INTERNOS
+    ========================= */
+
+    #productos-categoria,
+    #hierbas-categoria,
+    #frutsecos-categoria,
+    #harinas-categoria,
+    #cereales-categoria,
+    #semillas-categoria,
+    #aceites-categoria,
+    #legumbres-categoria,
+    #despensa-categoria,
+    #congelados-categoria {
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .grilla-productos,
+    .grilla-productos-harinas {
+        gap: 9px;
+    }
+
+
+    .producto-card {
+        padding: 9px;
+    }
+
+
+    .producto-card img {
+        height: 125px;
+
+        padding: 6px;
+    }
+
+
+    .producto-card h3 {
+        min-height: 42px;
+
+        font-size: 0.79rem;
+    }
+
+
+    .estado-imagen {
+        font-size: 0.57rem;
+    }
+
+
+    .abrir-info,
+    .abrir-info-frutos,
+    .abrir-info-cereales,
+    .abrir-info-semillas,
+    .abrir-info-congelados,
+    .abrir-info-harinas,
+    .ver-info-aceites,
+    .ver-info-congelados,
+    .ver-info-semillas,
+    .ver-info-legumbres,
+    .ver-info-despensa {
+
+        padding-left: 3px;
+        padding-right: 3px;
+
+        font-size: 0.59rem;
+    }
+
+
+    /* ABIERTA = TODO EL ANCHO */
+
+    .producto-card.abierta {
+        padding: 14px;
+    }
+
+    .producto-card.abierta img {
+        height: 190px;
+    }
+
+
+    /* =========================
+             NOSOTROS
+    ========================= */
+
+    .nosotros-valores {
+        gap: 7px;
+    }
+
+    .nosotros-valor {
+        padding: 10px 8px;
+    }
+
+    .nosotros-valor p {
+        font-size: 0.61rem;
+    }
+
+
+    /* =========================
+             CONTACTO
+    ========================= */
+
+    .contacto-opcion {
+        padding: 13px;
+    }
+
+    .contacto-opcion-icono {
+        width: 38px;
+        height: 38px;
+    }
+
+    .contacto-mapa {
+        height: 330px;
+    }
 
 }
 
@@ -1044,22 +3992,171 @@ html {
     margin-top: 0;
 }
 
+/* ==================================================
+              BENEFICIOS DEL PRODUCTO
+================================================== */
+
+.contenido-producto ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
 
 
-.abrir-info{
-    margin-top: 12px;
-    color: #0d0e0d;
-    font-size: 0.9rem;
-    font-weight: 600;
+.contenido-producto li {
+    position: relative;
+
+    margin: 0 0 10px;
+    padding: 11px 13px 11px 38px;
+
+    background: #fafbf8;
+
+    border: 1px solid #edf1e9;
+    border-radius: 11px;
+
+    color: #626d64;
+
+    font-size: 0.83rem;
+    line-height: 1.55;
+}
+
+
+/* Puntito verde decorativo */
+
+.contenido-producto li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 13px;
+    top: 11px;
+
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e7f1e3;
+
+    border-radius: 50%;
+
+    color: #4f7657;
+
+    font-size: 0.67rem;
+    font-weight: 800;
+}
+
+
+.contenido-producto li:last-child {
+    margin-bottom: 0;
+}
+
+
+.contenido-producto li strong {
+    color: #42694a;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+        INDICADORES "VER INFORMACIÓN"
+================================================== */
+
+.abrir-info,
+.abrir-info-frutos,
+.abrir-info-cereales,
+.abrir-info-semillas,
+.abrir-info-congelados,
+.abrir-info-harinas,
+.ver-info-aceites,
+.ver-info-congelados,
+.ver-info-semillas,
+.ver-info-legumbres,
+.ver-info-despensa {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 15px 0 0;
+    padding: 11px 14px;
+
+    background: #f0f5ec;
+
+    border: none;
+    border-radius: 12px;
+
+    color: #55745b;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    line-height: 1.4;
     text-align: center;
-    animation: flotar 2s infinite;
-    display: inline-block;
-    padding: 8px 18px;
-    background: #e8f5e9;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: .3s;
+
     cursor: pointer;
+
+    box-shadow: none;
+    animation: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.producto-card:hover .abrir-info,
+.producto-card:hover .abrir-info-frutos,
+.producto-card:hover .abrir-info-cereales,
+.producto-card:hover .abrir-info-semillas,
+.producto-card:hover .abrir-info-congelados,
+.producto-card:hover .abrir-info-harinas,
+.producto-card:hover .ver-info-aceites,
+.producto-card:hover .ver-info-congelados,
+.producto-card:hover .ver-info-semillas,
+.producto-card:hover .ver-info-legumbres,
+.producto-card:hover .ver-info-despensa {
+
+    background: #e7f0e2;
+    color: #31553a;
+}
+
+
+
+/* ==================================================
+               BOTÓN / INDICADOR DE INFORMACIÓN
+================================================== */
+
+.abrir-info {
+    position: relative;
+
+    margin: 15px 0 0;
+
+    padding: 11px 14px;
+
+    background: #f0f5ec;
+
+    border-radius: 12px;
+
+    color: #55745b;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    text-align: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.producto-card:hover .abrir-info {
+    background: #e7f0e2;
+    color: #31553a;
 }
 
 @keyframes flotar{
@@ -1078,72 +4175,6 @@ html {
    ESTILOS DE FRUTOS SECOS
 ========================================== */
 
-.abrir-info-frutos{
-
-    display: inline-block;
-
-    margin-top: 14px;
-    padding: 10px 20px;
-
-    background: linear-gradient(135deg, #f9efd7, #f3e0b6);
-
-    color: #6d4c41;
-
-    border: 2px solid #d8b67d;
-    border-radius: 30px;
-
-    font-weight: bold;
-    font-size: .95rem;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.10);
-
-    animation: descubrirFrutos 2.2s ease-in-out infinite;
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-/*BENEFICIOS DE CEREALES*/
-
-.abrir-info-cereales{
-    text-align: center;
-
-    color: #b8860b;
-
-    font-weight: bold;
-
-    margin-top: 15px;
-
-    cursor: pointer;
-
-    transition: .3s;
-
-}
-
-/*BENEFICIOS DE SEMILLAS*/
-.abrir-info-semillas{
-    margin-top: 20px;
-
-    font-size: 1.05rem;
-
-    font-weight: bold;
-
-    color: #5d8a3d;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-/*BENEFICIOS DE FRUT. CONGELADAS*/
-.abrir-info-congelados{
-    margin-top: 20px;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: .3s;
-    cursor: pointer;
-    color:rgba(210, 98, 100, 0.725);
-}
  
 /*------------ ACEITES -----------*/
 .producto-card-aceites{
@@ -1194,15 +4225,7 @@ html {
 
 }
 
-#aceites-categoria{
-    display: none;
 
-    min-height: 100vh;
-    padding: 120px 20px;
-    background: white;
-
-    padding-top: 185px;
-}
 
 
 
@@ -1346,48 +4369,11 @@ color: #222;
     font-weight: bold;
 }
 
-/*-----------SECCION HARINAS-------------*/
-.titulo-harinas{
-    color: #8b5e3c;
-}
+/*------------ SECCIÓN HARINAS --------------*/
 
-.titulo-harinas::after{
-    background: #d8b36b;
-}
 
-.abrir-info-harinas{
-    display: inline-block;
 
-    margin-top: 14px;
-    padding: 10px 20px;
 
-    background: linear-gradient(135deg, #f9efd7, #f3e0b6);
-
-    color: #6d4c41;
-
-    border: 2px solid #d8b67d;
-    border-radius: 30px;
-
-    font-weight: bold;
-    font-size: .95rem;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.10);
-
-    animation: descubrirFrutos 2.2s ease-in-out infinite;
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.producto-card-harina{
-    box-shadow: 0 8px 20px rgba(180, 140, 60, 0.25);
-    transition: 0.3s;
-}
-
-.producto-card-harina:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(180, 140, 60, 0.40);
-}
 
 /*------CONSUMO HARINA---------*/
 .consumo-harinas{
@@ -1420,16 +4406,24 @@ color: #222;
     color:#222;
 }
 
-/*CUADRITO DONDE ESTA EL PRODUCTO, ESTE ES EL DE HARINAS EN GENERAL*/
-.grilla-productos-harinas{
-    display:flex;
-    justify-content: center;
-    flex-wrap:wrap;
-    justify-content: center;
-    gap:25px;
-    align-items: flex-start;
-    filter: drop-shadow(0px 2px 4px rgb(141, 191, 40));
-    
+/* ==================================================
+             GRILLA DE PRODUCTOS - HARINAS
+================================================== */
+
+.grilla-productos-harinas {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: start;
+
+    filter: none;
 }
 
 /*=================== ETIQUETAS PREMEZCLAS ===================*/
@@ -1511,6 +4505,261 @@ color: #222;
 /*PARA CAMBIAR EL COLOR DEL FONDO BRILLOSO, ESTE ES DEL DE UNIVERSAL*/
 .sombra-universal{
     filter: drop-shadow(0px 6px 4px #5a3e8c66);
+}
+
+
+
+/*====================================================
+=              CARRUSEL DELICEL                      =
+====================================================*/
+
+.carrusel-delicel {
+    position: relative;
+    max-width: 520px;
+    margin: 35px auto 70px;
+    padding: 35px 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #e8f1e8;
+}
+
+
+/*====================================================
+=             CONTENIDO DEL PRODUCTO                 =
+====================================================*/
+
+.contenido-delicel {
+    width: 100%;
+    text-align: center;
+}
+
+
+/*====================================================
+=                    CONTADOR                        =
+====================================================*/
+
+.contador-delicel {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 6px 14px;
+
+    background: #eef6ee;
+    color: #47704c;
+
+    border-radius: 20px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/*====================================================
+=                TÍTULO DEL PRODUCTO                 =
+====================================================*/
+
+.titulo-delicel {
+    margin: 5px 0 20px;
+
+    font-size: 1.35rem;
+    color: #315c37;
+
+    line-height: 1.4;
+}
+
+
+/*====================================================
+=                IMAGEN DEL PRODUCTO                 =
+====================================================*/
+
+.imagen-delicel {
+    display: block;
+
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/*====================================================
+=               PRESENTACIÓN / PESO                  =
+====================================================*/
+
+.peso-delicel {
+    display: inline-block;
+
+    margin: 15px 0 10px;
+    padding: 7px 16px;
+
+    background: #f4f8f2;
+    color: #527057;
+
+    border-radius: 18px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/*====================================================
+=                 PRECIO DELICEL                     =
+====================================================*/
+
+.precio-delicel {
+    margin-top: 10px;
+}
+
+.precio-delicel > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #55705a;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* PRECIO PRINCIPAL DELICEL */
+
+#precioDelicel {
+    color: #315c37;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/*====================================================
+=               FLECHAS DEL CARRUSEL                 =
+====================================================*/
+
+.flecha-delicel {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #4f7f56;
+    color: white;
+
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    z-index: 5;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* FLECHA IZQUIERDA */
+
+#anteriorDelicel {
+    left: 15px;
+}
+
+
+/* FLECHA DERECHA */
+
+#siguienteDelicel {
+    right: 15px;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.flecha-delicel:hover {
+    background: #3f6c46;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/*====================================================
+=                DELICEL EN CELULAR                  =
+====================================================*/
+
+@media (max-width: 600px) {
+
+    .carrusel-delicel {
+        width: calc(100% - 30px);
+        max-width: 390px;
+
+        margin: 25px auto 55px;
+
+        padding:
+            30px
+            48px
+            25px;
+
+        border-radius: 20px;
+    }
+
+
+    .titulo-delicel {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+
+    .imagen-delicel {
+        max-width: 230px;
+        height: 240px;
+    }
+
+
+    /* Flechas más chicas para celular */
+
+    .flecha-delicel {
+        width: 38px;
+        height: 38px;
+
+        font-size: 1rem;
+    }
+
+
+    .carrusel-delicel #anteriorDelicel {
+    left: 7px !important;
+    right: auto !important;
+}
+
+.carrusel-delicel #siguienteDelicel {
+    right: 7px !important;
+    left: auto !important;
+}
+
 }
 
 /*=================== CARRUSEL PREMEZCLAS ===================*/
@@ -2005,9 +5254,7 @@ color: #222;
 
 /*-----------------SEMILLAS---------------------*/
 
-.producto-card-semillas{
-    filter: drop-shadow(0px 2px 2px #19da3656);
-}
+
 
 .beneficios-semillas{
 
@@ -2128,18 +5375,7 @@ color: #222;
 
 }
 
-/*COLOR FONDO DE LAS TARJETAS*/
-.producto-card-congelados{
 
-    filter: drop-shadow(0px 6px 6px rgba(91,184,255,0.35));
-
-}
-
-.producto-card-aceites{
-
-    filter: drop-shadow(0px 6px 6px rgba(75, 208, 90, 0.35));
-
-}
 
 .ver-info-congelados{
 
@@ -2195,108 +5431,126 @@ color: #222;
 
 }
 
-/*========== TITULO ==========*/
+/* ==================================================
+        PRECIOS / PRESENTACIONES
+================================================== */
 
-.precios{
+.precios {
+    width: 100%;
 
-    margin-top:15px;
+    margin-top: 22px;
+    padding: 17px 18px;
 
-    background:#fafafa;
+    background: #f8faf6;
 
-    border-radius:12px;
+    border: 1px solid #e3eadf;
+    border-radius: 15px;
 
-    padding:15px;
-
-    border:1px solid #ececec;
-
-}
-
-.precios h4{
-
-    margin-bottom:15px;
-    color:#2e7d32;
-    font-size:1rem;
-    text-align:center;
-
-}
-
-/*========== CADA PRECIO ==========*/
-
-.precios p{
-
-    display:flex;
-
-    align-items:center;
-
-    margin:10px 0;
-
-}
-
-.precios p span:first-child{
-
-    font-weight:600;
-
-    white-space:nowrap;
-
-}
-
-.precios p span:last-child{
-
-    color:#2e7d32;
-
-    font-weight:bold;
-
-    white-space:nowrap;
-
-}
-
-.linea-precio{
-
-    flex:1;
-
-    border-bottom:2px dotted #cfcfcf;
-
-    margin:0 8px;
-
+    box-shadow: none;
 }
 
 
-.estado-imagen{
+/* TÍTULO */
 
-    display:inline-block;
+.precios h4 {
+    display: flex;
+    align-items: center;
 
-    margin-top:12px;
+    margin: 0 0 14px;
+    padding-bottom: 11px;
 
-    margin-bottom:15px;
+    border-bottom: 1px solid #e5ebe2;
 
-    padding:6px 14px;
+    color: #42694a;
 
-    border-radius:20px;
-
-    font-size:.85rem;
-
-    font-weight:bold;
-
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
 }
 
-.estado-imagen.disponible{
 
-    background:#e8f8ec;
+/* CADA PRECIO */
 
-    color:#188038;
+.precios p {
+    display: flex;
+    align-items: center;
 
-    border:1px solid #b7e4c7;
+    margin: 9px 0;
 
+    color: #69736b;
+
+    font-size: 0.8rem;
 }
 
-.estado-imagen.agotado{
 
-    background:#fdeaea;
+/* PRESENTACIÓN: 100 g / 250 g / 500 g */
 
-    color:#c62828;
+.precios p span:first-child {
+    color: #69736b;
 
-    border:1px solid #f3b3b3;
+    font-weight: 600;
 
+    white-space: nowrap;
+}
+
+
+/* LÍNEA ENTRE PRESENTACIÓN Y PRECIO */
+
+.linea-precio {
+    flex: 1;
+
+    margin: 0 9px;
+
+    border-bottom: 1px dashed #cdd8c9;
+}
+
+
+/* PRECIO */
+
+.precios p span:last-child {
+    color: #31553a;
+
+    font-size: 0.88rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.estado-imagen {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+
+    margin: 13px 0 0;
+    padding: 6px 11px;
+
+    border-radius: 50px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* DISPONIBLE */
+
+.estado-imagen.disponible {
+    background: #edf7eb;
+    color: #3f7048;
+
+    border: 1px solid #d2e7cd;
+}
+
+
+/* AGOTADO */
+
+.estado-imagen.agotado {
+    background: #fff0f0;
+    color: #a84b4b;
+
+    border: 1px solid #f1d0d0;
 }
 
 .precio-simple{
@@ -2341,40 +5595,69 @@ color: #222;
 
 }
 
-/*================ BUSCADOR DE CATEGORÍAS ================*/
 
-.buscador-categoria{
+
+/* ==================================================
+              BUSCADOR DE CATEGORÍAS
+================================================== */
+
+.buscador-categoria {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto 38px;
 
     display: flex;
     justify-content: center;
-    margin: 20px 0 30px;
-
 }
 
-.input-buscador{
 
+.input-buscador {
     width: 100%;
-    max-width: 400px;
 
-    padding: 12px 18px;
+    padding: 14px 20px;
 
-    border: 2px solid #7da453;
-    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #dce6d8;
+    border-radius: 50px;
 
     outline: none;
 
-    font-size: 16px;
+    color: #344b39;
 
-    transition: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.88rem;
 
+    box-shadow:
+        0 7px 24px rgba(43, 74, 49, 0.06);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
-.input-buscador:focus{
 
-    border-color: #4caf50;
+.input-buscador::placeholder {
+    color: #96a298;
+}
 
-    box-shadow: 0 0 10px rgba(76,175,80,.25);
 
+.input-buscador:hover {
+    border-color: #c6d8c0;
+}
+
+
+.input-buscador:focus {
+    border-color: #91ad89;
+
+    box-shadow:
+        0 9px 28px rgba(43, 74, 49, 0.10);
+
+    transform: translateY(-1px);
 }
 
 .descripcion-subcategoria{
@@ -2462,63 +5745,66 @@ color: #222;
 
 }
 
-#legumbres-categoria{
 
-   display:none;
-    padding:40px 20px;
-    min-height: 100vh;
-    padding: 120px 20px;
-    background: white;
-   display: none;
-    min-height: 100vh;
-    padding: 120px 20px;
-    background: white;
-    padding-top: 185px;
-}
 
 /*================ SUBTÍTULOS DENTRO DE LAS CATEGORÍAS ================*/
 
-.subtitulo-categoria{
+/* ==================================================
+             SUBTÍTULOS DE CATEGORÍAS
+================================================== */
+
+.subtitulo-categoria {
+    position: relative;
 
     grid-column: 1 / -1;
 
-    font-size: 1.8rem;
-    font-weight: bold;
+    width: 100%;
+    max-width: 720px;
 
-    color: #4b6b3c;
+    margin: 65px auto 28px;
+    padding: 0 20px 20px;
 
-    margin-top: 30px;
-    margin-bottom: 10px;
+    color: #31553a;
 
-    padding-bottom: 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 3vw, 2.15rem);
+    font-weight: 500;
 
-    border-bottom: 2px solid #d8e6cf;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
 
+    text-align: center;
 }
 
-@media (max-width:768px){
+/* Los subtítulos internos no muestran
+   la etiqueta del título principal */
 
-    .subtitulo-categoria{
-
-        font-size: 1.4rem;
-
-        margin-top: 20px;
-        margin-bottom: 10px;
-
-    }
-
+.titulo-categoria.subtitulo-categoria::before {
+    display: none;
 }
+
+
+/* PEQUEÑA LÍNEA DECORATIVA */
+
+.subtitulo-categoria::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 2px;
+
+    margin: 14px auto 0;
+
+    background: #a8bea1;
+
+    border-radius: 20px;
+}
+
+
 
 /* ======================= DESPENSA SALUDABLE ======================= */
 
-#despensa-categoria{
-    display:none;
-    padding:40px 20px;
-    min-height: 100vh;
-    padding: 120px 20px;
-    background: white;
-
-}
 
 .producto-card-despensa{
     cursor:pointer;
@@ -2565,3 +5851,1263 @@ color: #222;
 .consumo-despensa p{
     line-height:1.6;
 }
+
+/* ==================================================
+   CORRECCIÓN FLECHAS DELICEL
+================================================== */
+
+.carrusel-delicel {
+    position: relative !important;
+}
+
+.carrusel-delicel #anteriorDelicel {
+    position: absolute !important;
+    left: 15px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+.carrusel-delicel #siguienteDelicel {
+    position: absolute !important;
+    right: 15px !important;
+    left: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .carrusel-delicel #anteriorDelicel {
+        left: 7px !important;
+        right: auto !important;
+    }
+
+    .carrusel-delicel #siguienteDelicel {
+        right: 7px !important;
+        left: auto !important;
+    }
+
+}
+
+/* ==================================================
+            BOTÓN INFORMACIÓN DELICEL
+================================================== */
+
+.btn-info-delicel {
+    margin-top: 18px;
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #4f7f56;
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-info-delicel:hover {
+    background: #3f6c46;
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==================================================
+                    MODAL DELICEL
+================================================== */
+
+.modal-delicel {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 35, 22, 0.65);
+    backdrop-filter: blur(5px);
+
+    z-index: 9999;
+}
+
+
+/* CAJA DEL MODAL */
+
+.modal-delicel-contenido {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border-radius: 26px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: aparecerModalDelicel 0.3s ease;
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes aparecerModalDelicel {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* BOTÓN CERRAR */
+
+.cerrar-modal-delicel {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #eef5ee;
+    color: #3f6c46;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* MARCA */
+
+.marca-modal-delicel {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 6px 15px;
+
+    border-radius: 20px;
+
+    background: #edf6ed;
+    color: #47704c;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* TÍTULO */
+
+.modal-delicel-contenido h2 {
+    margin: 5px 35px 12px;
+
+    color: #315c37;
+
+    font-size: 1.5rem;
+}
+
+
+/* ETIQUETAS */
+
+.etiquetas-modal-delicel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+.etiquetas-modal-delicel span {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #f5f8f3;
+    color: #55705a;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+
+/* IMAGEN */
+
+.modal-delicel-imagen {
+    display: block;
+
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+
+    margin: 10px auto 20px;
+
+    object-fit: contain;
+}
+
+
+/* INFORMACIÓN */
+
+.info-modal-delicel {
+    padding: 18px;
+
+    background: #f7faf6;
+
+    border-radius: 18px;
+
+    text-align: left;
+}
+
+.info-modal-delicel h3 {
+    margin: 0 0 8px;
+
+    color: #3f6c46;
+
+    font-size: 1rem;
+}
+
+.info-modal-delicel p {
+    margin: 0;
+
+    color: #59645b;
+
+    line-height: 1.6;
+}
+
+
+/* PARTE INFERIOR */
+
+.footer-modal-delicel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+.precio-modal-delicel {
+    text-align: right;
+}
+
+.precio-modal-delicel small {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #777;
+}
+
+.precio-modal-delicel strong {
+    color: #315c37;
+
+    font-size: 1.25rem;
+}
+
+
+/* ==================================================
+                MODAL DELICEL CELULAR
+================================================== */
+
+@media (max-width: 600px) {
+
+    .modal-delicel {
+        padding: 15px;
+    }
+
+    .modal-delicel-contenido {
+        max-height: 85vh;
+
+        padding:
+            30px
+            20px
+            25px;
+
+        border-radius: 22px;
+    }
+
+    .modal-delicel-contenido h2 {
+        font-size: 1.25rem;
+    }
+
+    .modal-delicel-imagen {
+        max-width: 210px;
+        height: 210px;
+    }
+
+    .footer-modal-delicel {
+        flex-direction: column;
+    }
+
+    .precio-modal-delicel {
+        text-align: center;
+    }
+
+}
+
+/* ==================================================
+              CARRUSEL GLUTAL
+================================================== */
+
+.carrusel-glutal {
+    position: relative;
+
+    max-width: 520px;
+    margin: 35px auto 70px;
+    padding: 35px 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e8f1e8;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==================================================
+              CONTENIDO DEL PRODUCTO
+================================================== */
+
+.contenido-glutal {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* ==================================================
+                    CONTADOR
+================================================== */
+
+.contador-glutal {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 6px 14px;
+
+    background: #eef6ee;
+    color: #47704c;
+
+    border-radius: 20px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+                TÍTULO DEL PRODUCTO
+================================================== */
+
+.titulo-glutal {
+    margin: 5px 0 20px;
+
+    color: #315c37;
+
+    font-size: 1.35rem;
+    line-height: 1.4;
+}
+
+
+/* ==================================================
+                IMAGEN DEL PRODUCTO
+================================================== */
+
+.imagen-glutal {
+    display: block;
+
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ==================================================
+                  PRESENTACIÓN
+================================================== */
+
+.peso-glutal {
+    display: inline-block;
+
+    margin: 15px 0 10px;
+    padding: 7px 16px;
+
+    background: #f4f8f2;
+    color: #527057;
+
+    border-radius: 18px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+                      PRECIO
+================================================== */
+
+.precio-glutal {
+    margin-top: 10px;
+}
+
+.precio-glutal > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #55705a;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#precioGlutal {
+    color: #315c37;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+
+/* ==================================================
+                FLECHAS DEL CARRUSEL
+================================================== */
+
+.flecha-glutal {
+    position: absolute !important;
+    top: 50% !important;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #4f7f56;
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    z-index: 5;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* IZQUIERDA */
+
+.carrusel-glutal #anteriorGlutal {
+    left: 15px !important;
+    right: auto !important;
+
+    transform: translateY(-50%) !important;
+}
+
+
+/* DERECHA */
+
+.carrusel-glutal #siguienteGlutal {
+    right: 15px !important;
+    left: auto !important;
+
+    transform: translateY(-50%) !important;
+}
+
+
+/* HOVER */
+
+.flecha-glutal:hover {
+    background: #3f6c46;
+}
+
+.carrusel-glutal #anteriorGlutal:hover,
+.carrusel-glutal #siguienteGlutal:hover {
+    transform:
+        translateY(-50%)
+        scale(1.08) !important;
+}
+
+
+/* ==================================================
+              BOTÓN VER INFORMACIÓN
+================================================== */
+
+.btn-info-glutal {
+    margin-top: 18px;
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #4f7f56;
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-info-glutal:hover {
+    background: #3f6c46;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==================================================
+                    MODAL GLUTAL
+================================================== */
+
+.modal-glutal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 35, 22, 0.65);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 9999;
+}
+
+
+/* CAJA DEL MODAL */
+
+.modal-glutal-contenido {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border-radius: 26px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: aparecerModalGlutal 0.3s ease;
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes aparecerModalGlutal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+                  BOTÓN CERRAR
+================================================== */
+
+.cerrar-modal-glutal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #eef5ee;
+    color: #3f6c46;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ==================================================
+                  MARCA GLUTAL
+================================================== */
+
+.marca-modal-glutal {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 6px 15px;
+
+    border-radius: 20px;
+
+    background: #edf6ed;
+    color: #47704c;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==================================================
+                 TÍTULO DEL MODAL
+================================================== */
+
+.modal-glutal-contenido h2 {
+    margin: 5px 35px 12px;
+
+    color: #315c37;
+
+    font-size: 1.5rem;
+}
+
+
+/* ==================================================
+                 ETIQUETAS MODAL
+================================================== */
+
+.etiquetas-modal-glutal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+.etiquetas-modal-glutal span {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #f5f8f3;
+    color: #55705a;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+                  IMAGEN MODAL
+================================================== */
+
+.modal-glutal-imagen {
+    display: block;
+
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+
+    margin: 10px auto 20px;
+
+    object-fit: contain;
+}
+
+
+/* ==================================================
+                INFORMACIÓN MODAL
+================================================== */
+
+.info-modal-glutal {
+    padding: 18px;
+
+    background: #f7faf6;
+
+    border-radius: 18px;
+
+    text-align: left;
+}
+
+.info-modal-glutal h3 {
+    margin: 0 0 8px;
+
+    color: #3f6c46;
+
+    font-size: 1rem;
+}
+
+.info-modal-glutal p {
+    margin: 0;
+
+    color: #59645b;
+
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+               PARTE INFERIOR MODAL
+================================================== */
+
+.footer-modal-glutal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+.precio-modal-glutal {
+    text-align: right;
+}
+
+
+.precio-modal-glutal small {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #777;
+}
+
+
+.precio-modal-glutal strong {
+    color: #315c37;
+
+    font-size: 1.25rem;
+}
+
+
+/* ==================================================
+              GLUTAL EN CELULAR
+================================================== */
+
+@media (max-width: 600px) {
+
+    .carrusel-glutal {
+        width: calc(100% - 30px);
+        max-width: 390px;
+
+        margin: 25px auto 55px;
+
+        padding:
+            30px
+            48px
+            25px;
+
+        border-radius: 20px;
+    }
+
+
+    .titulo-glutal {
+        font-size: 1.1rem;
+
+        margin-bottom: 15px;
+    }
+
+
+    .imagen-glutal {
+        max-width: 230px;
+        height: 240px;
+    }
+
+
+    /* FLECHAS */
+
+    .flecha-glutal {
+        width: 38px;
+        height: 38px;
+
+        font-size: 1rem;
+    }
+
+
+    .carrusel-glutal #anteriorGlutal {
+        left: 7px !important;
+        right: auto !important;
+    }
+
+
+    .carrusel-glutal #siguienteGlutal {
+        right: 7px !important;
+        left: auto !important;
+    }
+
+
+    /* MODAL */
+
+    .modal-glutal {
+        padding: 15px;
+    }
+
+
+    .modal-glutal-contenido {
+        max-height: 85vh;
+
+        padding:
+            30px
+            20px
+            25px;
+
+        border-radius: 22px;
+    }
+
+
+    .modal-glutal-contenido h2 {
+        font-size: 1.25rem;
+    }
+
+
+    .modal-glutal-imagen {
+        max-width: 210px;
+        height: 210px;
+    }
+
+
+    .footer-modal-glutal {
+        flex-direction: column;
+    }
+
+
+    .precio-modal-glutal {
+        text-align: center;
+    }
+
+}
+
+
+/* ==================================================
+        CONSUMO / PREPARACIÓN - DISEÑO FINAL
+================================================== */
+
+.consumo,
+.consumo-hierbas,
+.consumo-frutos,
+.consumo-cereales,
+.consumo-harinas,
+.consumo-semillas,
+.consumo-congelados,
+.consumo-legumbres,
+.consumo-despensa {
+
+    margin-top: 18px;
+    padding: 17px;
+
+    background: #f6f9f3;
+
+    border: 1px solid #e1e9de;
+    border-left: 3px solid #9bb792;
+    border-radius: 14px;
+
+    box-shadow: none;
+
+    color: #657067;
+}
+
+
+/* TÍTULO */
+
+.consumo h4,
+.consumo-hierbas h4,
+.consumo-frutos h4,
+.consumo-cereales h4,
+.consumo-harinas h4,
+.consumo-semillas h4,
+.consumo-congelados h4,
+.consumo-legumbres h4,
+.consumo-despensa h4 {
+
+    margin: 0 0 10px;
+
+    color: #42694a;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+/* TEXTO */
+
+.consumo p,
+.consumo-hierbas p,
+.consumo-frutos p,
+.consumo-cereales p,
+.consumo-harinas p,
+.consumo-semillas p,
+.consumo-congelados p,
+.consumo-legumbres p,
+.consumo-despensa p {
+
+    margin: 0;
+
+    color: #657067;
+
+    font-size: 0.82rem;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* Si hay textos en negrita dentro del consumo */
+
+.consumo strong,
+.consumo-hierbas strong,
+.consumo-frutos strong,
+.consumo-cereales strong,
+.consumo-harinas strong,
+.consumo-semillas strong,
+.consumo-congelados strong,
+.consumo-legumbres strong,
+.consumo-despensa strong {
+
+    color: #42694a;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+       PESTAÑAS BENEFICIOS / CONSUMO
+================================================== */
+
+.pestanas-producto {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    margin: 0 0 18px;
+    padding: 5px;
+
+    background: #f1f5ee;
+
+    border: 1px solid #e1e9de;
+    border-radius: 14px;
+}
+
+
+.pestana-producto {
+    padding: 10px 8px;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 10px;
+
+    color: #758078;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.pestana-producto:hover {
+    color: #42694a;
+}
+
+
+.pestana-producto.activa {
+    background: #ffffff;
+
+    color: #42694a;
+
+    box-shadow:
+        0 3px 10px rgba(43, 74, 49, 0.08);
+}
+
+
+/* PANEL DE CONSUMO CUANDO ESTÁ EN PESTAÑA */
+
+.panel-consumo {
+    margin-top: 0 !important;
+}
+
+
+
+/* ==================================================
+          ANIMACIONES DE ENTRADA - SECCIONES
+================================================== */
+
+@keyframes aparecerSeccion {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.seccion-animada {
+    animation: aparecerSeccion 0.65s ease both;
+}
+
+
+/* ==================================================
+        ANIMACIONES INTERNAS - NOSOTROS
+================================================== */
+
+.seccion-animada .nosotros-encabezado {
+    animation: subirSuave 0.7s ease 0.05s both;
+}
+
+.seccion-animada .nosotros-visual {
+    animation: entrarIzquierda 0.75s ease 0.15s both;
+}
+
+.seccion-animada .nosotros-texto {
+    animation: entrarDerecha 0.75s ease 0.2s both;
+}
+
+.seccion-animada .nosotros-frase {
+    animation: subirSuave 0.7s ease 0.3s both;
+}
+
+
+/* ==================================================
+        ANIMACIONES INTERNAS - CONTACTO
+================================================== */
+
+.seccion-animada .contacto-encabezado {
+    animation: subirSuave 0.7s ease 0.05s both;
+}
+
+.seccion-animada .contacto-informacion {
+    animation: entrarIzquierda 0.75s ease 0.15s both;
+}
+
+.seccion-animada .contacto-mapa-contenedor {
+    animation: entrarDerecha 0.75s ease 0.2s both;
+}
+
+
+/* ==================================================
+             KEYFRAMES GENERALES
+================================================== */
+
+@keyframes subirSuave {
+
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes entrarIzquierda {
+
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes entrarDerecha {
+
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ==================================================
+        ANIMACIÓN - CATÁLOGO PRINCIPAL
+================================================== */
+
+.seccion-animada .encabezado-catalogo {
+    animation: subirSuave 0.7s ease 0.05s both;
+}
+
+
+/* TARJETAS DE CATEGORÍAS */
+
+.seccion-animada .tarjeta {
+    animation: subirTarjeta 0.55s ease both;
+}
+
+
+/* APARECEN ESCALONADAS */
+
+.seccion-animada .tarjeta:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.seccion-animada .tarjeta:nth-child(2) {
+    animation-delay: 0.14s;
+}
+
+.seccion-animada .tarjeta:nth-child(3) {
+    animation-delay: 0.18s;
+}
+
+.seccion-animada .tarjeta:nth-child(4) {
+    animation-delay: 0.22s;
+}
+
+.seccion-animada .tarjeta:nth-child(5) {
+    animation-delay: 0.26s;
+}
+
+.seccion-animada .tarjeta:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.seccion-animada .tarjeta:nth-child(7) {
+    animation-delay: 0.34s;
+}
+
+.seccion-animada .tarjeta:nth-child(8) {
+    animation-delay: 0.38s;
+}
+
+.seccion-animada .tarjeta:nth-child(9) {
+    animation-delay: 0.42s;
+}
+
+.seccion-animada .tarjeta:nth-child(10) {
+    animation-delay: 0.46s;
+}
+
+
+@keyframes subirTarjeta {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
