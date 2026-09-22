@@ -2400,6 +2400,10 @@ a.contacto-opcion:hover .contacto-flecha {
 
 .producto-card {
     position: relative;
+    user-select: none;
+    
+    -webkit-user-select: none;
+
 
     width: 100%;
     min-width: 0;
@@ -3739,6 +3743,58 @@ header nav a {
     height: 110px;
 
     right: -60px;
+}
+
+/* ==================================================
+      CATEGORÍAS PRINCIPALES - CORRECCIÓN MÓVIL
+================================================== */
+
+#productos .tarjeta {
+    width: 100%;
+    max-width: 100%;
+
+    grid-column: 1 / -1;
+}
+
+
+/* Evita que el contenido se desborde */
+
+#productos .categoria-texto {
+    min-width: 0;
+}
+
+
+/* Nombre de la categoría */
+
+#productos .tarjeta h3 {
+    width: 100%;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+
+/* Flecha siempre a la derecha */
+
+#productos .categoria-flecha {
+    position: absolute;
+
+    top: 50%;
+    right: 16px;
+
+    transform: translateY(-50%);
+
+    margin: 0;
+}
+
+
+/* Reservamos lugar para la flecha */
+
+#productos .tarjeta {
+    padding-right: 58px;
 }
 
 }
@@ -7111,3 +7167,25 @@ color: #222;
 
 }
 
+
+/* ==================================================
+          EFECTO TÁCTIL EN CELULAR
+================================================== */
+
+.tarjeta,
+.producto-card,
+.btn-volver,
+.abrir-info,
+.abrir-info-frutos,
+.abrir-info-cereales,
+.abrir-info-semillas,
+.abrir-info-congelados,
+.abrir-info-harinas,
+.ver-info-aceites,
+.ver-info-congelados,
+.ver-info-semillas,
+.ver-info-legumbres,
+.ver-info-despensa {
+
+    -webkit-tap-highlight-color: transparent;
+}
