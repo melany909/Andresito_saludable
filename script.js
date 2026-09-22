@@ -342,7 +342,7 @@ const productosDelicel = [
         nombre: "Premezcla para pan casero",
         imagen: "img/harinas y premezcla/premezcla para pan casero delicel.png",
         peso: "500 g",
-        precio: 0,
+        precio: 4500,
         estado: "Disponible",
         descripcion: "Ideal para preparar panes caseros de manera práctica."
     },
@@ -351,7 +351,7 @@ const productosDelicel = [
         nombre: "Premezcla para pizza",
         imagen: "img/harinas y premezcla/premezcla para pizza delicel.png",
         peso: "500 g",
-        precio: 0,
+        precio: 5200,
         estado: "Disponible",
         descripcion: "Ideal para preparar pizzas caseras."
     },
@@ -360,7 +360,7 @@ const productosDelicel = [
         nombre: "Premezcla universal",
         imagen: "img/harinas y premezcla/premezcla universal delicel.webp",
         peso: "500 g",
-        precio: 0,
+        precio: 4100,
         estado: "Disponible",
         descripcion: "Una opción versátil para preparaciones de panadería, repostería y pastas."
     },
@@ -369,7 +369,7 @@ const productosDelicel = [
         nombre: "Bizcochuelo de chocolate",
         imagen: "img/harinas y premezcla/premezcla bizcochuelo de chocolate delicel.jpg",
         peso: "500 g",
-        precio: 0,
+        precio: 4300,
         estado: "Disponible",
         descripcion: "Ideal para preparar bizcochuelos de chocolate."
     },
@@ -378,7 +378,7 @@ const productosDelicel = [
         nombre: "Bizcochuelo de vainilla",
         imagen: "img/harinas y premezcla/premezcla biszcochuelo de vainilla delicel.webp",
         peso: "500 g",
-        precio: 0, 
+        precio: 4700, 
         estado: "Disponible",
         descripcion: "Ideal para preparar bizcochuelos de vainilla."
     },
@@ -387,7 +387,7 @@ const productosDelicel = [
         nombre: "Rebozador",
         imagen: "img/harinas y premezcla/rebozador delicel.webp",
         peso: "500 g",
-        precio: 0,
+        precio: 6500,
         estado: "Disponible",
          descripcion: "Ideal para utilizar en preparaciones horneadas o fritas."
     },
@@ -396,7 +396,7 @@ const productosDelicel = [
         nombre: "Premezcla para pan integral",
         imagen: "img/harinas y premezcla/premezcla para pan integral delicel.png",
         peso: "500 g",
-        precio: 0,
+        precio: 4800,
         estado: "Disponible",
         descripcion: "Ideal para preparar pan integral de manera práctica."
     },
@@ -405,7 +405,7 @@ const productosDelicel = [
         nombre: "Premezcla para ñoquis de papa",
         imagen: "img/harinas y premezcla/premezcla para ñoquis delicel.webp",
         peso: "500 g",
-        precio: 0,
+        precio: 6900,
         estado: "Disponible",
         descripcion: "Ideal para preparar ñoquis de papa."
     }
