@@ -2401,7 +2401,7 @@ a.contacto-opcion:hover .contacto-flecha {
 .producto-card {
     position: relative;
     user-select: none;
-    
+
     -webkit-user-select: none;
 
 
@@ -3069,6 +3069,30 @@ header nav a {
     gap: 12px;
 
     align-items: start;
+}
+
+/* ==================================================
+        HARINAS - 2 PRODUCTOS POR FILA
+================================================== */
+
+#harinas-categoria .grilla-productos-harinas {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    width: 100%;
+
+    gap: 12px;
+
+    align-items: start;
+}
+
+
+#harinas-categoria .producto-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
 }
 
 
